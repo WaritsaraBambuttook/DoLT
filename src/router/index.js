@@ -4,6 +4,7 @@ import Detail from '@/components/Detail'
 import Contact from '@/components/Contact'
 import Address from '@/components/Address'
 import Order from '@/components/Order'
+import Bumpertype from '@/components/Bumpertype'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/Contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/Bumpertype',
+      name: 'Bumpertype',
+      component: Bumpertype
     }
   ]
 })

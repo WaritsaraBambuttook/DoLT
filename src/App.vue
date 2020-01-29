@@ -7,6 +7,7 @@
         <b-navbar-nav>
           <b-nav-item to="/Detail">รายละเอียด</b-nav-item>
           <b-nav-item to="/Contact">ติดต่อสอบถาม</b-nav-item>
+          <b-nav-item>ติดต่อสอบถาม</b-nav-item>
           <!-- <b-nav-item-dropdown text="Lang" right>
             <b-dropdown-item href="#">EN</b-dropdown-item>
             <b-dropdown-item href="#">ES</b-dropdown-item>
@@ -40,7 +41,9 @@
 </template>
 
 <script>
+import { store } from "./store/store";
 export default {
+  store,
   data() {
     return {
       testCollection: []
