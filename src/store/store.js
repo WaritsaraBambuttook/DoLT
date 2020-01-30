@@ -1,17 +1,23 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { stat } from 'fs';
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        CarStyleOne: '1',
+        CarStyle: '',
+        Bumpertype: '',
     },
     mutations: {
-        setCarStyleOne(state, CarStyleOne) {
-            state.CarStyleOne = CarStyleOne;
+        setCarStyle(state, CarStyle) {
+            state.CarStyle = CarStyle;
+        },
+        setBumpertype(state, Bumpertype) {
+            state.Bumpertype = Bumpertype;
         },
     },
     getters: {
-        CarStyleOne: state => state.CarStyleOne
+        CarStyle: state => state.CarStyle,
+        Bumpertype: state => state.Bumpertype
     }
 })

@@ -1,18 +1,88 @@
 <template>
   <div>
-    <b-card
-      title="Card Title"
-      img-src="https://picsum.photos/600/300/?image=25"
-      img-alt="Image"
-      img-top
-      tag="article"
-      style="max-width: 20rem;"
-      class="mb-2"
-    >
-      <b-card-text>{{$store.getters.CarStyleOne}}</b-card-text>
+    <b-row>
+      <b-col>
+        <h3>ประเภทรถย่อยแต่ละลักษณะ</h3>
+      </b-col>
+    </b-row>
+    <br />
+    <b-row>
+      <b-col class="col-12 col-sm-4">
+        <b-button
+          class="carstyle"
+          variant="success"
+          :disabled="!typeOne"
+          @click="RLtype('Pickuptruck')"
+        >
+          <b-col>
+            <h5>กระบะบรรทุก</h5>
+            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
 
-      <b-button href="#" variant="primary">Go somewhere</b-button>
-    </b-card>
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
+        <b-button class="carstyle" variant="success" :disabled="!typeOne" @click="RLtype('dumper')">
+          <b-col>
+            <h5>ยกเท</h5>
+            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
+
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
+        <b-button
+          class="carstyle"
+          variant="success"
+          :disabled="!typeOne"
+          @click="RLtype('rampcar')"
+        >
+          <b-col>
+            <h5>รถพื้นเรีบทางลาด</h5>
+            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
+    </b-row>
+    <br />
+    <b-row>
+      <b-col class="col-12 col-sm-4">
+        <b-button class="carstyle" variant="success" :disabled="!typeTwo" @click="RLtype('van')">
+          <b-col>
+            <h5>รถตู้บรรทุก</h5>
+            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
+
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
+        <b-button
+          class="carstyle"
+          variant="success"
+          :disabled="!typethree"
+          @click="RLtype('Liquidtruck')"
+        >
+          <b-col>
+            <h5>รถบรรทุกของเหลว</h5>
+            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
+
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
+        <b-button
+          class="carstyle"
+          variant="success"
+          :disabled="!typethree"
+          @click="RLtype('HMtruck')"
+        >
+          <b-col>
+            <h5>รถบรรทุกวัสดุอันตราย</h5>
+            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
+    </b-row>
   </div>
 </template>
 <script>
@@ -20,9 +90,46 @@ import { store } from "../store/store";
 export default {
   store,
   data() {
-    return {};
+    return {
+      one: "",
+      two: "",
+      three: "",
+      typeOne: true,
+      typeTwo: true,
+      typethree: true
+    };
   },
-  methods: {}
+  methods: {
+    RLtype: function(type) {
+      console.log("commit to store " + type);
+      this.$store.commit("setBumpertype", type);
+      this.$router.push({ path: "/RLtype" });
+    }
+  },
+
+  created() {
+    this.one = this.$store.getters.CarStyle;
+
+    console.log("getters car style  " + this.one);
+
+    if (this.one == "carstyleOne") {
+      this.typeOne = true;
+      this.typeTwo = false;
+      this.typethree = false;
+      console.log("1111111");
+    } else if (this.one == "carstyleTwo") {
+      this.typeOne = false;
+      this.typeTwo = true;
+      this.typethree = false;
+      console.log("2222");
+    } else if (this.one == "carstyleThree") {
+      this.typeOne = false;
+      this.typeTwo = false;
+      this.typethree = true;
+
+      console.log("3333");
+    }
+  }
 };
 </script>
 <style>

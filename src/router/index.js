@@ -5,6 +5,8 @@ import Contact from '@/components/Contact'
 import Address from '@/components/Address'
 import Order from '@/components/Order'
 import Bumpertype from '@/components/Bumpertype'
+import RLtype from '@/components/RLtype'
+// import Stepper from '@/components/Stepper'
 
 Vue.use(Router)
 
@@ -34,6 +36,11 @@ export default new Router({
       path: '/Bumpertype',
       name: 'Bumpertype',
       component: Bumpertype
+    },
+    {
+      path: '/RLtype',
+      name: 'RLtype',
+      component: RLtype
     }
   ]
 })
