@@ -27,20 +27,20 @@ export default {
     return {
       testCollection: []
     };
-  },
-  mounted() {
-    const db = this.$firebase.firestore();
-    db.collection("four")
-      .get()
-      .then(snap => {
-        const testCollection = [];
-        snap.forEach(doc => {
-          testCollection.push(doc.data());
-        });
-        this.testCollection = testCollection;
-        console.log(this.testCollection);
-      });
   }
+  // mounted() {
+  //   const db = this.$firebase.firestore();
+  //   db.collection("four")
+  //     .get()
+  //     .then(snap => {
+  //       const testCollection = [];
+  //       snap.forEach(doc => {
+  //         testCollection.push(doc.data());
+  //       });
+  //       this.testCollection = testCollection;
+  //       console.log(this.testCollection);
+  //     });
+  // }
 };
 </script>
 

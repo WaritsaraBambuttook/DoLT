@@ -1,16 +1,11 @@
 <template>
   <div>
-    <b-row>
-      <b-col>
-        <h3>ประเภทรถย่อยแต่ละลักษณะ</h3>
-      </b-col>
-    </b-row>
     <br />
     <b-row>
       <b-col class="col-12 col-sm-4">
         <b-button
           class="carstyle"
-          variant="success"
+          :variant="buttonColor"
           :disabled="!typeOne"
           @click="RLtype('Pickuptruck')"
         >
@@ -22,7 +17,12 @@
       </b-col>
 
       <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
-        <b-button class="carstyle" variant="success" :disabled="!typeOne" @click="RLtype('dumper')">
+        <b-button
+          class="carstyle"
+          :variant="buttonColor"
+          :disabled="!typeOne"
+          @click="RLtype('dumper')"
+        >
           <b-col>
             <h5>ยกเท</h5>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
@@ -33,7 +33,7 @@
       <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button
           class="carstyle"
-          variant="success"
+          :variant="buttonColor"
           :disabled="!typeOne"
           @click="RLtype('rampcar')"
         >
@@ -47,7 +47,12 @@
     <br />
     <b-row>
       <b-col class="col-12 col-sm-4">
-        <b-button class="carstyle" variant="success" :disabled="!typeTwo" @click="RLtype('van')">
+        <b-button
+          class="carstyle"
+          :variant="buttonColor"
+          :disabled="!typeTwo"
+          @click="RLtype('van')"
+        >
           <b-col>
             <h5>รถตู้บรรทุก</h5>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
@@ -58,7 +63,7 @@
       <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button
           class="carstyle"
-          variant="success"
+          :variant="buttonColor"
           :disabled="!typethree"
           @click="RLtype('Liquidtruck')"
         >
@@ -72,7 +77,7 @@
       <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button
           class="carstyle"
-          variant="success"
+          :variant="buttonColor"
           :disabled="!typethree"
           @click="RLtype('HMtruck')"
         >
@@ -96,18 +101,18 @@ export default {
       three: "",
       typeOne: true,
       typeTwo: true,
-      typethree: true
+      typethree: true,
+      buttonColor: "outline-success"
     };
   },
   methods: {
     RLtype: function(type) {
       console.log("commit to store " + type);
       this.$store.commit("setBumpertype", type);
-      this.$router.push({ path: "/RLtype" });
     }
   },
 
-  created() {
+  mounted() {
     this.one = this.$store.getters.CarStyle;
 
     console.log("getters car style  " + this.one);
@@ -133,4 +138,7 @@ export default {
 };
 </script>
 <style>
+.carstyle:focus {
+  background-color: darkgreen;
+}
 </style>

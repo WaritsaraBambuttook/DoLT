@@ -6,12 +6,17 @@ import Address from '@/components/Address'
 import Order from '@/components/Order'
 import Bumpertype from '@/components/Bumpertype'
 import RLtype from '@/components/RLtype'
-// import Stepper from '@/components/Stepper'
+import Stepper from '@/components/Stepper'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      name: 'Stepper',
+      component: Stepper
+    },
     {
       path: '/',
       name: 'Order',

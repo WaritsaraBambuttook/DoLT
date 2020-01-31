@@ -18,6 +18,9 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
+import VueGoodWizard from 'vue-good-wizard';
+Vue.use(VueGoodWizard);
+
 Vue.config.productionTip = false
 
 // firebase.initializeApp({
