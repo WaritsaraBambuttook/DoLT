@@ -1,14 +1,14 @@
 <template>
   <div>
-    <b-row>
+    <!-- <b-row>
       <b-col>
         <h4>อุปกรณ์ป้องกัน</h4>
       </b-col>
-    </b-row>
+    </b-row>-->
 
     <b-row>
       <b-col class="col-12 col-sm-6">
-        <b-button class="carstyle" variant="success">
+        <b-button class="carstyle" :variant="buttonColor" @click="RLtype('LUPD')">
           <b-col>
             <h5>ด้านข้างรถ</h5>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
@@ -17,7 +17,7 @@
       </b-col>
 
       <b-col class="col-12 col-sm-6" style="margin-top: 10px;">
-        <b-button class="carstyle" variant="success">
+        <b-button class="carstyle" :variant="buttonColor" @click="RLtype('RUPD')">
           <b-col>
             <h5>ท้ายรถ</h5>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
@@ -33,8 +33,16 @@ export default {
   store,
   data() {
     return {
-      data: ""
+      data: "",
+      buttonColor: "outline-success"
     };
+  },
+  methods: {
+    RLtype: function(type) {
+      console.log(type);
+      console.log("commit RUPD or LUPD :  " + type);
+      this.$store.commit("setRLtype", type);
+    }
   },
   created() {
     this.data = this.$store.getters.Bumpertype;
@@ -45,4 +53,19 @@ export default {
 };
 </script>
 <style>
+.carstyle {
+  padding-left: unset;
+  padding-right: unset;
+  height: 100%;
+  width: 70%;
+}
+.img {
+  padding-left: unset;
+  padding-right: unset;
+  width: 150px;
+  height: 150px;
+}
+.carstyle:focus {
+  background-color: darkgreen;
+}
 </style>

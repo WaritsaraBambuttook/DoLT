@@ -7,6 +7,8 @@ import Order from '@/components/Order'
 import Bumpertype from '@/components/Bumpertype'
 import RLtype from '@/components/RLtype'
 import Stepper from '@/components/Stepper'
+import Rupd from '@/components/Rupd'
+import Lupd from '@/components/Lupd'
 
 Vue.use(Router)
 
@@ -18,7 +20,7 @@ export default new Router({
       component: Stepper
     },
     {
-      path: '/',
+      path: '/Order',
       name: 'Order',
       component: Order
     },
@@ -46,6 +48,16 @@ export default new Router({
       path: '/RLtype',
       name: 'RLtype',
       component: RLtype
+    },
+    {
+      path: '/Rupd',
+      name: 'Rupd',
+      component: Rupd
+    },
+    {
+      path: "/Lupd",
+      name: 'Lupd',
+      component: Lupd
     }
   ]
 })

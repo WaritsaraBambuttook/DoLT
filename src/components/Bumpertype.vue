@@ -7,7 +7,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typeOne"
-          @click="RLtype('Pickuptruck')"
+          @click="bumpertype('Pickuptruck')"
         >
           <b-col>
             <h5>กระบะบรรทุก</h5>
@@ -21,7 +21,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typeOne"
-          @click="RLtype('dumper')"
+          @click="bumpertype('dumper')"
         >
           <b-col>
             <h5>ยกเท</h5>
@@ -35,7 +35,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typeOne"
-          @click="RLtype('rampcar')"
+          @click="bumpertype('rampcar')"
         >
           <b-col>
             <h5>รถพื้นเรีบทางลาด</h5>
@@ -51,7 +51,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typeTwo"
-          @click="RLtype('van')"
+          @click="bumpertype('van')"
         >
           <b-col>
             <h5>รถตู้บรรทุก</h5>
@@ -65,7 +65,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typethree"
-          @click="RLtype('Liquidtruck')"
+          @click="bumpertype('Liquidtruck')"
         >
           <b-col>
             <h5>รถบรรทุกของเหลว</h5>
@@ -79,7 +79,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typethree"
-          @click="RLtype('HMtruck')"
+          @click="bumpertype('HMtruck')"
         >
           <b-col>
             <h5>รถบรรทุกวัสดุอันตราย</h5>
@@ -106,7 +106,7 @@ export default {
     };
   },
   methods: {
-    RLtype: function(type) {
+    bumpertype: function(type) {
       console.log("commit to store " + type);
       this.$store.commit("setBumpertype", type);
     }
@@ -131,7 +131,6 @@ export default {
       this.typeOne = false;
       this.typeTwo = false;
       this.typethree = true;
-
       console.log("3333");
     }
   }
