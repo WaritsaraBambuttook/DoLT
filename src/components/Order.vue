@@ -51,6 +51,108 @@
         </b-button>
       </b-col>
     </b-row>
+
+    <b-row>
+      <b-col class="col-12 col-sm-4">
+        <b-button
+          class="carstyle"
+          ref="myid"
+          id="one"
+          :variant="buttonColor"
+          @click="carstyle('carstyleFour')"
+        >
+          <b-col>
+            <h5>ประเภทที่ 4</h5>
+            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
+
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
+        <b-button
+          class="carstyle"
+          id="two"
+          :variant="buttonColor"
+          @click="carstyle('carstyleFive')"
+        >
+          <b-col>
+            <h5>ประเภทที่ 5</h5>
+            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
+
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
+        <b-button
+          class="carstyle"
+          id="three"
+          :variant="buttonColor"
+          @click="carstyle('carstyleSix')"
+        >
+          <b-col>
+            <h5>ประเภทที่ 6</h5>
+            <b-img
+              class="img"
+              thumbnail
+              fluid
+              :src="require('../assets/bfgjlruyz127.jpg')"
+              alt="Image 1"
+            ></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
+    </b-row>
+
+    <b-row>
+      <b-col class="col-12 col-sm-4">
+        <b-button
+          class="carstyle"
+          ref="myid"
+          id="one"
+          :variant="buttonColor"
+          @click="carstyle('carstyleSeven')"
+        >
+          <b-col>
+            <h5>ประเภทที่ 7</h5>
+            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
+
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
+        <b-button
+          class="carstyle"
+          id="two"
+          :variant="buttonColor"
+          @click="carstyle('carstyleEight')"
+        >
+          <b-col>
+            <h5>ประเภทที่ 8</h5>
+            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
+
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
+        <b-button
+          class="carstyle"
+          id="three"
+          :variant="buttonColor"
+          @click="carstyle('carstyleNine')"
+        >
+          <b-col>
+            <h5>ประเภทที่ 9</h5>
+            <b-img
+              class="img"
+              thumbnail
+              fluid
+              :src="require('../assets/bfgjlruyz127.jpg')"
+              alt="Image 1"
+            ></b-img>
+          </b-col>
+        </b-button>
+      </b-col>
+    </b-row>
   </div>
 </template>
 

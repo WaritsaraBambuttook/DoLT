@@ -39,11 +39,11 @@ export default new Router({
       name: 'Contact',
       component: Contact
     },
-    {
-      path: '/Bumpertype',
-      name: 'Bumpertype',
-      component: Bumpertype
-    },
+    // {
+    //   path: '/',
+    //   name: 'Bumpertype',
+    //   component: Bumpertype
+    // },
     {
       path: '/RLtype',
       name: 'RLtype',

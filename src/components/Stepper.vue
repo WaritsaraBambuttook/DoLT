@@ -92,6 +92,7 @@ export default {
       //check car style
       if (currentPage == 0) {
         if (carStyle == "") {
+          alert("เลือก 'ลักษณะรถยนต์' ใหม่อีกครั้ง");
           return false;
         } else {
           return true; //return false if you want to prevent moving to next page
@@ -100,6 +101,7 @@ export default {
         //check Bumper type
       } else if (currentPage == 1) {
         if (Bumpertype == "") {
+          alert("เลือก 'ประเภทรถยนต์ย่อย' ใหม่อีกครั้ง");
           return false;
         } else {
           return true; //return false if you want to prevent moving to next page
@@ -109,6 +111,7 @@ export default {
       //check RL type
       else if (currentPage == 2) {
         if (RLtype == "") {
+          alert("เลือก 'ประเภทกันชน' ใหม่อีกครั้ง");
           return false;
         } else {
           return true;
@@ -130,6 +133,7 @@ export default {
           ) {
             return true;
           } else {
+            alert("เลือก 'คุณสมบัติของกันชนท้าย' ใหม่อีกครั้งและครบถ้วน");
             return false;
           }
         } else if (RLtype == "LUPD") {
@@ -144,6 +148,8 @@ export default {
           ) {
             return true;
           } else {
+            alert("เลือก 'คุณสมบัติของกันชนด้านข้าง' ใหม่อีกครั้งและครบถ้วน");
+
             return false;
           }
         }
