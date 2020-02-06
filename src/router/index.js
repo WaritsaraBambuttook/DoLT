@@ -9,7 +9,7 @@ import RLtype from '@/components/RLtype'
 import Stepper from '@/components/Stepper'
 import Rupd from '@/components/Rupd'
 import Lupd from '@/components/Lupd'
-
+import Rsummary from '@/components/Rsummary'
 Vue.use(Router)
 
 export default new Router({
@@ -58,6 +58,11 @@ export default new Router({
       path: "/Lupd",
       name: 'Lupd',
       component: Lupd
-    }
+    },
+    // {
+    //   path: "/",
+    //   name: 'Rsummary',
+    //   component: Rsummary
+    // }
   ]
 })

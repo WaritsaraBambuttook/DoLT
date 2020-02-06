@@ -9,7 +9,12 @@
     <br />
     <b-row>
       <b-col>
-        <vue-good-wizard :steps="steps" :onNext="nextClicked" :onBack="backClicked">
+        <vue-good-wizard
+          :steps="steps"
+          :onNext="nextClicked"
+          :onBack="backClicked"
+          finalStepLabel="final"
+        >
           <div slot="page1">
             <Order />
           </div>
@@ -23,7 +28,7 @@
             <component v-bind:is="checkRLtype" />
           </div>
           <div slot="page5">
-            <h1>สรุปผล</h1>
+            <component v-bind:is="summary" />
           </div>
         </vue-good-wizard>
       </b-col>
@@ -38,8 +43,10 @@ import bumberType from "./Bumpertype";
 import RLtype from "./RLtype";
 import RUPD from "./Rupd";
 import LUPD from "./Lupd";
+import Rsummary from "./Rsummary";
+import Lsummary from "./Lsummary";
 export default {
-  components: { Order, bumberType, RLtype, RUPD, LUPD },
+  components: { Order, bumberType, RLtype, RUPD, LUPD, Rsummary, Lsummary },
   data() {
     return {
       steps: [
@@ -61,10 +68,14 @@ export default {
         },
         {
           label: "5.สรุปผล",
-          slot: "page5"
+          slot: "page5",
+          options: {
+            nextDisabled: true // control whether next is disabled or not
+          }
         }
       ],
-      checkRLtype: ""
+      checkRLtype: "",
+      summary: ""
     };
   },
   methods: {
@@ -117,7 +128,6 @@ export default {
           return true;
         }
       }
-
       //check rf
       else if (currentPage == 3) {
         if (RLtype == "RUPD") {
@@ -131,6 +141,7 @@ export default {
             rf5 != "" &&
             rf6 != ""
           ) {
+            this.summary = "Rsummary";
             return true;
           } else {
             alert("เลือก 'คุณสมบัติของกันชนท้าย' ใหม่อีกครั้งและครบถ้วน");
@@ -146,6 +157,7 @@ export default {
             lf5 != "" &&
             lf6 != ""
           ) {
+            this.summary = "Lsummary";
             return true;
           } else {
             alert("เลือก 'คุณสมบัติของกันชนด้านข้าง' ใหม่อีกครั้งและครบถ้วน");

@@ -33,7 +33,7 @@
 
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F3.1: Avoid interference">
+        <b-form-group label="F3.1: Avoid interference Width difference △W/2 ">
           <b-form-radio-group stacked>
             <b-form-input v-model="text" type="number" placeholder="กรอกขนาดของรถ"></b-form-input>
             <br />

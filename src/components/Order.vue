@@ -11,35 +11,29 @@
         <b-button
           class="carstyle"
           ref="myid"
-          id="one"
           :variant="buttonColor"
           @click="carstyle('carstyleOne')"
         >
           <b-col>
-            <h5>ประเภทที่ 1</h5>
+            <h6>ประเภทที่ 1</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
-        <b-button class="carstyle" id="two" :variant="buttonColor" @click="carstyle('carstyleTwo')">
+      <b-col class="col-12 col-sm-4">
+        <b-button class="carstyle" :variant="buttonColor" @click="carstyle('carstyleTwo')">
           <b-col>
-            <h5>ประเภทที่ 2</h5>
+            <h6>ประเภทที่ 2</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
-        <b-button
-          class="carstyle"
-          id="three"
-          :variant="buttonColor"
-          @click="carstyle('carstyleThree')"
-        >
+      <b-col class="col-12 col-sm-4">
+        <b-button class="carstyle" :variant="buttonColor" @click="carstyle('carstyleThree')">
           <b-col>
-            <h5>ประเภทที่ 3</h5>
+            <h6>ประเภทที่ 3</h6>
             <b-img
               class="img"
               thumbnail
@@ -51,46 +45,35 @@
         </b-button>
       </b-col>
     </b-row>
-
+    <br />
     <b-row>
       <b-col class="col-12 col-sm-4">
         <b-button
           class="carstyle"
           ref="myid"
-          id="one"
           :variant="buttonColor"
           @click="carstyle('carstyleFour')"
         >
           <b-col>
-            <h5>ประเภทที่ 4</h5>
+            <h6>ประเภทที่ 4</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
-        <b-button
-          class="carstyle"
-          id="two"
-          :variant="buttonColor"
-          @click="carstyle('carstyleFive')"
-        >
+      <b-col class="col-12 col-sm-4">
+        <b-button class="carstyle" :variant="buttonColor" @click="carstyle('carstyleFive')">
           <b-col>
-            <h5>ประเภทที่ 5</h5>
+            <h6>ประเภทที่ 5</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
-        <b-button
-          class="carstyle"
-          id="three"
-          :variant="buttonColor"
-          @click="carstyle('carstyleSix')"
-        >
+      <b-col class="col-12 col-sm-4">
+        <b-button class="carstyle" :variant="buttonColor" @click="carstyle('carstyleSix')">
           <b-col>
-            <h5>ประเภทที่ 6</h5>
+            <h6>ประเภทที่ 6</h6>
             <b-img
               class="img"
               thumbnail
@@ -102,46 +85,35 @@
         </b-button>
       </b-col>
     </b-row>
-
+    <br />
     <b-row>
       <b-col class="col-12 col-sm-4">
         <b-button
           class="carstyle"
           ref="myid"
-          id="one"
           :variant="buttonColor"
           @click="carstyle('carstyleSeven')"
         >
           <b-col>
-            <h5>ประเภทที่ 7</h5>
+            <h6>ประเภทที่ 7</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
-        <b-button
-          class="carstyle"
-          id="two"
-          :variant="buttonColor"
-          @click="carstyle('carstyleEight')"
-        >
+      <b-col class="col-12 col-sm-4">
+        <b-button class="carstyle" :variant="buttonColor" @click="carstyle('carstyleEight')">
           <b-col>
-            <h5>ประเภทที่ 8</h5>
+            <h6>ประเภทที่ 8</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
-        <b-button
-          class="carstyle"
-          id="three"
-          :variant="buttonColor"
-          @click="carstyle('carstyleNine')"
-        >
+      <b-col class="col-12 col-sm-4">
+        <b-button class="carstyle" :variant="buttonColor" @click="carstyle('carstyleNine')">
           <b-col>
-            <h5>ประเภทที่ 9</h5>
+            <h6>ประเภทที่ 9</h6>
             <b-img
               class="img"
               thumbnail
@@ -184,13 +156,13 @@ export default {
   padding-left: unset;
   padding-right: unset;
   height: 100%;
-  width: 70%;
+  width: 60%;
 }
 .img {
   padding-left: unset;
   padding-right: unset;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
 .carstyle:focus {
   background-color: darkgreen;

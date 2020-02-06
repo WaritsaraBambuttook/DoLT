@@ -10,7 +10,7 @@
           @click="bumpertype('Pickuptruck')"
         >
           <b-col>
-            <h5>กระบะบรรทุก</h5>
+            <h6>กระบะบรรทุก</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -24,7 +24,7 @@
           @click="bumpertype('dumper')"
         >
           <b-col>
-            <h5>ยกเท</h5>
+            <h6>ยกเท</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -38,7 +38,7 @@
           @click="bumpertype('rampcar')"
         >
           <b-col>
-            <h5>รถพื้นเรีบทางลาด</h5>
+            <h6>รถพื้นเรีบทางลาด</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -54,7 +54,7 @@
           @click="bumpertype('van')"
         >
           <b-col>
-            <h5>รถตู้บรรทุก</h5>
+            <h6>รถตู้บรรทุก</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -68,7 +68,7 @@
           @click="bumpertype('Liquidtruck')"
         >
           <b-col>
-            <h5>รถบรรทุกของเหลว</h5>
+            <h6>รถบรรทุกของเหลว</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -82,7 +82,7 @@
           @click="bumpertype('HMtruck')"
         >
           <b-col>
-            <h5>รถบรรทุกวัสดุอันตราย</h5>
+            <h6>รถบรรทุกวัสดุอันตราย</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -99,7 +99,7 @@
           @click="bumpertype('concreteTruck')"
         >
           <b-col>
-            <h5>รถบรรทุกถังคอนกรีต</h5>
+            <h6>รถบรรทุกถังคอนกรีต</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -113,7 +113,7 @@
           @click="bumpertype('LaborsavingTruck')"
         >
           <b-col>
-            <h5>บรรทุกเครื่องทุ่นแรง</h5>
+            <h6>บรรทุกเครื่องทุ่นแรง</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -127,7 +127,7 @@
           @click="bumpertype('cementPowderTruck')"
         >
           <b-col>
-            <h5>บรรทุกปูนซิเมนต์ผง</h5>
+            <h6>บรรทุกปูนซิเมนต์ผง</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -144,7 +144,7 @@
           @click="bumpertype('vacuumTrucks')"
         >
           <b-col>
-            <h5>รถดูดฝุ่นและกวาดถนน</h5>
+            <h6>รถดูดฝุ่นและกวาดถนน</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -158,7 +158,7 @@
           @click="bumpertype('garbageTruck')"
         >
           <b-col>
-            <h5>รถเก็บขยะ</h5>
+            <h6>รถเก็บขยะ</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -172,7 +172,7 @@
           @click="bumpertype('slideCar')"
         >
           <b-col>
-            <h5>รถสไลด์</h5>
+            <h6>รถสไลด์</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -189,7 +189,7 @@
           @click="bumpertype('doubleTrailer')"
         >
           <b-col>
-            <h5>เทรลเลอร์สองชั้น</h5>
+            <h6>เทรลเลอร์สองชั้น</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -203,7 +203,7 @@
           @click="bumpertype('tankerTrailers')"
         >
           <b-col>
-            <h5>รถพ่วงบรรทุก</h5>
+            <h6>รถพ่วงบรรทุก</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -217,7 +217,7 @@
           @click="bumpertype('dumpTrailers')"
         >
           <b-col>
-            <h5>พ่วงยกเท</h5>
+            <h6>พ่วงยกเท</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -234,7 +234,7 @@
           @click="bumpertype('semiTrailer')"
         >
           <b-col>
-            <h5>รถกึ่งพ่วง</h5>
+            <h6>รถกึ่งพ่วง</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -248,7 +248,7 @@
           @click="bumpertype('vehicleTransport')"
         >
           <b-col>
-            <h5>รถกึ่งพ่วงวัสดุยาว</h5>
+            <h6>รถกึ่งพ่วงวัสดุยาว</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -262,7 +262,7 @@
           @click="bumpertype('towingCar')"
         >
           <b-col>
-            <h5>รถลากจูง</h5>
+            <h6>รถลากจูง</h6>
             <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
           </b-col>
         </b-button>
@@ -334,13 +334,13 @@ export default {
   padding-left: unset;
   padding-right: unset;
   height: 100%;
-  width: 70%;
+  width: 60%;
 }
 .img {
   padding-left: unset;
   padding-right: unset;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
 .carstyle:focus {
   background-color: darkgreen;
