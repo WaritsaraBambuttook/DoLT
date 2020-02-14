@@ -321,7 +321,6 @@ export default {
       this.typeeight = true;
     } else if (this.one == "ประเภทที่9") {
       this.typenine = true;
-      console.log("33333");
     }
   }
 };
