@@ -11,8 +11,8 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F1: Attach to chassis STAY design">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="c-type" @change="one('ctype')">C-type</b-form-radio>
-            <b-form-radio name="some-radios" value="i-Type" @change="one('itype')">I-type</b-form-radio>
+            <b-form-radio name="some-radios" value="c-type" @change="one('c-type')">C-type</b-form-radio>
+            <b-form-radio name="some-radios" value="i-Type" @change="one('i-type')">I-type</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -23,7 +23,7 @@
             <b-form-radio
               name="some-radios"
               value="Bolts-nuts"
-              @change="two('Boltsnuts')"
+              @change="two('Bolt-snuts')"
             >Bolts & nuts</b-form-radio>
             <b-form-radio name="some-radios" value="Welding" @change="two('Welding')">Welding</b-form-radio>
           </b-form-radio-group>
@@ -43,14 +43,13 @@
             <b-form-radio
               name="some-radios"
               id="one"
-              value="Bolts-nuts"
-              @change="three('over')"
+              @change="three('W/2น้อยกว่าหรือเท่ากับ775mm')"
             >W/2 น้อยกว่าหรือเท่ากับ 775 mm</b-form-radio>
             <b-form-radio
               name="some-radios"
               id="two"
               value="Welding"
-              @change="three('Lessequal')"
+              @change="three('W/2มากกว่า775mm')"
             >W/2 มากกว่า 775 mm</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -71,16 +70,12 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F3.3: Avoid interference Power source">
           <b-form-radio-group stacked>
-            <b-form-radio
-              name="some-radios"
-              value="nopower"
-              @change="five('nopower')"
-            >foldable>no power</b-form-radio>
+            <b-form-radio name="some-radios" value="nopower" @change="five('No-power')">no power</b-form-radio>
             <b-form-radio
               name="some-radios"
               value="humanpower"
-              @change="five('humanpower')"
-            >foldable>human power</b-form-radio>
+              @change="five('Human-power')"
+            >human power</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -91,12 +86,12 @@
             <b-form-radio
               name="some-radios"
               value="Circlesquare"
-              @change="six('Circlesquare')"
+              @change="six('Circle-square')"
             >Circle Square</b-form-radio>
             <b-form-radio
               name="some-radios"
               value="Doublesquare"
-              @change="six('Doublesquare')"
+              @change="six('Double-square')"
             >Double squarer</b-form-radio>
             <b-form-radio name="some-radios" value="LIP" @change="six('LIP')">LIP channel</b-form-radio>
           </b-form-radio-group>

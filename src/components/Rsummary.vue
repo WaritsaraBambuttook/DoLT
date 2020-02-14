@@ -23,7 +23,7 @@
       </b-row>
       <b-row class="col-12 col-sm-12">
         <b-col>
-          <b-button>dowload</b-button>
+          <b-button @click="pdf">dowload</b-button>
           <br />
         </b-col>
       </b-row>
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import jsPDF from "jspdf";
 export default {
   data() {
     return {
@@ -50,6 +51,14 @@ export default {
       bumper: "",
       type: ""
     };
+  },
+  methods: {
+    pdf: function() {
+      let pdfName = "RUPD";
+      var doc = new jsPDF("p", "pt");
+      doc.text("Hello World" + this.car, 50, 50);
+      doc.save(pdfName + ".pdf");
+    }
   },
   created() {
     this.car = this.$store.getters.CarStyle;

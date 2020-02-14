@@ -7,7 +7,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typeone"
-          @click="bumpertype('Pickuptruck')"
+          @click="bumpertype('กระบะบรรทุก')"
         >
           <b-col>
             <h6>กระบะบรรทุก</h6>
@@ -21,7 +21,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typeone"
-          @click="bumpertype('dumper')"
+          @click="bumpertype('ยกเท')"
         >
           <b-col>
             <h6>ยกเท</h6>
@@ -35,7 +35,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typeone"
-          @click="bumpertype('rampcar')"
+          @click="bumpertype('รถพื้นเรีบทางลาด')"
         >
           <b-col>
             <h6>รถพื้นเรีบทางลาด</h6>
@@ -51,7 +51,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typetwo"
-          @click="bumpertype('van')"
+          @click="bumpertype('รถตู้บรรทุก')"
         >
           <b-col>
             <h6>รถตู้บรรทุก</h6>
@@ -65,7 +65,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typethree"
-          @click="bumpertype('Liquidtruck')"
+          @click="bumpertype('รถบรรทุกของเหลว')"
         >
           <b-col>
             <h6>รถบรรทุกของเหลว</h6>
@@ -79,7 +79,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typefour"
-          @click="bumpertype('HMtruck')"
+          @click="bumpertype('รถบรรทุกวัสดุอันตราย')"
         >
           <b-col>
             <h6>รถบรรทุกวัสดุอันตราย</h6>
@@ -96,7 +96,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typefive"
-          @click="bumpertype('concreteTruck')"
+          @click="bumpertype('รถบรรทุกถังคอนกรีต')"
         >
           <b-col>
             <h6>รถบรรทุกถังคอนกรีต</h6>
@@ -110,7 +110,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typefive"
-          @click="bumpertype('LaborsavingTruck')"
+          @click="bumpertype('บรรทุกเครื่องทุ่นแรง')"
         >
           <b-col>
             <h6>บรรทุกเครื่องทุ่นแรง</h6>
@@ -124,7 +124,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typefive"
-          @click="bumpertype('cementPowderTruck')"
+          @click="bumpertype('บรรทุกปูนซิเมนต์ผง')"
         >
           <b-col>
             <h6>บรรทุกปูนซิเมนต์ผง</h6>
@@ -141,7 +141,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typefive"
-          @click="bumpertype('vacuumTrucks')"
+          @click="bumpertype('รถดูดฝุ่นและกวาดถนน')"
         >
           <b-col>
             <h6>รถดูดฝุ่นและกวาดถนน</h6>
@@ -155,7 +155,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typefive"
-          @click="bumpertype('garbageTruck')"
+          @click="bumpertype('รถเก็บขยะ')"
         >
           <b-col>
             <h6>รถเก็บขยะ</h6>
@@ -169,7 +169,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typefive"
-          @click="bumpertype('slideCar')"
+          @click="bumpertype('รถสไลด์')"
         >
           <b-col>
             <h6>รถสไลด์</h6>
@@ -186,7 +186,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typefive"
-          @click="bumpertype('doubleTrailer')"
+          @click="bumpertype('เทรลเลอร์สองชั้น')"
         >
           <b-col>
             <h6>เทรลเลอร์สองชั้น</h6>
@@ -200,7 +200,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typesix"
-          @click="bumpertype('tankerTrailers')"
+          @click="bumpertype('รถพ่วงบรรทุก')"
         >
           <b-col>
             <h6>รถพ่วงบรรทุก</h6>
@@ -214,7 +214,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typesix"
-          @click="bumpertype('dumpTrailers')"
+          @click="bumpertype('พ่วงยกเท')"
         >
           <b-col>
             <h6>พ่วงยกเท</h6>
@@ -231,7 +231,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typeseven"
-          @click="bumpertype('semiTrailer')"
+          @click="bumpertype('รถกึ่งพ่วง')"
         >
           <b-col>
             <h6>รถกึ่งพ่วง</h6>
@@ -245,7 +245,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typeeight"
-          @click="bumpertype('vehicleTransport')"
+          @click="bumpertype('รถกึ่งพ่วงวัสดุยาว')"
         >
           <b-col>
             <h6>รถกึ่งพ่วงวัสดุยาว</h6>
@@ -259,7 +259,7 @@
           class="carstyle"
           :variant="buttonColor"
           :disabled="!typenine"
-          @click="bumpertype('towingCar')"
+          @click="bumpertype('รถลากจูง')"
         >
           <b-col>
             <h6>รถลากจูง</h6>
@@ -303,23 +303,23 @@ export default {
 
     console.log("getters car style  " + this.one);
 
-    if (this.one == "carstyleOne") {
+    if (this.one == "ประเภทที่1") {
       this.typeone = true;
-    } else if (this.one == "carstyleTwo") {
+    } else if (this.one == "ประเภทที่2") {
       this.typetwo = true;
-    } else if (this.one == "carstyleThree") {
+    } else if (this.one == "ประเภทที่3") {
       this.typethree = true;
-    } else if (this.one == "carstyleFour") {
+    } else if (this.one == "ประเภทที่4") {
       this.typefour = true;
-    } else if (this.one == "carstyleFive") {
+    } else if (this.one == "ประเภทที่5") {
       this.typefive = true;
-    } else if (this.one == "carstyleSix") {
+    } else if (this.one == "ประเภทที่6") {
       this.typesix = true;
-    } else if (this.one == "carstyleSeven") {
+    } else if (this.one == "ประเภทที่7") {
       this.typeseven = true;
-    } else if (this.one == "carstyleEight") {
+    } else if (this.one == "ประเภทที่8") {
       this.typeeight = true;
-    } else if (this.one == "carstyleNine") {
+    } else if (this.one == "ประเภทที่9") {
       this.typenine = true;
       console.log("33333");
     }

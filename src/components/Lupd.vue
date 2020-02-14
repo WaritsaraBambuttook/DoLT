@@ -4,8 +4,8 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F1: Attach to chassis STAY design">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="c-type" @change="one('ctype')">C-type</b-form-radio>
-            <b-form-radio name="some-radios" value="i-Type" @change="one('itype')">I-type</b-form-radio>
+            <b-form-radio name="some-radios" value="c-type" @change="one('c-type')">C-type</b-form-radio>
+            <b-form-radio name="some-radios" value="i-Type" @change="one('i-type')">I-type</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -16,7 +16,7 @@
             <b-form-radio
               name="some-radios"
               value="Bolts-nuts"
-              @change="two('Boltsnuts')"
+              @change="two('Bolts-nuts')"
             >Bolts & nuts</b-form-radio>
             <b-form-radio name="some-radios" value="Welding" @change="two('Welding')">Welding</b-form-radio>
           </b-form-radio-group>
@@ -41,7 +41,7 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F3.2: Avoid interference SUPPORT BEAM  profile">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="Lsection" @change="four('Lsection')">L-section</b-form-radio>
+            <b-form-radio name="some-radios" value="Lsection" @change="four('L-section')">L-section</b-form-radio>
             <b-form-radio name="some-radios" value="slidable" @change="four('circle')">circle</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -61,13 +61,13 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F4: Absorb impact energy Protective beam">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="Csection" @change="six('Csection')">C-section</b-form-radio>
+            <b-form-radio name="some-radios" value="Csection" @change="six('C-section')">C-section</b-form-radio>
             <b-form-radio
               name="some-radios"
               value="Rectangular"
               @change="six('Rectangular')"
             >Rectangular</b-form-radio>
-            <b-form-radio name="some-radios" value="Wsection" @change="six('Wsection')">W-section</b-form-radio>
+            <b-form-radio name="some-radios" value="Wsection" @change="six('W-section')">W-section</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
