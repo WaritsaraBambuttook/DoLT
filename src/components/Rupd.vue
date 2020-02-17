@@ -11,8 +11,8 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F1: Attach to chassis STAY design">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="c-type" @change="one('c-type')">C-type</b-form-radio>
-            <b-form-radio name="some-radios" value="i-Type" @change="one('i-type')">I-type</b-form-radio>
+            <b-form-radio name="some-radios" value="C-type" @change="one('C-type')">C-type</b-form-radio>
+            <b-form-radio name="some-radios" value="I-Type" @change="one('I-type')">I-type</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -23,7 +23,7 @@
             <b-form-radio
               name="some-radios"
               value="Bolts-nuts"
-              @change="two('Bolt-snuts')"
+              @change="two('Bolts-nuts')"
             >Bolts & nuts</b-form-radio>
             <b-form-radio name="some-radios" value="Welding" @change="two('Welding')">Welding</b-form-radio>
           </b-form-radio-group>
@@ -58,9 +58,9 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F3.2: Avoid interference SPACER design">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="fixed" @change="four('fixed')">fixed</b-form-radio>
-            <b-form-radio name="some-radios" value="slidable" @change="four('slidable')">slidable</b-form-radio>
-            <b-form-radio name="some-radios" value="foldable" @change="four('foldable')">foldable</b-form-radio>
+            <b-form-radio name="some-radios" value="fixed" @change="four('Fixed')">Fixed</b-form-radio>
+            <b-form-radio name="some-radios" value="slidable" @change="four('Slidable')">Slidable</b-form-radio>
+            <b-form-radio name="some-radios" value="foldable" @change="four('Foldable')">Foldable</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -70,12 +70,12 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F3.3: Avoid interference Power source">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="nopower" @change="five('No-power')">no power</b-form-radio>
+            <b-form-radio name="some-radios" value="nopower" @change="five('No-power')">No power</b-form-radio>
             <b-form-radio
               name="some-radios"
               value="humanpower"
               @change="five('Human-power')"
-            >human power</b-form-radio>
+            >Human power</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>

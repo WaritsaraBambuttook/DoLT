@@ -4,8 +4,8 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F1: Attach to chassis STAY design">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="c-type" @change="one('c-type')">C-type</b-form-radio>
-            <b-form-radio name="some-radios" value="i-Type" @change="one('i-type')">I-type</b-form-radio>
+            <b-form-radio name="some-radios" value="c-type" @change="one('C-type')">C-type</b-form-radio>
+            <b-form-radio name="some-radios" value="i-Type" @change="one('I-type')">I-type</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -28,12 +28,12 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F3.1: Avoid interference STAY attachment ">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="vertical" @change="three('vertical')">vertical</b-form-radio>
+            <b-form-radio name="some-radios" value="vertical" @change="three('Vertical')">Vertical</b-form-radio>
             <b-form-radio
               name="some-radios"
               value="horizontal"
-              @change="three('horizontal')"
-            >horizontal</b-form-radio>
+              @change="three('Horizontal')"
+            >Horizontal</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -42,7 +42,7 @@
         <b-form-group label="F3.2: Avoid interference SUPPORT BEAM  profile">
           <b-form-radio-group stacked>
             <b-form-radio name="some-radios" value="Lsection" @change="four('L-section')">L-section</b-form-radio>
-            <b-form-radio name="some-radios" value="slidable" @change="four('circle')">circle</b-form-radio>
+            <b-form-radio name="some-radios" value="slidable" @change="four('Circle')">Circle</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>

@@ -23,7 +23,10 @@
       </b-row>
       <b-row class="col-12 col-sm-12">
         <b-col>
-          <b-button @click="pdf">dowload</b-button>
+          <a :href="locationFile">
+            <b-button @click="pdf">download</b-button>
+          </a>
+
           <br />
         </b-col>
       </b-row>
@@ -37,7 +40,6 @@
 </template>
 
 <script>
-import jsPDF from "jspdf";
 export default {
   data() {
     return {
@@ -49,15 +51,50 @@ export default {
       rf6: "",
       car: "",
       bumper: "",
-      type: ""
+      type: "",
+      locationFile: "",
+      nameFile: ""
     };
   },
   methods: {
     pdf: function() {
-      let pdfName = "RUPD";
-      var doc = new jsPDF("p", "pt");
-      doc.text("Hello World" + this.car, 50, 50);
-      doc.save(pdfName + ".pdf");
+      //RUPD1
+      if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Fixed" &&
+        this.rf5 == "No-power" &&
+        this.rf6 == "Circle-square"
+      ) {
+        this.locationFile =
+          "https://drive.google.com/u/0/uc?id=1qLXN4F8UQl9X8Bt8d84vmWfsWS321OEd&export=download";
+        console.log("RUPD 1");
+      }
+      //RUPD2
+      else if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Fixed" &&
+        this.rf5 == "No-power" &&
+        this.rf6 == "Double-square"
+      ) {
+        this.locationFile =
+          "https://drive.google.com/u/0/uc?id=1sVVrm8tA-c6w_zfc4szeB6i_zkoOTPIR&export=download";
+        console.log("RUPD 2");
+      }
+      //RUPD3
+      else if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Fixed" &&
+        this.rf5 == "No-power" &&
+        this.rf6 == "LIP"
+      ) {
+        console.log("RUPD 3");
+      }
     }
   },
   created() {
