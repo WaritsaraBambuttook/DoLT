@@ -24,7 +24,7 @@
       <b-row class="col-12 col-sm-12">
         <b-col>
           <a :href="locationFile">
-            <b-button @click="pdf">download</b-button>
+            <b-button @click="GeneratePDF">download</b-button>
           </a>
 
           <br />
@@ -57,7 +57,7 @@ export default {
     };
   },
   methods: {
-    pdf: function() {
+    GeneratePDF: function() {
       //RUPD1
       if (
         this.rf1 == "C-type" &&
@@ -65,7 +65,7 @@ export default {
         this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
         this.rf4 == "Fixed" &&
         this.rf5 == "No-power" &&
-        this.rf6 == "Circle-square"
+        this.rf6 == "Tube+C-beam"
       ) {
         this.locationFile =
           "https://drive.google.com/u/0/uc?id=1qLXN4F8UQl9X8Bt8d84vmWfsWS321OEd&export=download";
@@ -78,7 +78,7 @@ export default {
         this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
         this.rf4 == "Fixed" &&
         this.rf5 == "No-power" &&
-        this.rf6 == "Double-square"
+        this.rf6 == "Double-recht"
       ) {
         this.locationFile =
           "https://drive.google.com/u/0/uc?id=1sVVrm8tA-c6w_zfc4szeB6i_zkoOTPIR&export=download";
@@ -91,10 +91,373 @@ export default {
         this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
         this.rf4 == "Fixed" &&
         this.rf5 == "No-power" &&
-        this.rf6 == "LIP"
+        this.rf6 == "LIP-channel"
       ) {
         console.log("RUPD 3");
       }
+      //RUPD4
+      else if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Fixed" &&
+        this.rf5 == "No-power" &&
+        this.rf6 == "Circle"
+      ) {
+        console.log("RUPD 4");
+      }
+      //RUPD5
+      else if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Fixed" &&
+        this.rf5 == "No-power" &&
+        this.rf6 == "Square"
+      ) {
+        console.log("RUPD 5");
+      }
+      //RUPD6
+      else if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Fixed" &&
+        this.rf5 == "No-power" &&
+        this.rf6 == "Recht"
+      ) {
+        console.log("RUPD 6");
+      }
+      //RUPD7
+      else if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Slidable" &&
+        this.rf5 == "Human-power" &&
+        this.rf6 == "Tube+C-beam"
+      ) {
+        console.log("RUPD 7");
+      }
+      //RUPD8
+      else if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Slidable" &&
+        this.rf5 == "Human-power" &&
+        this.rf6 == "Double-recht"
+      ) {
+        console.log("RUPD 8");
+      }
+      //RUPD9
+      else if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Slidable" &&
+        this.rf5 == "Human-power" &&
+        this.rf6 == "LIP-channel"
+      ) {
+        console.log("RUPD 9");
+      }
+      //RUPD10
+      else if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Slidable" &&
+        this.rf5 == "Human-power" &&
+        this.rf6 == "Circle"
+      ) {
+        console.log("RUPD 10");
+      }
+      //RUPD11
+      else if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Slidable" &&
+        this.rf5 == "Human-power" &&
+        this.rf6 == "Square"
+      ) {
+        console.log("RUPD 11");
+      }
+      //RUPD12
+      else if (
+        this.rf1 == "C-type" &&
+        this.rf2 == "Bolts-nuts" &&
+        this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+        this.rf4 == "Slidable" &&
+        this.rf5 == "Human-power" &&
+        this.rf6 == "Recht"
+      ) {
+        console.log("RUPD 12");
+      }
+      // //RUPD13
+      // else if (
+      //   this.rf1 == "C-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Slidable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Circle-square"
+      // ) {
+      //   console.log("RUPD 13");
+      // }
+      // //RUPD14
+      // else if (
+      //   this.rf1 == "C-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Slidable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Double-square"
+      // ) {
+      //   console.log("RUPD 14");
+      // }
+      // //RUPD15
+      // else if (
+      //   this.rf1 == "C-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Slidable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "LIP"
+      // ) {
+      //   console.log("RUPD 15");
+      // }
+      // //RUPD16
+      // else if (
+      //   this.rf1 == "C-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Foldable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Circle-square"
+      // ) {
+      //   console.log("RUPD 16");
+      // }
+      // //RUPD17
+      // else if (
+      //   this.rf1 == "C-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Foldable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Double-square"
+      // ) {
+      //   console.log("RUPD 17");
+      // }
+      // //RUPD18
+      // else if (
+      //   this.rf1 == "C-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Foldable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "LIP"
+      // ) {
+      //   console.log("RUPD 18");
+      // }
+      // //RUPD19
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+      //   this.rf4 == "Fixed" &&
+      //   this.rf5 == "No-power" &&
+      //   this.rf6 == "Circle-square"
+      // ) {
+      //   console.log("RUPD 19");
+      // }
+      // //RUPD20
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+      //   this.rf4 == "Fixed" &&
+      //   this.rf5 == "No-power" &&
+      //   this.rf6 == "Double-square"
+      // ) {
+      //   console.log("RUPD 20");
+      // }
+      // //RUPD21
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+      //   this.rf4 == "Fixed" &&
+      //   this.rf5 == "No-power" &&
+      //   this.rf6 == "LIP"
+      // ) {
+      //   console.log("RUPD 21");
+      // }
+      // //RUPD22
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+      //   this.rf4 == "Slidable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Circle-square"
+      // ) {
+      //   console.log("RUPD 22");
+      // }
+      // //RUPD23
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+      //   this.rf4 == "Slidable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Double-square"
+      // ) {
+      //   console.log("RUPD 23");
+      // }
+      // //RUPD24
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+      //   this.rf4 == "Slidable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "LIP"
+      // ) {
+      //   console.log("RUPD 24");
+      // }
+      // //RUPD25
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+      //   this.rf4 == "Foldable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Circle-square"
+      // ) {
+      //   console.log("RUPD 25");
+      // }
+      // //RUPD26
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+      //   this.rf4 == "Foldable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Double-square"
+      // ) {
+      //   console.log("RUPD 26");
+      // }
+      // //RUPD27
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
+      //   this.rf4 == "Foldable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "LIP"
+      // ) {
+      //   console.log("RUPD 27");
+      // }
+      // //RUPD28
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Fixed" &&
+      //   this.rf5 == "No-power" &&
+      //   this.rf6 == "Circle-square"
+      // ) {
+      //   console.log("RUPD 28");
+      // }
+      // //RUPD29
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Fixed" &&
+      //   this.rf5 == "No-power" &&
+      //   this.rf6 == "Double-square"
+      // ) {
+      //   console.log("RUPD 29");
+      // }
+      // //RUPD30
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Fixed" &&
+      //   this.rf5 == "No-power" &&
+      //   this.rf6 == "LIP"
+      // ) {
+      //   console.log("RUPD 30");
+      // }
+      // //RUPD31
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Slidable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Circle-square"
+      // ) {
+      //   console.log("RUPD 31");
+      // }
+      // //RUPD32
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Slidable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Double-square"
+      // ) {
+      //   console.log("RUPD 32");
+      // }
+      // //RUPD33
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Slidable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "LIP"
+      // ) {
+      //   console.log("RUPD 33");
+      // }
+      // //RUPD34
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Foldable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Circle-square"
+      // ) {
+      //   console.log("RUPD 34");
+      // }
+      // //RUPD35
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Foldable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "Double-square"
+      // ) {
+      //   console.log("RUPD 35");
+      // }
+      // //RUPD36
+      // else if (
+      //   this.rf1 == "I-type" &&
+      //   this.rf2 == "Bolts-nuts" &&
+      //   this.rf3 == "W/2มากกว่า775mm" &&
+      //   this.rf4 == "Foldable" &&
+      //   this.rf5 == "Human-power" &&
+      //   this.rf6 == "LIP"
+      // ) {
+      //   console.log("RUPD 36");
+      // }
     }
   },
   created() {

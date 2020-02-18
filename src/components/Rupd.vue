@@ -1,15 +1,8 @@
 <template>
   <div class="f1">
-    <!-- <b-row class="text-center">
-      <b-col>
-        <h3>เลือกฟังก็ชันของรถ</h3>
-      </b-col>
-    </b-row>
-    <br />-->
-    <!-- <br /> -->
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F1: Attach to chassis STAY design">
+        <b-form-group label="F1: วิธีการติดต้ังเข้ากับคัสซี">
           <b-form-radio-group stacked>
             <b-form-radio name="some-radios" value="C-type" @change="one('C-type')">C-type</b-form-radio>
             <b-form-radio name="some-radios" value="I-Type" @change="one('I-type')">I-type</b-form-radio>
@@ -18,7 +11,7 @@
       </b-col>
 
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F2: Mount to chassis Fixing method">
+        <b-form-group label="F2: วิธีการจับยึดเข้ากับคัสซี ">
           <b-form-radio-group stacked>
             <b-form-radio
               name="some-radios"
@@ -33,7 +26,7 @@
 
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F3.1: Avoid interference Width difference △W/2 ">
+        <b-form-group label="F3.1: รูปแบบของขายึด (Stay)  ">
           <b-form-radio-group stacked>
             <b-form-input v-model="text" type="number" placeholder="กรอกขนาดของรถ"></b-form-input>
             <br />
@@ -42,21 +35,31 @@
             <br />
             <b-form-radio
               name="some-radios"
-              id="one"
               @change="three('W/2น้อยกว่าหรือเท่ากับ775mm')"
             >W/2 น้อยกว่าหรือเท่ากับ 775 mm</b-form-radio>
             <b-form-radio
               name="some-radios"
-              id="two"
-              value="Welding"
+              value="W/2มากกว่า775mm"
               @change="three('W/2มากกว่า775mm')"
             >W/2 มากกว่า 775 mm</b-form-radio>
+            <b-form-radio name="some-radios" value="2-axles" @change="three('2-axles')">2-axles</b-form-radio>
+            <b-form-radio name="some-radios" value="3-axles" @change="three('3-axles')">3-axles</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="Tipping-vechincle"
+              @change="three('Tipping-vechincle')"
+            >Tipping-vechincle</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="Trailer-coupling"
+              @change="three('Trailer-coupling')"
+            >Trailer-coupling</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
 
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F3.2: Avoid interference SPACER design">
+        <b-form-group label="F3.2: การปรับได้ของขายึด (Stay)">
           <b-form-radio-group stacked>
             <b-form-radio name="some-radios" value="fixed" @change="four('Fixed')">Fixed</b-form-radio>
             <b-form-radio name="some-radios" value="slidable" @change="four('Slidable')">Slidable</b-form-radio>
@@ -68,12 +71,12 @@
 
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F3.3: Avoid interference Power source">
+        <b-form-group label="F3.3: การใช้แรงคนในการปรับตำแหน่ง">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="nopower" @change="five('No-power')">No power</b-form-radio>
+            <b-form-radio name="some-radios" value="No-power" @change="five('No-power')">No power</b-form-radio>
             <b-form-radio
               name="some-radios"
-              value="humanpower"
+              value="Human-power"
               @change="five('Human-power')"
             >Human power</b-form-radio>
           </b-form-radio-group>
@@ -81,19 +84,27 @@
       </b-col>
 
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F4: Absorb impact energy Protective beam">
+        <b-form-group label="F4:  รูปแบบชิ้นส่วนสำหรับป้องกันการมุด">
           <b-form-radio-group stacked>
             <b-form-radio
               name="some-radios"
-              value="Circlesquare"
-              @change="six('Circle-square')"
-            >Circle Square</b-form-radio>
+              value="Tube+C-beam"
+              @change="six('Tube+C-beam')"
+            >Tube และ C-beam</b-form-radio>
             <b-form-radio
               name="some-radios"
-              value="Doublesquare"
-              @change="six('Double-square')"
-            >Double squarer</b-form-radio>
-            <b-form-radio name="some-radios" value="LIP" @change="six('LIP')">LIP channel</b-form-radio>
+              value="Double-recht"
+              @change="six('Double-recht')"
+            >Double recht</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="LIP-channel"
+              @change="six('LIP-channel')"
+            >LIP channel</b-form-radio>
+            <b-form-radio name="some-radios" value="Circle" @change="six('Circle')">Circle</b-form-radio>
+            <b-form-radio name="some-radios" value="Square" @change="six('Square')">Square</b-form-radio>
+            <b-form-radio name="some-radios" value="Recht" @change="six('Recht')">Recht</b-form-radio>
+            <b-form-radio name="some-radios" value="C-beam" @change="six('C-beam')">C-beam</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>

@@ -41,8 +41,8 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F3.2: Avoid interference SUPPORT BEAM  profile">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="Lsection" @change="four('L-section')">L-section</b-form-radio>
-            <b-form-radio name="some-radios" value="slidable" @change="four('Circle')">Circle</b-form-radio>
+            <b-form-radio name="some-radios" value="C-section" @change="four('C-section')">C-section</b-form-radio>
+            <b-form-radio name="some-radios" value="Circle" @change="four('Circle')">Circle</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -68,6 +68,7 @@
               @change="six('Rectangular')"
             >Rectangular</b-form-radio>
             <b-form-radio name="some-radios" value="Wsection" @change="six('W-section')">W-section</b-form-radio>
+            <b-form-radio name="some-radios" value="Circle" @change="six('Circle')">Circle</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>

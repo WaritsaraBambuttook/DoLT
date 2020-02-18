@@ -38,13 +38,13 @@
  
 <script>
 // import Stepper from "vuejs-stepper";
-import Order from "./Order";
-import bumberType from "./Bumpertype";
-import RLtype from "./RLtype";
-import RUPD from "./Rupd";
-import LUPD from "./Lupd";
-import Rsummary from "./Rsummary";
-import Lsummary from "./Lsummary";
+import Order from "../components/Order";
+import bumberType from "../components/Bumpertype";
+import RLtype from "../components/RLtype";
+import RUPD from "../components/Rupd";
+import LUPD from "../components/Lupd";
+import Rsummary from "../components/Rsummary";
+import Lsummary from "../components/Lsummary";
 export default {
   components: { Order, bumberType, RLtype, RUPD, LUPD, Rsummary, Lsummary },
   data() {

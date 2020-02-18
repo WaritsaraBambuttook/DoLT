@@ -25,7 +25,7 @@
       <br />
       <b-row class="col-12 col-sm-12">
         <b-col>
-          <b-button>dowload</b-button>
+          <b-button @click="GeneratePDF">dowload</b-button>
         </b-col>
       </b-row>
       <b-row class="col-12 col-sm-12">
@@ -51,6 +51,21 @@ export default {
       bumper: "",
       type: ""
     };
+  },
+  methods: {
+    GeneratePDF: function() {
+      //LUPD 1
+      if (
+        this.lf1 == "C-type" &&
+        this.lf2 == "Bolts-nuts" &&
+        this.lf3 == "Vertical" &&
+        this.lf4 == "C-section" &&
+        this.lf5 == "Fixed" &&
+        this.lf6 == "C-section"
+      ) {
+        console.log("LUPD 1");
+      }
+    }
   },
   created() {
     this.car = this.$store.getters.CarStyle;
