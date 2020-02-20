@@ -38,7 +38,7 @@
  
 <script>
 // import Stepper from "vuejs-stepper";
-import Order from "../components/Order";
+import Order from "../components/CarStyle";
 import Bumper1 from "../components/Bumpertype/BumperTypeOne";
 import Bumper2 from "../components/Bumpertype/BumperTypeTwo";
 import Bumper3 from "../components/Bumpertype/BumperTypeThree";
@@ -49,10 +49,10 @@ import Bumper7 from "../components/Bumpertype/BumperTypeSeven";
 import Bumper8 from "../components/Bumpertype/BumperTypeEight";
 import Bumper9 from "../components/Bumpertype/BumperTypeNine";
 import RLtype from "../components/RLtype";
-import RUPD from "../components/Rupd";
-import LUPD from "../components/Lupd";
-import Rsummary from "../components/Rsummary";
-import Lsummary from "../components/Lsummary";
+import RUPD from "../components/RUPD/Rupd";
+import LUPD from "../components/LUPD/Lupd";
+import Rsummary from "../components/RUPD/Rsummary";
+import Lsummary from "../components/LUPD/Lsummary";
 export default {
   components: {
     Order,
