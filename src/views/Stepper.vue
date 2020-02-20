@@ -19,7 +19,7 @@
             <Order />
           </div>
           <div slot="page2">
-            <bumberType />
+            <component v-bind:is="checkBumpertype" />
           </div>
           <div slot="page3">
             <RLtype />
@@ -39,14 +39,38 @@
 <script>
 // import Stepper from "vuejs-stepper";
 import Order from "../components/Order";
-import bumberType from "../components/Bumpertype";
+import Bumper1 from "../components/Bumpertype/BumperTypeOne";
+import Bumper2 from "../components/Bumpertype/BumperTypeTwo";
+import Bumper3 from "../components/Bumpertype/BumperTypeThree";
+import Bumper4 from "../components/Bumpertype/BumperTypeFour";
+import Bumper5 from "../components/Bumpertype/BumperTypeFive";
+import Bumper6 from "../components/Bumpertype/BumperTypeSix";
+import Bumper7 from "../components/Bumpertype/BumperTypeSeven";
+import Bumper8 from "../components/Bumpertype/BumperTypeEight";
+import Bumper9 from "../components/Bumpertype/BumperTypeNine";
 import RLtype from "../components/RLtype";
 import RUPD from "../components/Rupd";
 import LUPD from "../components/Lupd";
 import Rsummary from "../components/Rsummary";
 import Lsummary from "../components/Lsummary";
 export default {
-  components: { Order, bumberType, RLtype, RUPD, LUPD, Rsummary, Lsummary },
+  components: {
+    Order,
+    Bumper1,
+    Bumper2,
+    Bumper3,
+    Bumper4,
+    Bumper5,
+    Bumper6,
+    Bumper7,
+    Bumper8,
+    Bumper9,
+    RLtype,
+    RUPD,
+    LUPD,
+    Rsummary,
+    Lsummary
+  },
   data() {
     return {
       steps: [
@@ -75,7 +99,8 @@ export default {
         }
       ],
       checkRLtype: "",
-      summary: ""
+      summary: "",
+      checkBumpertype: ""
     };
   },
   methods: {
@@ -106,6 +131,25 @@ export default {
           alert("เลือก 'ลักษณะรถยนต์' ใหม่อีกครั้ง");
           return false;
         } else {
+          if (carStyle == "ประเภทที่1") {
+            this.checkBumpertype = "Bumper1";
+          } else if (carStyle == "ประเภทที่2") {
+            this.checkBumpertype = "Bumper2";
+          } else if (carStyle == "ประเภทที่3") {
+            this.checkBumpertype = "Bumper3";
+          } else if (carStyle == "ประเภทที่4") {
+            this.checkBumpertype = "Bumper4";
+          } else if (carStyle == "ประเภทที่5") {
+            this.checkBumpertype = "Bumper5";
+          } else if (carStyle == "ประเภทที่6") {
+            this.checkBumpertype = "Bumper6";
+          } else if (carStyle == "ประเภทที่7") {
+            this.checkBumpertype = "Bumper7";
+          } else if (carStyle == "ประเภทที่8") {
+            this.checkBumpertype = "Bumper8";
+          } else if (carStyle == "ประเภทที่9") {
+            this.checkBumpertype = "Bumper9";
+          }
           return true; //return false if you want to prevent moving to next page
         }
 
