@@ -28,57 +28,61 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="F3.1: รูปแบบของขายึด (Stay)  ">
           <b-form-radio-group stacked>
-            <b-form-input v-model="text" type="number" placeholder="กรอกขนาดของรถ"></b-form-input>
+            <b-col>
+              <b-form-input v-model="Wveh" type="number" placeholder="ความกว้างตัวรถ" min="0"></b-form-input>
+              <b-form-input v-model="Wch" type="number" placeholder="ความกว้างคัตซี" min="0"></b-form-input>
+            </b-col>
             <br />
-            <b-button @click="cal">คำนวณ</b-button>
-            <div class="mt-2">Value: {{ num }}</div>
+            <b-col>
+              <b-button @click="cal">คำนวณ</b-button>
+              <div class="mt-2">Value: {{ num }}</div>
+            </b-col>
             <br />
-            <b-form-radio
-              name="some-radios"
-              @change="three('W/2น้อยกว่าหรือเท่ากับ775mm')"
-            >W/2 น้อยกว่าหรือเท่ากับ 775 mm</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="W/2มากกว่า775mm"
-              @change="three('W/2มากกว่า775mm')"
-            >W/2 มากกว่า 775 mm</b-form-radio>
-            <b-form-radio name="some-radios" value="2-axles" @change="three('2-axles')">2-axles</b-form-radio>
-            <b-form-radio name="some-radios" value="3-axles" @change="three('3-axles')">3-axles</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="Tipping-vechincle"
-              @change="three('Tipping-vechincle')"
-            >Tipping-vechincle</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="Trailer-coupling"
-              @change="three('Trailer-coupling')"
-            >Trailer-coupling</b-form-radio>
-          </b-form-radio-group>
-        </b-form-group>
-      </b-col>
 
-      <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F3.2: การปรับได้ของขายึด (Stay)">
-          <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="fixed" @change="four('Fixed')">Fixed</b-form-radio>
-            <b-form-radio name="some-radios" value="slidable" @change="four('Slidable')">Slidable</b-form-radio>
-            <b-form-radio name="some-radios" value="foldable" @change="four('Foldable')">Foldable</b-form-radio>
-          </b-form-radio-group>
-        </b-form-group>
-      </b-col>
-    </b-row>
+            <b-col>
+              <h5>W/2 น้อยกว่าหรือเท่ากับ 775 mm</h5>
+              <b-form-radio
+                name="some-radios"
+                value="Trapezord"
+                @change="three('Trapezord-stay')"
+                :disabled="LessEqual"
+              >Trapezord-stay</b-form-radio>
+            </b-col>
+            <br />
 
-    <b-row>
-      <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F3.3: การใช้แรงคนในการปรับตำแหน่ง">
-          <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="No-power" @change="five('No-power')">No power</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="Human-power"
-              @change="five('Human-power')"
-            >Human power</b-form-radio>
+            <b-col>
+              <h5>W/2 มากกว่า 775mm</h5>
+              <b-form-radio
+                name="some-radios"
+                value="Trapezord-stay"
+                @change="three('Trapezord-stay')"
+                :disabled="MoreThan"
+              >Trapezord-stay</b-form-radio>
+              <b-form-radio
+                name="some-radios"
+                value="2-axles"
+                @change="three('2-axle-trailer')"
+                :disabled="MoreThan"
+              >2-axle-trailer</b-form-radio>
+              <b-form-radio
+                name="some-radios"
+                value="3-axles"
+                @change="three('3-axle-trailer')"
+                :disabled="MoreThan"
+              >3-axle-trailer</b-form-radio>
+              <b-form-radio
+                name="some-radios"
+                value="Tipping-vechincle"
+                @change="three('Tipping-vechincle')"
+                :disabled="MoreThan"
+              >Tipping-vechincle</b-form-radio>
+              <b-form-radio
+                name="some-radios"
+                value="Trailer-coupling"
+                @change="three('Trailer-coupling')"
+                :disabled="MoreThan"
+              >Trailer-coupling</b-form-radio>
+            </b-col>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -109,6 +113,31 @@
         </b-form-group>
       </b-col>
     </b-row>
+
+    <b-row>
+      <b-col class="col-12 col-sm-6 outline">
+        <b-form-group label="F3.3: การใช้แรงคนในการปรับตำแหน่ง">
+          <b-form-radio-group stacked>
+            <b-form-radio name="some-radios" value="No-power" @change="five('No-power')">No power</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="Human-power"
+              @change="five('Human-power')"
+            >Human power</b-form-radio>
+          </b-form-radio-group>
+        </b-form-group>
+      </b-col>
+
+      <b-col class="col-12 col-sm-6 outline">
+        <b-form-group label="F3.2: การปรับได้ของขายึด (Stay)">
+          <b-form-radio-group stacked>
+            <b-form-radio name="some-radios" value="fixed" @change="four('Fixed')">Fixed</b-form-radio>
+            <b-form-radio name="some-radios" value="slidable" @change="four('Slidable')">Slidable</b-form-radio>
+            <b-form-radio name="some-radios" value="foldable" @change="four('Foldable')">Foldable</b-form-radio>
+          </b-form-radio-group>
+        </b-form-group>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -117,8 +146,11 @@ export default {
   data() {
     return {
       selected: "",
-      text: "",
-      num: ""
+      Wveh: "",
+      Wch: "",
+      num: "",
+      LessEqual: true,
+      MoreThan: true
     };
   },
   methods: {
@@ -154,9 +186,36 @@ export default {
     },
 
     cal: function() {
-      let calculate = this.text / 2;
-      this.num = calculate;
-      console.log("cal :" + this.num);
+      let less = "W/2น้อยกว่าหรือเท่ากับ775mm";
+      let more = "W/2มากกว่า775mm";
+      if (this.Wch != "" && this.Wveh != "") {
+        let calculate = (this.Wveh - this.Wch) / 2;
+        this.num = calculate;
+        console.log("cal :" + this.num);
+        if (this.num > 775) {
+          this.MoreThan = false;
+          this.LessEqual = true;
+          this.$store.commit("setCheckWidth", more);
+          console.log(
+            "getter >> more than : " + this.$store.getters.CheckWidth
+          );
+        } else {
+          this.MoreThan = true;
+          this.LessEqual = false;
+          this.$store.commit("setCheckWidth", less);
+          console.log(
+            "getter >> less than and equal : " + this.$store.getters.CheckWidth
+          );
+        }
+      } else {
+        if (this.Wveh == "") {
+          alert("กรอก 'ความกว้างของตัวรถ' ");
+        } else if (this.Wveh == "" && this.Wch == "") {
+          alert("กรอก 'ความกว้างของตัวรถ และ ความกว้างของคัตซี' ");
+        } else {
+          alert("กรอก 'ความกว้างของคัตซี' ");
+        }
+      }
     }
   }
 };

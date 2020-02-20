@@ -38,7 +38,7 @@
  
 <script>
 // import Stepper from "vuejs-stepper";
-import Order from "../components/CarStyle";
+import Order from "../components/CarType";
 import Bumper1 from "../components/Bumpertype/BumperTypeOne";
 import Bumper2 from "../components/Bumpertype/BumperTypeTwo";
 import Bumper3 from "../components/Bumpertype/BumperTypeThree";

@@ -7,18 +7,18 @@ import Address from '../views/Address'
 // import Bumpertype from '@/components/Bumpertype'
 // import RLtype from '@/components/RLtype'
 import Stepper from '../views/Stepper'
-// import Rupd from '@/components/Rupd'
+import Rupd from '@/components/RUPD/Rupd'
 // import Lupd from '@/components/Lupd'
 // import Rsummary from '@/components/Rsummary'
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'Stepper',
-      component: Stepper
-    },
+    // {
+    //   path: '/',
+    //   name: 'Stepper',
+    //   component: Stepper
+    // },
     // {
     //   path: '/Order',
     //   name: 'Order',
@@ -49,11 +49,11 @@ export default new Router({
     //   name: 'RLtype',
     //   component: RLtype
     // },
-    // {
-    //   path: '/Rupd',
-    //   name: 'Rupd',
-    //   component: Rupd
-    // },
+    {
+      path: '/',
+      name: 'Rupd',
+      component: Rupd
+    },
     // {
     //   path: "/Lupd",
     //   name: 'Lupd',

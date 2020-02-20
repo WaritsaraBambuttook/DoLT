@@ -7,6 +7,7 @@ export const store = new Vuex.Store({
     state: {
         CarStyle: '',
         Bumpertype: '',
+        CheckWidth: '',
         RLtype: '',
         rfone: '',
         rftwo: '',
@@ -27,6 +28,9 @@ export const store = new Vuex.Store({
         },
         setBumpertype(state, Bumpertype) {
             state.Bumpertype = Bumpertype;
+        },
+        setCheckWidth(state, CheckWidth) {
+            state.CheckWidth = CheckWidth;
         },
         setRLtype(state, RLtype) {
             state.RLtype = RLtype;
@@ -71,6 +75,7 @@ export const store = new Vuex.Store({
     getters: {
         CarStyle: state => state.CarStyle,
         Bumpertype: state => state.Bumpertype,
+        CheckWidth: state => state.CheckWidth,
         RLtype: state => state.RLtype,
         rfone: state => state.rfone,
         rftwo: state => state.rftwo,
@@ -84,5 +89,6 @@ export const store = new Vuex.Store({
         lffour: state => state.lffour,
         lffive: state => state.lffive,
         lfsix: state => state.lfsix,
+
     }
 })
