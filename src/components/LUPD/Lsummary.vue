@@ -11,7 +11,13 @@
       <br />
       <b-row class="col-12 col-sm-12">
         <b-col class="col-12 col-sm-5">
-          <b-img class="img" thumbnail fluid :src="require('../../assets/logo.png')" alt="Image 1"></b-img>
+          <b-img
+            class="imgLsummary"
+            thumbnail
+            fluid
+            :src="require('../../assets/logo.png')"
+            alt="Image 1"
+          ></b-img>
         </b-col>
         <b-col class="col-12 col-sm-7 text-left">
           <p>F1: Attach to chassis STAY design : {{lf1}}</p>
@@ -101,7 +107,7 @@ export default {
 };
 </script>
 <style>
-.img {
+.imgLsummary {
   width: 200px;
   height: 200px;
 }

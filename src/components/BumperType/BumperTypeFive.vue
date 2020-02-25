@@ -1,7 +1,7 @@
 <template>
   <div>
     <br />
-    <b-row>
+    <b-row style="margin-top: 3px;">
       <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button class="carstyle" :variant="buttonColor" @click="bumpertype('รถบรรทุกถังคอนกรีต')">
           <b-col>
@@ -51,9 +51,8 @@
         </b-button>
       </b-col>
     </b-row>
-    <br />
 
-    <b-row>
+    <b-row style="margin-top: 3px;">
       <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button
           class="carstyle"
@@ -103,9 +102,8 @@
         </b-button>
       </b-col>
     </b-row>
-    <br />
 
-    <b-row>
+    <b-row style="margin-top: 3px;">
       <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button class="carstyle" :variant="buttonColor" @click="bumpertype('เทรลเลอร์สองชั้น')">
           <b-col>

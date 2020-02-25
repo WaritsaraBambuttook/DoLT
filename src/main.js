@@ -22,20 +22,6 @@ import VueGoodWizard from 'vue-good-wizard';
 Vue.use(VueGoodWizard);
 
 Vue.config.productionTip = false
-
-// firebase.initializeApp({
-//   apiKey: "AIzaSyCREOi6bLi6nBWOQce7fYoMQbO7QGf-J1E",
-//   authDomain: "dolt-8cc63.firebaseapp.com",
-//   databaseURL: "https://dolt-8cc63.firebaseio.com",
-//   projectId: "dolt-8cc63",
-//   storageBucket: "dolt-8cc63.appspot.com",
-//   messagingSenderId: "363171306887",
-//   appId: "1:363171306887:web:a7f49f657f6937047a4722",
-//   measurementId: "G-6DB2DE5G4T"
-// })
-// var db = firebase.firestore();
-// console.log(firebase);
-
 var Config = {
   apiKey: "AIzaSyCREOi6bLi6nBWOQce7fYoMQbO7QGf-J1E",
   authDomain: "dolt-8cc63.firebaseapp.com",

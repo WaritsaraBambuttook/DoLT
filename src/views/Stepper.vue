@@ -1,13 +1,57 @@
 <template>
   <div>
-    <b-row>
+    <b-row v-if="check === true">
+      <b-col>
+        <b-jumbotron id="jumbotron" lead="กรุณากรอกข้อมูล">
+          <b-row>
+            <b-col class="col-4 col-sm-4">
+              <label id="name" for="input-live">ชื่อ :</label>
+            </b-col>
+            <b-col class="col-8 col-sm-8">
+              <b-form-input
+                v-model="firstname"
+                :state="firstnameState"
+                aria-describedby="input-live-help input-live-feedback"
+                trim
+              ></b-form-input>
+              <!-- This will only be shown if the preceding input has an invalid state -->
+              <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกชื่อ</b-form-invalid-feedback>
+            </b-col>
+          </b-row>
+          <br />
+          <b-row>
+            <b-col class="col-4 col-sm-4">
+              <label for="input-live">นามสกุล :</label>
+            </b-col>
+            <b-col class="col-8 col-sm-8">
+              <b-form-input
+                v-model="lastname"
+                :state="lastnameState"
+                aria-describedby="input-live-help input-live-feedback"
+                trim
+              ></b-form-input>
+              <!-- This will only be shown if the preceding input has an invalid state -->
+              <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกนามสกุล</b-form-invalid-feedback>
+            </b-col>
+          </b-row>
+          <br />
+          <b-row>
+            <b-col>
+              <b-button id="confirm" class="confirm" @click="confirm">ตกลง</b-button>
+            </b-col>
+          </b-row>
+        </b-jumbotron>
+      </b-col>
+    </b-row>
+    <!-- slot -->
+    <b-row v-if="check===false">
       <b-col>
         <h3>ระบบการสั่งจองกันชน</h3>
       </b-col>
     </b-row>
     <br />
     <br />
-    <b-row>
+    <b-row v-if="check===false">
       <b-col>
         <vue-good-wizard
           :steps="steps"
@@ -71,6 +115,14 @@ export default {
     Rsummary,
     Lsummary
   },
+  computed: {
+    firstnameState() {
+      return this.firstname.length != "" ? true : false;
+    },
+    lastnameState() {
+      return this.lastname.length != "" ? true : false;
+    }
+  },
   data() {
     return {
       steps: [
@@ -100,7 +152,10 @@ export default {
       ],
       checkRLtype: "",
       summary: "",
-      checkBumpertype: ""
+      checkBumpertype: "",
+      firstname: "",
+      lastname: "",
+      check: true
     };
   },
   methods: {
@@ -240,7 +295,67 @@ export default {
       }
       console.log("back clicked", currentPage);
       return true; //return false if you want to prevent moving to previous page
+    },
+    confirm: function() {
+      const db = this.$firebase.firestore();
+      console.log(this.firstname);
+      console.log(this.lastname);
+      if (this.firstname == "" && this.lastname == "") {
+        alert("กรุณากรอกข้อมูล");
+        this.page = true;
+      } else {
+        var instance = this;
+        instance.check = true;
+        db.collection("register")
+          .add({
+            firstname: this.firstname,
+            lastname: this.lastname
+          })
+          .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+            instance.check = false;
+          })
+          .catch(function(error) {
+            console.error("Error adding document: ", error);
+          });
+      }
     }
   }
 };
 </script> 
+<style>
+.wizard__step.active .wizard__step__indicator[data-v-c21d83ca] {
+  background-color: #4e1771;
+}
+.wizard__step__indicator[data-v-c21d83ca] {
+  width: 20px;
+  height: 20px;
+  background-color: #d7b0f0;
+  border: 3px solid #4e1771;
+}
+.wizard__step__label[data-v-c21d83ca] {
+  color: black;
+  font-weight: bold;
+}
+.wizard__body__actions[data-v-c21d83ca] {
+  border-top: 1px solid #4e1771;
+  background-color: #d7b0f0;
+}
+.wizard__body__actions a[data-v-c21d83ca] {
+  background-color: #4e1771;
+}
+.wizard__body__actions a[data-v-c21d83ca]:hover {
+  background-color: #4e1771;
+}
+.wizard__step.active:not(:first-child) .wizard__step__line[data-v-c21d83ca] {
+  background-color: #000000;
+}
+.confirm {
+  background-color: #4d2b68; /*Button Color*/
+  color: #fff;
+  width: 20%;
+}
+/* #jumbotron {
+  background-image: url("../assets/Car-icon.png");
+} */
+</style>

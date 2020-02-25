@@ -5,14 +5,13 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item to="/Detail">รายละเอียด</b-nav-item>
+          <b-nav-item to="/Home">รายละเอียด</b-nav-item>
+          <b-nav-item to="/download">ดาวน์โหลดกันชน</b-nav-item>
           <b-nav-item to="/Contact">ติดต่อสอบถาม</b-nav-item>
-          <b-nav-item>ติดต่อสอบถาม</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
     <br />
-
     <b-container>
       <router-view to="/" />
     </b-container>
@@ -21,6 +20,7 @@
 
 <script>
 import { store } from "./store/store";
+
 export default {
   store,
   data() {
@@ -45,11 +45,16 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Prompt&display=swap");
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Prompt";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #4d2b68;
+  background-color: rgb(248, 239, 252);
+}
+.bg-info {
+  background-color: #853aa8 !important;
 }
 </style>

@@ -6,8 +6,8 @@
       </b-col>
     </b-row>-->
     <br />
-    <b-row>
-      <b-col class="col-12 col-sm-4">
+    <b-row style="margin-top: 3px;">
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button
           class="carstyle"
           ref="myid"
@@ -21,7 +21,7 @@
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4">
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button class="carstyle" :variant="buttonColor" @click="carstyle('ประเภทที่2')">
           <b-col>
             <h6>ประเภทที่ 2</h6>
@@ -30,7 +30,7 @@
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4">
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button class="carstyle" :variant="buttonColor" @click="carstyle('ประเภทที่3')">
           <b-col>
             <h6>ประเภทที่ 3</h6>
@@ -45,9 +45,9 @@
         </b-button>
       </b-col>
     </b-row>
-    <br />
-    <b-row>
-      <b-col class="col-12 col-sm-4">
+
+    <b-row style="margin-top: 3px;">
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button
           class="carstyle"
           ref="myid"
@@ -61,7 +61,7 @@
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4">
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button class="carstyle" :variant="buttonColor" @click="carstyle('ประเภทที่5')">
           <b-col>
             <h6>ประเภทที่ 5</h6>
@@ -70,7 +70,7 @@
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4">
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button class="carstyle" :variant="buttonColor" @click="carstyle('ประเภทที่6')">
           <b-col>
             <h6>ประเภทที่ 6</h6>
@@ -85,9 +85,9 @@
         </b-button>
       </b-col>
     </b-row>
-    <br />
-    <b-row>
-      <b-col class="col-12 col-sm-4">
+
+    <b-row style="margin-top: 3px;">
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button
           class="carstyle"
           ref="myid"
@@ -101,7 +101,7 @@
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4">
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button class="carstyle" :variant="buttonColor" @click="carstyle('ประเภทที่8')">
           <b-col>
             <h6>ประเภทที่ 8</h6>
@@ -110,7 +110,7 @@
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-4">
+      <b-col class="col-12 col-sm-4" style="margin-top: 10px;">
         <b-button class="carstyle" :variant="buttonColor" @click="carstyle('ประเภทที่9')">
           <b-col>
             <h6>ประเภทที่ 9</h6>

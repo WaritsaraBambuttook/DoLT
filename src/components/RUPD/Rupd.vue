@@ -2,7 +2,7 @@
   <div class="f1">
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F1: วิธีการติดต้ังเข้ากับคัสซี">
+        <b-form-group label="1. วิธีการติดต้ังเข้ากับคัสซี">
           <b-form-radio-group stacked>
             <b-form-radio name="some-radios" value="C-type" @change="one('C-type')">C-type</b-form-radio>
             <b-form-radio name="some-radios" value="I-Type" @change="one('I-type')">I-type</b-form-radio>
@@ -11,13 +11,13 @@
       </b-col>
 
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F2: วิธีการจับยึดเข้ากับคัสซี ">
+        <b-form-group label="2. วิธีการจับยึดเข้ากับคัสซี ">
           <b-form-radio-group stacked>
             <b-form-radio
               name="some-radios"
               value="Bolts-nuts"
               @change="two('Bolts-nuts')"
-            >Bolts & nuts</b-form-radio>
+            >Bolts-nuts</b-form-radio>
             <b-form-radio name="some-radios" value="Welding" @change="two('Welding')">Welding</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -26,7 +26,7 @@
 
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F3.1: รูปแบบของขายึด (Stay)  ">
+        <b-form-group label="3. รูปแบบของขายึด (Stay)  ">
           <b-form-radio-group stacked>
             <b-col>
               <b-form-input v-model="Wveh" type="number" placeholder="ความกว้างตัวรถ" min="0"></b-form-input>
@@ -88,7 +88,7 @@
       </b-col>
 
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F4:  รูปแบบชิ้นส่วนสำหรับป้องกันการมุด">
+        <b-form-group label="4.  รูปแบบชิ้นส่วนสำหรับป้องกันการมุด">
           <b-form-radio-group stacked>
             <b-form-radio
               name="some-radios"
@@ -116,7 +116,16 @@
 
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F3.3: การใช้แรงคนในการปรับตำแหน่ง">
+        <b-form-group label="5. การปรับได้ของขายึด (Stay)">
+          <b-form-radio-group stacked>
+            <b-form-radio name="some-radios" value="fixed" @change="four('Fixed')">Fixed</b-form-radio>
+            <b-form-radio name="some-radios" value="slidable" @change="four('Slidable')">Slidable</b-form-radio>
+            <b-form-radio name="some-radios" value="foldable" @change="four('Foldable')">Foldable</b-form-radio>
+          </b-form-radio-group>
+        </b-form-group>
+      </b-col>
+      <b-col class="col-12 col-sm-6 outline">
+        <b-form-group label="6. การใช้แรงคนในการปรับตำแหน่ง">
           <b-form-radio-group stacked>
             <b-form-radio name="some-radios" value="No-power" @change="five('No-power')">No power</b-form-radio>
             <b-form-radio
@@ -124,16 +133,6 @@
               value="Human-power"
               @change="five('Human-power')"
             >Human power</b-form-radio>
-          </b-form-radio-group>
-        </b-form-group>
-      </b-col>
-
-      <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="F3.2: การปรับได้ของขายึด (Stay)">
-          <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="fixed" @change="four('Fixed')">Fixed</b-form-radio>
-            <b-form-radio name="some-radios" value="slidable" @change="four('Slidable')">Slidable</b-form-radio>
-            <b-form-radio name="some-radios" value="foldable" @change="four('Foldable')">Foldable</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -184,7 +183,6 @@ export default {
       this.$store.commit("setrfsix", type);
       console.log("getter 6 : " + this.$store.getters.rfsix);
     },
-
     cal: function() {
       let less = "W/2น้อยกว่าหรือเท่ากับ775mm";
       let more = "W/2มากกว่า775mm";
