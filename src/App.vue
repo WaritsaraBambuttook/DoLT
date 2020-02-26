@@ -45,14 +45,16 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Prompt&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Kanit&display=swap");
+body {
+  background-color: rgb(248, 239, 252);
+  font-family: "Kanit";
+}
 #app {
-  font-family: "Prompt";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #4d2b68;
-  background-color: rgb(248, 239, 252);
 }
 .bg-info {
   background-color: #853aa8 !important;

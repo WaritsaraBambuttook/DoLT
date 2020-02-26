@@ -4,8 +4,8 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="1. วิธีการติดต้ังเข้ากับคัสซี">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="C-type" @change="one('C-type')">C-type</b-form-radio>
-            <b-form-radio name="some-radios" value="I-Type" @change="one('I-type')">I-type</b-form-radio>
+            <b-form-radio name="some-radios" value="C-type" @change="one('C-type')">แบบ C-type</b-form-radio>
+            <b-form-radio name="some-radios" value="I-Type" @change="one('I-type')">แบบ I-type</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -16,9 +16,13 @@
             <b-form-radio
               name="some-radios"
               value="Bolts-nuts"
-              @change="two('Bolts-nuts')"
-            >Bolts-nuts</b-form-radio>
-            <b-form-radio name="some-radios" value="Welding" @change="two('Welding')">Welding</b-form-radio>
+              @change="two('ยึดด้วยโบลต์(Bolts-nuts)')"
+            >ยึดด้วยโบลต์ (Bolts-nuts)</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="Welding"
+              @change="two('ยึดด้วยการเชื่อม(Welding)')"
+            >ยึดด้วยการเชื่อม (Welding)</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -40,48 +44,48 @@
             <br />
 
             <b-col>
-              <h5>W/2 น้อยกว่าหรือเท่ากับ 775 mm</h5>
+              <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 น้อยกว่าหรือเท่ากับ 775 mm</h5>
               <b-form-radio
                 name="some-radios"
                 value="Trapezord"
-                @change="three('Trapezord-stay')"
+                @change="three('ขายึดแบบที่1(Trapezord-stay)')"
                 :disabled="LessEqual"
-              >Trapezord-stay</b-form-radio>
+              >ขายึดแบบที่ 1(Trapezord-stay)</b-form-radio>
             </b-col>
             <br />
 
             <b-col>
-              <h5>W/2 มากกว่า 775mm</h5>
+              <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 มากกว่า 775mm</h5>
               <b-form-radio
                 name="some-radios"
                 value="Trapezord-stay"
-                @change="three('Trapezord-stay')"
+                @change="three('ขายึดแบบที่1(Trapezord-stay)')"
                 :disabled="MoreThan"
-              >Trapezord-stay</b-form-radio>
+              >ขายึดแบบที่ 1 (Trapezord-stay)</b-form-radio>
               <b-form-radio
                 name="some-radios"
                 value="2-axles"
-                @change="three('2-axle-trailer')"
+                @change="three('ขายึดสำหรับเทรลเลอร์3เพลา แบบที่1')"
                 :disabled="MoreThan"
-              >2-axle-trailer</b-form-radio>
+              >ขายึดสำหรับเทรลเลอร์ 3 เพลา แบบที่ 1</b-form-radio>
               <b-form-radio
                 name="some-radios"
                 value="3-axles"
-                @change="three('3-axle-trailer')"
+                @change="three('ขายึดสำหรับเทรลเลอร์3เพลา แบบที่2')"
                 :disabled="MoreThan"
-              >3-axle-trailer</b-form-radio>
+              >ขายึดสำหรับเทรลเลอร์ 3 เพลา แบบที่ 2</b-form-radio>
               <b-form-radio
                 name="some-radios"
                 value="Tipping-vechincle"
-                @change="three('Tipping-vechincle')"
+                @change="three('ขายึดสำหรับรถดั๊มพ์(Tipping vehicle)')"
                 :disabled="MoreThan"
-              >Tipping-vechincle</b-form-radio>
+              >ขายึดสำหรับรถดั๊มพ์ (Tipping vehicle)</b-form-radio>
               <b-form-radio
                 name="some-radios"
                 value="Trailer-coupling"
-                @change="three('Trailer-coupling')"
+                @change="three('สำหรับรถที่มีข้อต่อพ่วง(trailer coupling)')"
                 :disabled="MoreThan"
-              >Trailer-coupling</b-form-radio>
+              >สำหรับรถที่มีข้อต่อพ่วง (trailer coupling)</b-form-radio>
             </b-col>
           </b-form-radio-group>
         </b-form-group>
@@ -93,22 +97,38 @@
             <b-form-radio
               name="some-radios"
               value="Tube+C-beam"
-              @change="six('Tube+C-beam')"
-            >Tube และ C-beam</b-form-radio>
+              @change="six('แบบผสมท่อและตัวซี(Tube+C-beam)')"
+            >แบบผสมท่อและตัวซี (Tube และ C-beam)</b-form-radio>
             <b-form-radio
               name="some-radios"
               value="Double-recht"
-              @change="six('Double-recht')"
-            >Double recht</b-form-radio>
+              @change="six('แบบผสมสี่เหลี่ยมประกบ(Double-recht)')"
+            >แบบผสมสี่เหลี่ยมประกบ (Double recht)</b-form-radio>
             <b-form-radio
               name="some-radios"
               value="LIP-channel"
-              @change="six('LIP-channel')"
-            >LIP channel</b-form-radio>
-            <b-form-radio name="some-radios" value="Circle" @change="six('Circle')">Circle</b-form-radio>
-            <b-form-radio name="some-radios" value="Square" @change="six('Square')">Square</b-form-radio>
-            <b-form-radio name="some-radios" value="Recht" @change="six('Recht')">Recht</b-form-radio>
-            <b-form-radio name="some-radios" value="C-beam" @change="six('C-beam')">C-beam</b-form-radio>
+              @change="six('แบบผสมตัวซีประกบ(LIP-channel)')"
+            >แบบผสมตัวซีประกบ (LIP channel)</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="Circle"
+              @change="six('แบบท่อเดี่ยว(Circle)')"
+            >แบบท่อเดี่ยว (Circle)</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="Square"
+              @change="six('แบบกล่องเดี่ยว(Square)')"
+            >แบบกล่องเดี่ยว (Square)</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="Recht"
+              @change="six('แบบกล่องผืนผ้าเดี่ยว(Recht)')"
+            >แบบกล่องผืนผ้าเดี่ยว (Recht)</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="C-beam"
+              @change="six('แบบตัวซีเดี่ยว(C-beam)')"
+            >แบบตัวซีเดี่ยว (C-beam)</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -118,21 +138,37 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="5. การปรับได้ของขายึด (Stay)">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="fixed" @change="four('Fixed')">Fixed</b-form-radio>
-            <b-form-radio name="some-radios" value="slidable" @change="four('Slidable')">Slidable</b-form-radio>
-            <b-form-radio name="some-radios" value="foldable" @change="four('Foldable')">Foldable</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="fixed"
+              @change="four('แบบยึดตายตัว(Fixed)')"
+            >แบบยึดตายตัว (Fixed)</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="slidable"
+              @change="four('แบบเลื่อนได้(Slidable)')"
+            >แบบเลื่อนได้ (Slidable)</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="foldable"
+              @change="four('แบบพับได้(Foldable)')"
+            >แบบพับได้ (Foldable)</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="6. การใช้แรงคนในการปรับตำแหน่ง">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="No-power" @change="five('No-power')">No power</b-form-radio>
+            <b-form-radio
+              name="some-radios"
+              value="No-power"
+              @change="five('ไม่ใช้แรงคน(No-power)')"
+            >ไม่ใช้แรงคน (No power)</b-form-radio>
             <b-form-radio
               name="some-radios"
               value="Human-power"
-              @change="five('Human-power')"
-            >Human power</b-form-radio>
+              @change="five('ใช้แรงคน(Human-power)')"
+            >ใช้แรงคน (Human power)</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -184,8 +220,9 @@ export default {
       console.log("getter 6 : " + this.$store.getters.rfsix);
     },
     cal: function() {
-      let less = "W/2น้อยกว่าหรือเท่ากับ775mm";
-      let more = "W/2มากกว่า775mm";
+      let less =
+        "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2น้อยกว่าหรือเท่ากับ775mm";
+      let more = "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2มากกว่า775mm";
       if (this.Wch != "" && this.Wveh != "") {
         let calculate = (this.Wveh - this.Wch) / 2;
         this.num = calculate;

@@ -9,6 +9,7 @@
             </b-col>
             <b-col class="col-8 col-sm-8">
               <b-form-input
+                type="text"
                 v-model="firstname"
                 :state="firstnameState"
                 aria-describedby="input-live-help input-live-feedback"
@@ -19,12 +20,14 @@
             </b-col>
           </b-row>
           <br />
+
           <b-row>
             <b-col class="col-4 col-sm-4">
               <label for="input-live">นามสกุล :</label>
             </b-col>
             <b-col class="col-8 col-sm-8">
               <b-form-input
+                type="text"
                 v-model="lastname"
                 :state="lastnameState"
                 aria-describedby="input-live-help input-live-feedback"
@@ -35,9 +38,50 @@
             </b-col>
           </b-row>
           <br />
+
+          <b-row>
+            <b-col class="col-4 col-sm-4">
+              <label for="input-live">บริษัท/หน่วยงาน :</label>
+            </b-col>
+            <b-col class="col-8 col-sm-8">
+              <b-form-input
+                type="text"
+                v-model="company"
+                :state="companyState"
+                aria-describedby="input-live-help input-live-feedback"
+                trim
+              ></b-form-input>
+              <!-- This will only be shown if the preceding input has an invalid state -->
+              <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกบริษัท/หน่วยงาน</b-form-invalid-feedback>
+            </b-col>
+          </b-row>
+          <br />
+
+          <b-row>
+            <b-col class="col-4 col-sm-4">
+              <label for="input-live">อีเมล :</label>
+            </b-col>
+            <b-col class="col-8 col-sm-8">
+              <b-form-input
+                type="email"
+                required
+                v-model="email"
+                :state="emailState"
+                aria-describedby="input-live-help input-live-feedback"
+                trim
+                class="form-control validate"
+              ></b-form-input>
+              <!-- This will only be shown if the preceding input has an invalid state -->
+              <b-form-invalid-feedback
+                id="input-live-feedback "
+              >กรุณากรอกอีเมล เช่น name@example.com</b-form-invalid-feedback>
+            </b-col>
+          </b-row>
+          <br />
+
           <b-row>
             <b-col>
-              <b-button id="confirm" class="confirm" @click="confirm">ตกลง</b-button>
+              <b-button type="submit" id="confirm" class="confirm" @click="confirm">ตกลง</b-button>
             </b-col>
           </b-row>
         </b-jumbotron>
@@ -121,6 +165,16 @@ export default {
     },
     lastnameState() {
       return this.lastname.length != "" ? true : false;
+    },
+    companyState() {
+      return this.company.length != "" ? true : false;
+    },
+    emailState() {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return this.email.length != "" &&
+        re.test(String(this.email).toLowerCase())
+        ? true
+        : false;
     }
   },
   data() {
@@ -155,6 +209,8 @@ export default {
       checkBumpertype: "",
       firstname: "",
       lastname: "",
+      company: "",
+      email: "",
       check: true
     };
   },
@@ -309,7 +365,9 @@ export default {
         db.collection("register")
           .add({
             firstname: this.firstname,
-            lastname: this.lastname
+            lastname: this.lastname,
+            company: this.company,
+            email: this.email
           })
           .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
