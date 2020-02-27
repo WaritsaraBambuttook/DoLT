@@ -33,8 +33,18 @@
         <b-form-group label="3. รูปแบบของขายึด (Stay)  ">
           <b-form-radio-group stacked>
             <b-col>
-              <b-form-input v-model="Wveh" type="number" placeholder="ความกว้างตัวรถ" min="0"></b-form-input>
-              <b-form-input v-model="Wch" type="number" placeholder="ความกว้างคัตซี" min="0"></b-form-input>
+              <b-form-input
+                v-model="Wveh"
+                type="number"
+                placeholder="ความกว้างตัวรถ เช่น 2200 mm"
+                min="0"
+              ></b-form-input>
+              <b-form-input
+                v-model="Wch"
+                type="number"
+                placeholder="ความกว้างคัตซี เช่น 800 mm"
+                min="0"
+              ></b-form-input>
             </b-col>
             <br />
             <b-col>
@@ -44,47 +54,47 @@
             <br />
 
             <b-col>
-              <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 น้อยกว่าหรือเท่ากับ 775 mm</h5>
+              <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 มากกว่า 775 mm</h5>
               <b-form-radio
                 name="some-radios"
                 value="Trapezord"
-                @change="three('ขายึดแบบที่1(Trapezord-stay)')"
-                :disabled="LessEqual"
+                @change="three('ขายึดแบบที่1(stay)')"
+                :disabled="MoreThan"
               >ขายึดแบบที่ 1(Trapezord-stay)</b-form-radio>
             </b-col>
             <br />
 
             <b-col>
-              <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 มากกว่า 775mm</h5>
+              <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 น้อยกว่าหรือเท่ากับ 775mm</h5>
               <b-form-radio
                 name="some-radios"
                 value="Trapezord-stay"
-                @change="three('ขายึดแบบที่1(Trapezord-stay)')"
-                :disabled="MoreThan"
+                @change="three('ขายึดแบบที่1(stay)')"
+                :disabled="LessEqual"
               >ขายึดแบบที่ 1 (Trapezord-stay)</b-form-radio>
               <b-form-radio
                 name="some-radios"
                 value="2-axles"
                 @change="three('ขายึดสำหรับเทรลเลอร์3เพลา แบบที่1')"
-                :disabled="MoreThan"
+                :disabled="LessEqual"
               >ขายึดสำหรับเทรลเลอร์ 3 เพลา แบบที่ 1</b-form-radio>
               <b-form-radio
                 name="some-radios"
                 value="3-axles"
                 @change="three('ขายึดสำหรับเทรลเลอร์3เพลา แบบที่2')"
-                :disabled="MoreThan"
+                :disabled="LessEqual"
               >ขายึดสำหรับเทรลเลอร์ 3 เพลา แบบที่ 2</b-form-radio>
               <b-form-radio
                 name="some-radios"
                 value="Tipping-vechincle"
                 @change="three('ขายึดสำหรับรถดั๊มพ์(Tipping vehicle)')"
-                :disabled="MoreThan"
+                :disabled="LessEqual"
               >ขายึดสำหรับรถดั๊มพ์ (Tipping vehicle)</b-form-radio>
               <b-form-radio
                 name="some-radios"
                 value="Trailer-coupling"
                 @change="three('สำหรับรถที่มีข้อต่อพ่วง(trailer coupling)')"
-                :disabled="MoreThan"
+                :disabled="LessEqual"
               >สำหรับรถที่มีข้อต่อพ่วง (trailer coupling)</b-form-radio>
             </b-col>
           </b-form-radio-group>
