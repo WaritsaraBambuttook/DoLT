@@ -15,6 +15,22 @@
     <b-container>
       <router-view to="/" />
     </b-container>
+    <br />
+    <br />
+    <footer class="footer">
+      <b-card title="Card title" sub-title="Card subtitle">
+        <b-card-text>
+          Some quick example text to build on the
+          <em>card title</em> and make up the bulk of the card's
+          content.
+        </b-card-text>
+
+        <b-card-text>A second paragraph of text in the card.</b-card-text>
+
+        <a href="#" class="card-link">Card link</a>
+        <b-link href="#" class="card-link">Another link</b-link>
+      </b-card>
+    </footer>
   </div>
 </template>
 
@@ -57,6 +73,10 @@ body {
   color: #4d2b68;
 }
 .bg-info {
-  background-color: #853aa8 !important;
+  background-color: #563d7c !important;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1071;
 }
 </style>
