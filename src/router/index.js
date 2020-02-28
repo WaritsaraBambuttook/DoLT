@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../views/Home'
-import Contact from '../views/Contact'
-import Address from '../views/Address'
-import Stepper from '../views/Stepper'
+import Home from '../pages/Home'
+import Contact from '../pages/Contact'
+import Address from '../pages/Address'
+import Stepper from '../pages/Stepper'
 // import Register from '../views/Register'
 Vue.use(Router)
 

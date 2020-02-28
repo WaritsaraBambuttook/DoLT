@@ -211,7 +211,7 @@ export default {
       lastname: "",
       company: "",
       email: "",
-      check: false
+      check: true
     };
   },
   methods: {
