@@ -17,7 +17,7 @@
     </b-container>
     <br />
     <br />
-    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <!-- <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
       <b-col>
         <b-card title="Card title" sub-title="Card subtitle">
           <b-card-text>
@@ -32,7 +32,7 @@
           <b-link href="#" class="card-link">Another link</b-link>
         </b-card>
       </b-col>
-    </footer>
+    </footer>-->
   </div>
 </template>
 

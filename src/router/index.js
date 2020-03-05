@@ -5,6 +5,7 @@ import Contact from '../pages/Contact'
 import Address from '../pages/Address'
 import Stepper from '../pages/Stepper'
 import google from '../pages/googleSheet'
+import bumper from '../components/TypeofCar/TypeOne.vue'
 Vue.use(Router)
 
 export default new Router({

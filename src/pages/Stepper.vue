@@ -127,15 +127,15 @@
 <script>
 // import Stepper from "vuejs-stepper";
 import Order from "../components/CarType";
-import Bumper1 from "../components/Bumpertype/BumperTypeOne";
-import Bumper2 from "../components/Bumpertype/BumperTypeTwo";
-import Bumper3 from "../components/Bumpertype/BumperTypeThree";
-import Bumper4 from "../components/Bumpertype/BumperTypeFour";
-import Bumper5 from "../components/Bumpertype/BumperTypeFive";
-import Bumper6 from "../components/Bumpertype/BumperTypeSix";
-import Bumper7 from "../components/Bumpertype/BumperTypeSeven";
-import Bumper8 from "../components/Bumpertype/BumperTypeEight";
-import Bumper9 from "../components/Bumpertype/BumperTypeNine";
+import Bumper1 from "../components/TypeofCar/TypeOne";
+import Bumper2 from "../components/TypeofCar/TypeTwo";
+import Bumper3 from "../components/TypeofCar/TypeThree";
+import Bumper4 from "../components/TypeofCar/TypeFour";
+import Bumper5 from "../components/TypeofCar/TypeFive";
+import Bumper6 from "../components/TypeofCar/TypeSix";
+import Bumper7 from "../components/TypeofCar/TypeSeven";
+import Bumper8 from "../components/TypeofCar/TypeEight";
+import Bumper9 from "../components/TypeofCar/TypeNine";
 import RLtype from "../components/RLtype";
 import RUPD from "../components/RUPD/Rupd";
 import LUPD from "../components/LUPD/Lupd";

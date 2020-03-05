@@ -2,42 +2,46 @@
   <div>
     <br />
     <b-row style="margin-top: 3px;">
-      <b-col
-        v-for="carType in carType"
-        :key="carType"
-        class="col-12 col-sm-4"
-        style="margin-top: 10px;"
-      >
-        <b-button class="carstyle" ref="myid" :variant="buttonColor" @click="carstyle(carType)">
+      <b-col v-for="type in type" :key="type" class="col-12 col-sm-4" style="margin-top: 10px;">
+        <b-button class="carstyle" :variant="buttonColor" @click="subType(type)">
           <b-col>
-            <h6>{{carType}}</h6>
-            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+            <h6>{{type}}</h6>
+            <b-img
+              class="img"
+              thumbnail
+              fluid
+              :src="require('../../assets/logo.png')"
+              alt="Image 1"
+            ></b-img>
           </b-col>
         </b-button>
       </b-col>
     </b-row>
+    <br />
   </div>
 </template>
-
 <script>
 import axios from "axios";
-import { store } from "../store/store";
+import { store } from "../../store/store";
 export default {
   store,
   data() {
     return {
+      one: "",
       buttonColor: "outline-success",
-      head: [],
-      carType: []
+      type: []
     };
   },
   methods: {
-    carstyle: function(type) {
-      console.log("commit car style  " + type);
-      this.$store.commit("setCarStyle", type);
+    subType: function(type) {
+      console.log("commit to store " + type);
+      this.$store.commit("setBumpertype", type);
     }
   },
+
   mounted() {
+    this.one = this.$store.getters.CarStyle;
+    console.log("getters car style  " + this.one);
     var instance = this;
     var url =
       "https://sheets.googleapis.com//v4/spreadsheets/1vfnoJq3AiL0GuHaGhI_q8W2zRUPBM9swH2V5_EW8MlU/values/A1:AP76/?key=AIzaSyBdDxNQXwJyowwndJy54wQoynwFvQJiK_g";
@@ -45,16 +49,11 @@ export default {
       .get(url)
       .then(function(response) {
         var data = response.data.values;
-        for (let i = 0; i < 1; i++) {
-          for (let j = 23; j < 42; j++) {
-            // console.log(data[i][j]);
-            instance.head.push(data[i][j]);
-            var filtered = instance.head.filter(function(el) {
-              return el != "";
-            });
-            // console.log(filtered);
-            instance.carType = filtered;
-            console.log(instance.carType);
+        for (let i = 1; i < 2; i++) {
+          for (let j = 29; j < 36; j++) {
+            console.log(data[i][j]);
+            instance.type.push(data[i][j]);
+            console.log(instance.type);
           }
         }
       })
