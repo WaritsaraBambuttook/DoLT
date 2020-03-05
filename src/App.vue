@@ -12,24 +12,26 @@
       </b-collapse>
     </b-navbar>
     <br />
-    <b-container>
+    <b-container class="wrapper">
       <router-view to="/" />
     </b-container>
     <br />
     <br />
-    <footer class="footer">
-      <b-card title="Card title" sub-title="Card subtitle">
-        <b-card-text>
-          Some quick example text to build on the
-          <em>card title</em> and make up the bulk of the card's
-          content.
-        </b-card-text>
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+      <b-col>
+        <b-card title="Card title" sub-title="Card subtitle">
+          <b-card-text>
+            Some quick example text to build on the
+            <em>card title</em> and make up the bulk of the card's
+            content.
+          </b-card-text>
 
-        <b-card-text>A second paragraph of text in the card.</b-card-text>
+          <b-card-text>A second paragraph of text in the card.</b-card-text>
 
-        <a href="#" class="card-link">Card link</a>
-        <b-link href="#" class="card-link">Another link</b-link>
-      </b-card>
+          <a href="#" class="card-link">Card link</a>
+          <b-link href="#" class="card-link">Another link</b-link>
+        </b-card>
+      </b-col>
     </footer>
   </div>
 </template>
@@ -41,7 +43,7 @@ export default {
   store,
   data() {
     return {
-      testCollection: []
+      // testCollection: []
     };
   }
   // mounted() {
@@ -66,9 +68,6 @@ html,
 body {
   background-color: rgb(248, 239, 252);
   font-family: "Kanit";
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 #app {
   -webkit-font-smoothing: antialiased;
@@ -83,39 +82,7 @@ body {
   top: 0;
   z-index: 1071;
 }
-/* .card-body {
-  background-color: #6e6081;
-  color: white;
-  position: fixed;
-  width: 100%;
-} */
-/* .footer {
-  bottom: 0px;
-  width: 100%;
-  position: absolute;
-} */
-
-/* @media (max-width: 414) {
-  .footer {
-    bottom: 0px;
-    width: 100%;
-    position: absolute;
-  }
-} */
-/* @media (min-width: 768) {
-  .footer {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-  }
-} */
-/* @media (max-width: 575.98px) {
-  .card {
-    font-size: 14px;
-  }
+#sticky-footer {
+  flex-shrink: 0;
 }
-
-.card {
-   display: block;
-} */
 </style>

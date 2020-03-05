@@ -4,21 +4,21 @@ import Home from '../pages/Home'
 import Contact from '../pages/Contact'
 import Address from '../pages/Address'
 import Stepper from '../pages/Stepper'
-// import Register from '../views/Register'
+import google from '../pages/googleSheet'
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    // {
+    //   path: '/',
+    //   name: 'google',
+    //   component: google
+    // },
     {
       path: '/',
       name: 'Stepper',
       component: Stepper
     },
-    // {
-    //   path: '/',
-    //   name: 'Register',
-    //   component: Register
-    // },
     {
       path: '/Address',
       name: 'Address',
