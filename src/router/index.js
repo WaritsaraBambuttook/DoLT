@@ -10,16 +10,16 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'google',
-    //   component: google
-    // },
     {
       path: '/',
-      name: 'Stepper',
-      component: Stepper
+      name: 'google',
+      component: google
     },
+    // {
+    //   path: '/',
+    //   name: 'Stepper',
+    //   component: Stepper
+    // },
     {
       path: '/Address',
       name: 'Address',
