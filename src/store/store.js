@@ -6,7 +6,8 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         CarStyle: '',
-        Bumpertype: '',
+        Bumpertype: 'กระบะบรรทุก',
+        numberOfSubType: "23",
         CheckWidth: '',
         RLtype: '',
         rfone: '',
@@ -29,6 +30,10 @@ export const store = new Vuex.Store({
         setBumpertype(state, Bumpertype) {
             state.Bumpertype = Bumpertype;
         },
+        setnumberOfSubType(state, numberOfSubType) {
+            state.numberOfSubType = numberOfSubType;
+        },
+
         setCheckWidth(state, CheckWidth) {
             state.CheckWidth = CheckWidth;
         },
@@ -75,6 +80,7 @@ export const store = new Vuex.Store({
     getters: {
         CarStyle: state => state.CarStyle,
         Bumpertype: state => state.Bumpertype,
+        numberOfSubType: state => state.numberOfSubType,
         CheckWidth: state => state.CheckWidth,
         RLtype: state => state.RLtype,
         rfone: state => state.rfone,

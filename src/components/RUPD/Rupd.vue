@@ -4,8 +4,14 @@
       <b-col class="col-12 col-sm-6 outline">
         <b-form-group label="1. วิธีการติดต้ังเข้ากับคัสซี">
           <b-form-radio-group stacked>
-            <b-form-radio name="some-radios" value="C-type" @change="one('C-type')">แบบ C-type</b-form-radio>
-            <b-form-radio name="some-radios" value="I-Type" @change="one('I-type')">แบบ I-type</b-form-radio>
+            <b-form-radio
+              v-for="f1 in f1"
+              :key="f1"
+              name="some-radios"
+              :value="f1"
+              @change="one(f1)"
+              :disabled="f1 == maxF1_ctype || f1 == maxF1_itype"
+            >แบบ {{f1}}</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -14,15 +20,13 @@
         <b-form-group label="2. วิธีการจับยึดเข้ากับคัสซี ">
           <b-form-radio-group stacked>
             <b-form-radio
+              v-for="f2 in f2"
+              :key="f2"
               name="some-radios"
-              value="Bolts-nuts"
-              @change="two('ยึดด้วยโบลต์(Bolts-nuts)')"
-            >ยึดด้วยโบลต์ (Bolts-nuts)</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="Welding"
-              @change="two('ยึดด้วยการเชื่อม(Welding)')"
-            >ยึดด้วยการเชื่อม (Welding)</b-form-radio>
+              :value="f2"
+              @change="two(f2)"
+              :disabled="f2 == maxF2_boltsnuts || f2 == maxF2_welding"
+            >{{f2}}</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -56,46 +60,26 @@
             <b-col>
               <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 มากกว่า 775 mm</h5>
               <b-form-radio
+                v-for="f31 in f31"
+                :key="f31"
                 name="some-radios"
-                value="Trapezord"
-                @change="three('ขายึดแบบที่1(stay)')"
-                :disabled="MoreThan"
-              >ขายึดแบบที่ 1(Trapezord-stay)</b-form-radio>
+                :value="f31"
+                @change="three(f31)"
+                :disabled="MoreThan || f31 == maxF31"
+              >{{f31}}</b-form-radio>
             </b-col>
             <br />
 
             <b-col>
               <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 น้อยกว่าหรือเท่ากับ 775mm</h5>
               <b-form-radio
+                v-for="f311 in f311"
+                :key="f311"
                 name="some-radios"
-                value="Trapezord-stay"
-                @change="three('ขายึดแบบที่1(stay)')"
-                :disabled="LessEqual"
-              >ขายึดแบบที่ 1 (Trapezord-stay)</b-form-radio>
-              <b-form-radio
-                name="some-radios"
-                value="2-axles"
-                @change="three('ขายึดสำหรับเทรลเลอร์3เพลา แบบที่1')"
-                :disabled="LessEqual"
-              >ขายึดสำหรับเทรลเลอร์ 3 เพลา แบบที่ 1</b-form-radio>
-              <b-form-radio
-                name="some-radios"
-                value="3-axles"
-                @change="three('ขายึดสำหรับเทรลเลอร์3เพลา แบบที่2')"
-                :disabled="LessEqual"
-              >ขายึดสำหรับเทรลเลอร์ 3 เพลา แบบที่ 2</b-form-radio>
-              <b-form-radio
-                name="some-radios"
-                value="Tipping-vechincle"
-                @change="three('ขายึดสำหรับรถดั๊มพ์(Tipping vehicle)')"
-                :disabled="LessEqual"
-              >ขายึดสำหรับรถดั๊มพ์ (Tipping vehicle)</b-form-radio>
-              <b-form-radio
-                name="some-radios"
-                value="Trailer-coupling"
-                @change="three('สำหรับรถที่มีข้อต่อพ่วง(trailer coupling)')"
-                :disabled="LessEqual"
-              >สำหรับรถที่มีข้อต่อพ่วง (trailer coupling)</b-form-radio>
+                :value="f311"
+                @change="three(f311)"
+                :disabled="LessEqual || f311 ==  maxF311_stay2 ||  f311 ==  maxF311_trailer31 ||  f311 ==  maxF311_trailer32 ||  f311 ==  maxF311_tipping ||  f311 ==  maxF311_trailer"
+              >{{f311}}</b-form-radio>
             </b-col>
           </b-form-radio-group>
         </b-form-group>
@@ -105,40 +89,13 @@
         <b-form-group label="4.  รูปแบบชิ้นส่วนสำหรับป้องกันการมุด">
           <b-form-radio-group stacked>
             <b-form-radio
+              v-for="f4 in f4"
+              :key="f4"
               name="some-radios"
-              value="Tube+C-beam"
-              @change="six('แบบผสมท่อและตัวซี(Tube+C-beam)')"
-            >แบบผสมท่อและตัวซี (Tube และ C-beam)</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="Double-recht"
-              @change="six('แบบผสมสี่เหลี่ยมประกบ(Double-recht)')"
-            >แบบผสมสี่เหลี่ยมประกบ (Double recht)</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="LIP-channel"
-              @change="six('แบบผสมตัวซีประกบ(LIP-channel)')"
-            >แบบผสมตัวซีประกบ (LIP channel)</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="Circle"
-              @change="six('แบบท่อเดี่ยว(Circle)')"
-            >แบบท่อเดี่ยว (Circle)</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="Square"
-              @change="six('แบบกล่องเดี่ยว(Square)')"
-            >แบบกล่องเดี่ยว (Square)</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="Recht"
-              @change="six('แบบกล่องผืนผ้าเดี่ยว(Recht)')"
-            >แบบกล่องผืนผ้าเดี่ยว (Recht)</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="C-beam"
-              @change="six('แบบตัวซีเดี่ยว(C-beam)')"
-            >แบบตัวซีเดี่ยว (C-beam)</b-form-radio>
+              :value="f4"
+              @change="six(f4)"
+              :disabled=" f4 ==   maxF4_tube_cbeam || f4 ==   maxF4_double_recht || f4 ==   maxF4_lip || f4 ==   maxF4_circle || f4 ==   maxF4_square || f4 ==   maxF4_recht || f4 ==   maxF4_cbeam "
+            >{{f4}}</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -149,20 +106,13 @@
         <b-form-group label="5. การปรับได้ของขายึด (Stay)">
           <b-form-radio-group stacked>
             <b-form-radio
+              v-for="f32 in f32"
+              :key="f32"
               name="some-radios"
-              value="fixed"
-              @change="four('แบบยึดตายตัว(Fixed)')"
-            >แบบยึดตายตัว (Fixed)</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="slidable"
-              @change="four('แบบเลื่อนได้(Slidable)')"
-            >แบบเลื่อนได้ (Slidable)</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="foldable"
-              @change="four('แบบพับได้(Foldable)')"
-            >แบบพับได้ (Foldable)</b-form-radio>
+              :value="f32"
+              @change="four(f32)"
+              :disabled="f32 ==   maxF32_fixed ||f32 ==   maxF32_slidable || f32 ==   maxF32_foldable"
+            >{{f32}}</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -170,15 +120,13 @@
         <b-form-group label="6. การใช้แรงคนในการปรับตำแหน่ง">
           <b-form-radio-group stacked>
             <b-form-radio
+              v-for="f33 in f33"
+              :key="f33"
               name="some-radios"
-              value="No-power"
-              @change="five('ไม่ใช้แรงคน(No-power)')"
-            >ไม่ใช้แรงคน (No power)</b-form-radio>
-            <b-form-radio
-              name="some-radios"
-              value="Human-power"
-              @change="five('ใช้แรงคน(Human-power)')"
-            >ใช้แรงคน (Human power)</b-form-radio>
+              :value="f33"
+              @change="five(f33)"
+              :disabled="f33 ==   maxF33_nopower || f33 ==   maxF33_humanpower "
+            >{{f33}}</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -187,15 +135,70 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       selected: "",
+      maxF1_ctype: "",
+      maxF1_itype: "",
+      maxF2_boltsnuts: "",
+      maxF2_welding: "",
+      maxF31: "",
+      maxF311_stay2: "",
+      maxF311_trailer31: "",
+      maxF311_trailer32: "",
+      maxF311_tipping: "",
+      maxF311_trailer: "",
+      maxF32_fixed: "",
+      maxF32_slidable: "",
+      maxF32_foldable: "",
+      maxF33_nopower: "",
+      maxF33_humanpower: "",
+      maxF4_tube_cbeam: "",
+      maxF4_double_recht: "",
+      maxF4_lip: "",
+      maxF4_circle: "",
+      maxF4_square: "",
+      maxF4_recht: "",
+      maxF4_cbeam: "",
       Wveh: "",
       Wch: "",
       num: "",
       LessEqual: true,
-      MoreThan: true
+      MoreThan: true,
+      f1: [],
+      f2: [],
+      f31: [],
+      f311: [],
+      f32: [],
+      f33: [],
+      f4: [],
+      subType: [],
+      index: [],
+      type: [],
+      ctype: [],
+      itype: [],
+      BoltsNuts: [],
+      Welding: [],
+      stay1: [],
+      stay2: [],
+      trailer31: [],
+      trailer32: [],
+      tippingVehicle: [],
+      trailerCoupling: [],
+      fixed: [],
+      slidable: [],
+      foldable: [],
+      noPower: [],
+      humanPower: [],
+      tubeC: [],
+      doubleRecht: [],
+      lip: [],
+      circle: [],
+      square: [],
+      recht: [],
+      cbeam: []
     };
   },
   methods: {
@@ -262,6 +265,250 @@ export default {
         }
       }
     }
+  },
+  mounted() {
+    var Bumpertype = this.$store.getters.Bumpertype;
+    var numberOfSubType = this.$store.getters.numberOfSubType;
+    console.log("getters sub tpye  " + Bumpertype);
+    var instance = this;
+    var url =
+      "https://sheets.googleapis.com//v4/spreadsheets/1vfnoJq3AiL0GuHaGhI_q8W2zRUPBM9swH2V5_EW8MlU/values/A1:AP76/?key=AIzaSyBdDxNQXwJyowwndJy54wQoynwFvQJiK_g";
+    axios
+      .get(url)
+      .then(function(response) {
+        var data = response.data.values;
+        //f1
+        for (let i = 1; i < 2; i++) {
+          for (let j = 1; j < 3; j++) {
+            instance.f1.push(data[i][j]);
+          }
+        }
+        //f2
+        for (let i = 1; i < 2; i++) {
+          for (let j = 3; j <= 4; j++) {
+            instance.f2.push(data[i][j]);
+          }
+        }
+        //f31
+        for (let i = 2; i < 3; i++) {
+          for (let j = 5; j < 6; j++) {
+            instance.f31.push(data[i][j]);
+          }
+        }
+        //f311
+        for (let i = 2; i < 3; i++) {
+          for (let j = 6; j <= 10; j++) {
+            instance.f311.push(data[i][j]);
+          }
+        }
+        //f32
+        for (let i = 1; i < 2; i++) {
+          for (let j = 11; j <= 13; j++) {
+            instance.f32.push(data[i][j]);
+          }
+        }
+        //f33
+        for (let i = 1; i < 2; i++) {
+          for (let j = 14; j <= 15; j++) {
+            instance.f33.push(data[i][j]);
+          }
+        }
+        //f4
+        for (let i = 1; i < 2; i++) {
+          for (let j = 16; j <= 22; j++) {
+            instance.f4.push(data[i][j]);
+          }
+        }
+        // console.log("f1 >>" + instance.f1);
+        // console.log("f2 >>" + instance.f2);
+        // console.log("f31 >>" + instance.f31);
+        // console.log("f311 >>" + instance.f311);
+        // console.log("f32 >>" + instance.f32);
+        // console.log("f33 >>" + instance.f33);
+        // console.log("f4 >>" + instance.f4);
+
+        //////////////////////////////////////////////////////////////////////////
+
+        for (let i = 3; i < data.length; i++) {
+          if (data[i][numberOfSubType] == 1) {
+            instance.subType.push(data[i][numberOfSubType]);
+            instance.index.push(i);
+            instance.type.push(data[i][0]);
+
+            instance.ctype.push(data[i][1]);
+            instance.itype.push(data[i][2]);
+
+            instance.BoltsNuts.push(data[i][3]);
+            instance.Welding.push(data[i][4]);
+
+            instance.stay1.push(data[i][5]);
+
+            instance.stay2.push(data[i][6]);
+            instance.trailer31.push(data[i][7]);
+            instance.trailer32.push(data[i][8]);
+            instance.tippingVehicle.push(data[i][9]);
+            instance.trailerCoupling.push(data[i][10]);
+
+            instance.fixed.push(data[i][11]);
+            instance.slidable.push(data[i][12]);
+            instance.foldable.push(data[i][13]);
+
+            instance.noPower.push(data[i][14]);
+            instance.humanPower.push(data[i][15]);
+
+            instance.tubeC.push(data[i][16]);
+            instance.doubleRecht.push(data[i][17]);
+            instance.lip.push(data[i][18]);
+            instance.circle.push(data[i][19]);
+            instance.square.push(data[i][20]);
+            instance.recht.push(data[i][21]);
+            instance.cbeam.push(data[i][22]);
+          }
+        }
+        // console.log("f1 " + instance.f1[1]);
+
+        console.log("subtype " + instance.subType);
+        console.log("index " + instance.index);
+        console.log("type " + instance.type);
+
+        console.log("ctype" + instance.ctype);
+        console.log("itype" + instance.itype);
+
+        console.log("BoltsNuts " + instance.BoltsNuts);
+        console.log("Welding" + instance.Welding);
+
+        console.log("stay1 " + instance.stay1);
+        console.log("stay2" + instance.stay2);
+        console.log("trailer31 " + instance.trailer31);
+        console.log("trailer32" + instance.trailer32);
+        console.log("tippingVehicle " + instance.tippingVehicle);
+        console.log("trailerCoupling" + instance.trailerCoupling);
+
+        console.log("fixed " + instance.fixed);
+        console.log("slidable" + instance.slidable);
+        console.log("foldable " + instance.foldable);
+
+        console.log("noPower" + instance.noPower);
+        console.log("humanPower " + instance.humanPower);
+
+        console.log("tubeC" + instance.tubeC);
+        console.log("doubleRecht " + instance.doubleRecht);
+        console.log("lip" + instance.lip);
+        console.log("circle " + instance.circle);
+        console.log("square" + instance.square);
+        console.log("circle " + instance.recht);
+        console.log("square" + instance.cbeam);
+
+        //max
+        console.log("Max ctype  " + Math.max(...instance.ctype));
+        console.log("Max itype  " + Math.max(...instance.itype));
+
+        console.log("Max BoltsNuts  " + Math.max(...instance.BoltsNuts));
+        console.log("Max Welding  " + Math.max(...instance.Welding));
+
+        console.log("Max stay1  " + Math.max(...instance.stay1));
+        console.log("Max stay2  " + Math.max(...instance.stay2));
+        console.log("Max trailer31  " + Math.max(...instance.trailer31));
+        console.log("Max trailer32  " + Math.max(...instance.trailer32));
+        console.log(
+          "Max tippingVehicle  " + Math.max(...instance.tippingVehicle)
+        );
+        console.log(
+          "Max trailerCoupling  " + Math.max(...instance.trailerCoupling)
+        );
+
+        console.log("Max fixed  " + Math.max(...instance.fixed));
+        console.log("Max slidable  " + Math.max(...instance.slidable));
+        console.log("Max foldable  " + Math.max(...instance.foldable));
+
+        console.log("Max noPower  " + Math.max(...instance.noPower));
+        console.log("Max humanPower  " + Math.max(...instance.humanPower));
+
+        console.log("Max tubeC  " + Math.max(...instance.tubeC));
+        console.log("Max doubleRecht  " + Math.max(...instance.doubleRecht));
+        console.log("Max lip  " + Math.max(...instance.lip));
+        console.log("Max circle  " + Math.max(...instance.circle));
+        console.log("Max square  " + Math.max(...instance.square));
+        console.log("Max recht  " + Math.max(...instance.recht));
+        console.log("Max cbeam  " + Math.max(...instance.cbeam));
+
+        //f1
+        if (Math.max(...instance.ctype) == 0) {
+          instance.maxF1_ctype = instance.f1[0];
+        }
+        if (Math.max(...instance.itype) == 0) {
+          instance.maxF1_itype = instance.f1[1];
+        }
+        //f2
+        if (Math.max(...instance.BoltsNuts) == 0) {
+          instance.maxF2_boltsnuts = instance.f2[0];
+        }
+        if (Math.max(...instance.Welding) == 0) {
+          instance.maxF2_welding = instance.f2[1];
+        }
+        //f31
+        if (Math.max(...instance.stay1) == 0) {
+          instance.maxF31 = instance.f31;
+        }
+        //f311
+        if (Math.max(...instance.stay2) == 0) {
+          instance.maxF311_stay2 = instance.f311[0];
+        }
+        if (Math.max(...instance.trailer31) == 0) {
+          instance.maxF311_trailer31 = instance.f311[1];
+        }
+        if (Math.max(...instance.trailer32) == 0) {
+          instance.maxF311_trailer32 = instance.f311[2];
+        }
+        if (Math.max(...instance.tippingVehicle) == 0) {
+          instance.maxF311_tipping = instance.f311[3];
+        }
+        if (Math.max(...instance.trailerCoupling) == 0) {
+          instance.maxF311_trailer = instance.f311[4];
+        }
+        //f32
+        if (Math.max(...instance.fixed) == 0) {
+          instance.maxF32_fixed = instance.f32[0];
+        }
+        if (Math.max(...instance.slidable) == 0) {
+          instance.maxF32_slidable = instance.f32[1];
+        }
+        if (Math.max(...instance.foldable) == 0) {
+          instance.maxF32_foldable = instance.f32[2];
+        }
+        //f33
+        if (Math.max(...instance.noPower) == 0) {
+          instance.maxF33_nopower = instance.f33[0];
+        }
+        if (Math.max(...instance.humanPower) == 0) {
+          instance.maxF33_humanpower = instance.f33[1];
+        }
+        //f4
+        if (Math.max(...instance.tubeC) == 0) {
+          instance.maxF4_tube_cbeam = instance.f4[0];
+        }
+        if (Math.max(...instance.doubleRecht) == 0) {
+          instance.maxF4_double_recht = instance.f4[1];
+        }
+        if (Math.max(...instance.lip) == 0) {
+          instance.maxF4_lip = instance.f4[2];
+        }
+        if (Math.max(...instance.circle) == 0) {
+          instance.maxF4_circle = instance.f4[3];
+        }
+        if (Math.max(...instance.square) == 0) {
+          instance.maxF4_square = instance.f4[4];
+        }
+        if (Math.max(...instance.recht) == 0) {
+          instance.maxF4_recht = instance.f4[5];
+        }
+        if (Math.max(...instance.cbeam) == 0) {
+          instance.maxF4_cbeam = instance.f4[6];
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 };
 </script>

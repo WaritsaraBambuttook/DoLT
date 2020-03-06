@@ -6,14 +6,15 @@ import Address from '../pages/Address'
 import Stepper from '../pages/Stepper'
 import google from '../pages/googleSheet'
 import bumper from '../components/TypeofCar/TypeOne.vue'
+import rupd from '../components/RUPD/Rupd.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'google',
-      component: google
+      name: 'rupd',
+      component: rupd
     },
     // {
     //   path: '/',
