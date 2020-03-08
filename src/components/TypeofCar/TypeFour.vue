@@ -29,13 +29,18 @@ export default {
     return {
       one: "",
       buttonColor: "outline-success",
-      type: []
+      type: [],
+      index: []
     };
   },
   methods: {
-    subType: function(type) {
-      console.log("commit to store " + type);
-      this.$store.commit("setBumpertype", type);
+    subType: function(data) {
+      if (data == this.type[0]) {
+        this.$store.commit("setnumberOfSubType", this.index[0]);
+        console.log("index " + this.index[0]);
+      }
+      console.log("commit to store " + data);
+      this.$store.commit("setBumpertype", data);
     }
   },
 
@@ -53,9 +58,11 @@ export default {
           for (let j = 28; j < 29; j++) {
             console.log(data[i][j]);
             instance.type.push(data[i][j]);
-            console.log(instance.type);
+            instance.index.push(j);
           }
         }
+        console.log(instance.type);
+        console.log("index " + instance.index);
       })
       .catch(function(error) {
         console.log(error);

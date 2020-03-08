@@ -28,13 +28,19 @@ export default {
     return {
       one: "",
       buttonColor: "outline-success",
-      type: []
+      type: [],
+      index: []
     };
   },
   methods: {
-    subType: function(type) {
-      console.log("commit to store " + type);
-      this.$store.commit("setBumpertype", type);
+    subType: function(data) {
+      console.log("commit to store " + data);
+      //ส่ง index ของค่าไปเก็ไว้
+      if (data == this.type[0]) {
+        this.$store.commit("setnumberOfSubType", this.index[0]);
+        console.log("index " + this.index[0]);
+      }
+      this.$store.commit("setBumpertype", data);
     }
   },
 
@@ -52,9 +58,12 @@ export default {
           for (let j = 40; j < 41; j++) {
             console.log(data[i][j]);
             instance.type.push(data[i][j]);
-            console.log(instance.type);
+
+            instance.index.push(j);
           }
         }
+        console.log(instance.type);
+        console.log("instance.index " + instance.index);
       })
       .catch(function(error) {
         console.log(error);

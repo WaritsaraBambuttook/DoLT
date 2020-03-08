@@ -7,7 +7,7 @@ export const store = new Vuex.Store({
     state: {
         CarStyle: '',
         Bumpertype: 'กระบะบรรทุก',
-        numberOfSubType: "23",
+        numberOfSubType: "",
         CheckWidth: '',
         RLtype: '',
         rfone: '',

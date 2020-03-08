@@ -29,13 +29,32 @@ export default {
     return {
       one: "",
       buttonColor: "outline-success",
-      type: []
+      type: [],
+      index: []
     };
   },
   methods: {
-    subType: function(type) {
-      console.log("commit to store " + type);
-      this.$store.commit("setBumpertype", type);
+    subType: function(data) {
+      console.log("commit to store " + data);
+      // if (data == this.type[0]) {
+      //   this.$store.commit("setnumberOfSubType", this.index[0]);
+      //   console.log("index " + this.index[0]);
+      // }
+      // if (data == this.type[1]) {
+      //   this.$store.commit("setnumberOfSubType", this.index[1]);
+      //   console.log("index " + this.index[1]);
+      // }
+      // if (data == this.type[2]) {
+      //   this.$store.commit("setnumberOfSubType", this.index[2]);
+      //   console.log("index " + this.index[2]);
+      // }
+      for (let index = 0; index <= 2; index++) {
+        if (data == this.type[index]) {
+          console.log("index " + this.index[index]);
+          this.$store.commit("setnumberOfSubType", this.index[index]);
+        }
+      }
+      this.$store.commit("setBumpertype", data);
     }
   },
 
@@ -53,9 +72,12 @@ export default {
           for (let j = 23; j < 26; j++) {
             console.log(data[i][j]);
             instance.type.push(data[i][j]);
-            console.log(instance.type);
+
+            instance.index.push(j);
           }
         }
+        console.log(instance.type);
+        console.log("instance.index " + instance.index);
       })
       .catch(function(error) {
         console.log(error);
