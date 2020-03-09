@@ -32,9 +32,9 @@ export default {
     };
   },
   methods: {
-    carstyle: function(type) {
-      console.log("commit car style  " + type);
-      this.$store.commit("setCarStyle", type);
+    carstyle: function(data) {
+      console.log("commit car style  " + data);
+      this.$store.commit("setCarStyle", data);
     }
   },
   mounted() {
@@ -54,7 +54,7 @@ export default {
             });
             // console.log(filtered);
             instance.carType = filtered;
-            console.log(instance.carType);
+            // console.log(instance.carType);
           }
         }
       })

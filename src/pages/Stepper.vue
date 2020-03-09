@@ -141,6 +141,7 @@ import RUPD from "../components/RUPD/Rupd";
 import LUPD from "../components/LUPD/Lupd";
 import Rsummary from "../components/RUPD/Rsummary";
 import Lsummary from "../components/LUPD/Lsummary";
+import axios from "axios";
 export default {
   components: {
     Order,
@@ -211,8 +212,35 @@ export default {
       lastname: "",
       company: "",
       email: "",
-      check: false
+      check: false,
+      head: [],
+      carType: []
     };
+  },
+  mounted() {
+    var instance = this;
+    var url =
+      "https://sheets.googleapis.com//v4/spreadsheets/1vfnoJq3AiL0GuHaGhI_q8W2zRUPBM9swH2V5_EW8MlU/values/A1:AP76/?key=AIzaSyBdDxNQXwJyowwndJy54wQoynwFvQJiK_g";
+    axios
+      .get(url)
+      .then(function(response) {
+        var data = response.data.values;
+        for (let i = 0; i < 1; i++) {
+          for (let j = 23; j < 42; j++) {
+            // console.log(data[i][j]);
+            instance.head.push(data[i][j]);
+            var filtered = instance.head.filter(function(el) {
+              return el != "";
+            });
+            // console.log(filtered);
+            instance.carType = filtered;
+            console.log(instance.carType);
+          }
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   },
   methods: {
     nextClicked(currentPage) {
@@ -238,27 +266,29 @@ export default {
       let lf6 = this.$store.getters.lfsix;
       //check car style
       if (currentPage == 0) {
+        console.log(this.carType[0]);
+
         if (carStyle == "") {
           alert("เลือก 'ลักษณะรถยนต์' ใหม่อีกครั้ง");
           return false;
         } else {
-          if (carStyle == "ประเภทที่1") {
+          if (carStyle == this.carType[0]) {
             this.checkBumpertype = "Bumper1";
-          } else if (carStyle == "ประเภทที่2") {
+          } else if (carStyle == this.carType[1]) {
             this.checkBumpertype = "Bumper2";
-          } else if (carStyle == "ประเภทที่3") {
+          } else if (carStyle == this.carType[2]) {
             this.checkBumpertype = "Bumper3";
-          } else if (carStyle == "ประเภทที่4") {
+          } else if (carStyle == this.carType[3]) {
             this.checkBumpertype = "Bumper4";
-          } else if (carStyle == "ประเภทที่5") {
+          } else if (carStyle == this.carType[4]) {
             this.checkBumpertype = "Bumper5";
-          } else if (carStyle == "ประเภทที่6") {
+          } else if (carStyle == this.carType[5]) {
             this.checkBumpertype = "Bumper6";
-          } else if (carStyle == "ประเภทที่7") {
+          } else if (carStyle == this.carType[6]) {
             this.checkBumpertype = "Bumper7";
-          } else if (carStyle == "ประเภทที่8") {
+          } else if (carStyle == this.carType[7]) {
             this.checkBumpertype = "Bumper8";
-          } else if (carStyle == "ประเภทที่9") {
+          } else if (carStyle == this.carType[8]) {
             this.checkBumpertype = "Bumper9";
           }
           return true; //return false if you want to prevent moving to next page
