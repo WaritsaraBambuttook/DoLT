@@ -3,15 +3,15 @@
     <br />
     <b-row style="margin-top: 3px;">
       <b-col
-        v-for="carType in carType"
-        :key="carType"
+        v-for="car in carType"
+        :key="car.name"
         class="col-12 col-sm-4"
         style="margin-top: 10px;"
       >
-        <b-button class="carstyle" ref="myid" :variant="buttonColor" @click="carstyle(carType)">
+        <b-button class="carstyle" ref="myid" :variant="buttonColor" @click="carstyle(car.name)">
+          <h6>{{car.name}}</h6>
           <b-col>
-            <h6>{{carType}}</h6>
-            <b-img class="img" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+            <b-img thumbnail fluid :src="car.type" :alt="car.name"></b-img>
           </b-col>
         </b-button>
       </b-col>
@@ -27,8 +27,20 @@ export default {
   data() {
     return {
       buttonColor: "outline-success",
+      imgCar: [
+        require("../assets/ImgCarType/1.jpg"),
+        require("../assets/ImgCarType/2.jpg"),
+        require("../assets/ImgCarType/3.jpg"),
+        require("../assets/ImgCarType/4.jpg"),
+        require("../assets/ImgCarType/5.jpg"),
+        require("../assets/ImgCarType/6.jpg"),
+        require("../assets/ImgCarType/7.jpg"),
+        require("../assets/ImgCarType/8.jpg"),
+        require("../assets/ImgCarType/9.jpg")
+      ],
       head: [],
       carType: []
+      // object: []
     };
   },
   methods: {
@@ -52,10 +64,14 @@ export default {
             var filtered = instance.head.filter(function(el) {
               return el != "";
             });
-            // console.log(filtered);
-            instance.carType = filtered;
-            // console.log(instance.carType);
+            // instance.carType = filtered;
           }
+        }
+        for (let i = 0; i < filtered.length; i++) {
+          instance.carType.push({
+            name: filtered[i],
+            type: instance.imgCar[i]
+          });
         }
       })
       .catch(function(error) {

@@ -234,7 +234,7 @@ export default {
             });
             // console.log(filtered);
             instance.carType = filtered;
-            console.log(instance.carType);
+            // console.log(instance.carType);
           }
         }
       })
