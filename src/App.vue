@@ -5,8 +5,8 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item to="/Home">รายละเอียด</b-nav-item>
-          <b-nav-item to="/download">ดาวน์โหลดกันชน</b-nav-item>
+          <b-nav-item to="/Home">รายละเอียดโครงการ</b-nav-item>
+          <b-nav-item to="/download">ดาวน์โหลดอุปกรณ์ป้องกัน</b-nav-item>
           <b-nav-item to="/Contact">ติดต่อสอบถาม</b-nav-item>
         </b-navbar-nav>
       </b-collapse>

@@ -58,7 +58,7 @@
             <br />
 
             <b-col>
-              <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 มากกว่า 775 mm</h5>
+              <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 มากกว่า 890 mm</h5>
               <b-form-radio
                 v-for="f31 in f31"
                 :key="f31"
@@ -71,7 +71,7 @@
             <br />
 
             <b-col>
-              <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 น้อยกว่าหรือเท่ากับ 775mm</h5>
+              <h5>ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2 น้อยกว่าหรือเท่ากับ 890 mm</h5>
               <b-form-radio
                 v-for="f311 in f311"
                 :key="f311"
@@ -125,7 +125,7 @@
               name="some-radios"
               :value="f33"
               @change="five(f33)"
-              :disabled="f33 ==   maxF33_nopower || f33 ==   maxF33_humanpower "
+              :disabled="f33 ==   maxF33_nopower || f33 ==   maxF33_humanpower   "
             >{{f33}}</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -198,7 +198,9 @@ export default {
       circle: [],
       square: [],
       recht: [],
-      cbeam: []
+      cbeam: [],
+      validateFixed: [],
+      data: []
     };
   },
   methods: {
@@ -218,6 +220,39 @@ export default {
       console.log("getter 3 : " + this.$store.getters.rfthree);
     },
     four: function(type) {
+      this.validateFixed = type;
+      if (this.f32[0] == this.validateFixed) {
+        this.humanPower = 0;
+        if (this.humanPower == 0) {
+          this.maxF33_humanpower = this.f33[1];
+          console.log("validate if1.1........", this.maxF33_humanpower);
+        }
+      } else {
+        this.humanPower = [];
+        console.log("else");
+        var numberOfSubType = this.$store.getters.numberOfSubType;
+        var data = this.data;
+        for (let i = 3; i < data.length; i++) {
+          if (data[i][numberOfSubType] == 1) {
+            this.subType.push(data[i][numberOfSubType]);
+            this.index.push(i);
+            this.type.push(data[i][0]);
+            this.noPower.push(data[i][14]);
+            this.humanPower.push(data[i][15]);
+          }
+        }
+        // console.log(Math.max(...this.humanPower));
+        if (Math.max(...this.humanPower) == 0) {
+          console.log("max......");
+          this.maxF33_humanpower = this.f33[1];
+          console.log("validate if2........", this.maxF33_humanpower);
+        } else {
+          this.maxF33_humanpower = this.f33;
+          // this.humanPower = Math.max(...this.humanPower);
+          console.log("validate else........", this.maxF33_humanpower);
+        }
+      }
+
       console.log("click 4 : " + type);
       this.$store.commit("setrffour", type);
       console.log("getter 4 : " + this.$store.getters.rffour);
@@ -234,13 +269,13 @@ export default {
     },
     cal: function() {
       let less =
-        "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2น้อยกว่าหรือเท่ากับ775mm";
-      let more = "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2มากกว่า775mm";
+        "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2น้อยกว่าหรือเท่ากับ890mm";
+      let more = "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2มากกว่า890mm";
       if (this.Wch != "" && this.Wveh != "") {
         let calculate = (this.Wveh - this.Wch) / 2;
         this.num = calculate;
         console.log("cal :" + this.num);
-        if (this.num > 775) {
+        if (this.num > 890) {
           this.MoreThan = false;
           this.LessEqual = true;
           this.$store.commit("setCheckWidth", more);
@@ -277,6 +312,7 @@ export default {
       .get(url)
       .then(function(response) {
         var data = response.data.values;
+        instance.data = response.data.values;
         //f1
         for (let i = 1; i < 2; i++) {
           for (let j = 1; j < 3; j++) {
@@ -313,6 +349,7 @@ export default {
             instance.f33.push(data[i][j]);
           }
         }
+
         //f4
         for (let i = 1; i < 2; i++) {
           for (let j = 16; j <= 22; j++) {
@@ -323,8 +360,8 @@ export default {
         // console.log("f2 >>" + instance.f2);
         // console.log("f31 >>" + instance.f31);
         // console.log("f311 >>" + instance.f311);
-        // console.log("f32 >>" + instance.f32);
-        // console.log("f33 >>" + instance.f33);
+        console.log("f32 >>" + instance.f32);
+        console.log("f33 >>" + instance.f33);
         // console.log("f4 >>" + instance.f4);
 
         //////////////////////////////////////////////////////////////////////////

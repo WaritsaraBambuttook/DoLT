@@ -90,7 +90,7 @@
     <!-- slot -->
     <b-row v-if="check===false">
       <b-col>
-        <h3>ระบบการสั่งจองกันชน</h3>
+        <h3>ระบบดาวน์โหลดอุปกรณ์ป้องกันด้านข้างและด้านท้ายรถบรรทุก</h3>
       </b-col>
     </b-row>
     <br />
@@ -182,23 +182,23 @@ export default {
     return {
       steps: [
         {
-          label: "1.ลักษณะของรถ",
+          label: "1.ลักษณะรถ",
           slot: "page1"
         },
         {
-          label: "2.ประเภทรถย่อย",
+          label: "2.ลักษณะรถย่อย",
           slot: "page2"
         },
         {
-          label: "3.ประเภทกันชน",
+          label: "3.ตำแหน่งติดตั้งอุปกรณ์",
           slot: "page3"
         },
         {
-          label: "4.ฟังก์ชั่นกันชน",
+          label: "4.ฟังก์ชั่นอุปกรณ์",
           slot: "page4"
         },
         {
-          label: "5.สรุปผล",
+          label: "5.สรุปแบบอุปกรณ์",
           slot: "page5",
           options: {
             nextDisabled: true // control whether next is disabled or not

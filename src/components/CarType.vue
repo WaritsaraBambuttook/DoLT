@@ -11,7 +11,7 @@
         <b-button class="carstyle" ref="myid" :variant="buttonColor" @click="carstyle(car.name)">
           <h6>{{car.name}}</h6>
           <b-col>
-            <b-img thumbnail fluid :src="car.type" :alt="car.name"></b-img>
+            <b-img thumbnail fluid :src="car.img" :alt="car.name"></b-img>
           </b-col>
         </b-button>
       </b-col>
@@ -70,7 +70,7 @@ export default {
         for (let i = 0; i < filtered.length; i++) {
           instance.carType.push({
             name: filtered[i],
-            type: instance.imgCar[i]
+            img: instance.imgCar[i]
           });
         }
       })
@@ -93,8 +93,8 @@ export default {
 .img {
   padding-left: unset;
   padding-right: unset;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 .carstyle:focus {
   background-color: darkgreen;
