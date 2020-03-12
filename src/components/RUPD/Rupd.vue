@@ -220,6 +220,7 @@ export default {
       console.log("getter 3 : " + this.$store.getters.rfthree);
     },
     four: function(type) {
+      //อนาคตอาจจะลบตรงนี้///////////////////////////////////////////////////////
       this.validateFixed = type;
       if (this.f32[0] == this.validateFixed) {
         this.humanPower = 0;
@@ -241,7 +242,6 @@ export default {
             this.humanPower.push(data[i][15]);
           }
         }
-        // console.log(Math.max(...this.humanPower));
         if (Math.max(...this.humanPower) == 0) {
           console.log("max......");
           this.maxF33_humanpower = this.f33[1];
@@ -252,6 +252,7 @@ export default {
           console.log("validate else........", this.maxF33_humanpower);
         }
       }
+      ///////////////////////////////////////////////////////////////////////
 
       console.log("click 4 : " + type);
       this.$store.commit("setrffour", type);
@@ -408,33 +409,33 @@ export default {
         console.log("index " + instance.index);
         console.log("type " + instance.type);
 
-        console.log("ctype" + instance.ctype);
-        console.log("itype" + instance.itype);
+        // console.log("ctype" + instance.ctype);
+        // console.log("itype" + instance.itype);
 
-        console.log("BoltsNuts " + instance.BoltsNuts);
-        console.log("Welding" + instance.Welding);
+        // console.log("BoltsNuts " + instance.BoltsNuts);
+        // console.log("Welding" + instance.Welding);
 
-        console.log("stay1 " + instance.stay1);
-        console.log("stay2" + instance.stay2);
-        console.log("trailer31 " + instance.trailer31);
-        console.log("trailer32" + instance.trailer32);
-        console.log("tippingVehicle " + instance.tippingVehicle);
-        console.log("trailerCoupling" + instance.trailerCoupling);
+        // console.log("stay1 " + instance.stay1);
+        // console.log("stay2" + instance.stay2);
+        // console.log("trailer31 " + instance.trailer31);
+        // console.log("trailer32" + instance.trailer32);
+        // console.log("tippingVehicle " + instance.tippingVehicle);
+        // console.log("trailerCoupling" + instance.trailerCoupling);
 
-        console.log("fixed " + instance.fixed);
-        console.log("slidable" + instance.slidable);
-        console.log("foldable " + instance.foldable);
+        // console.log("fixed " + instance.fixed);
+        // console.log("slidable" + instance.slidable);
+        // console.log("foldable " + instance.foldable);
 
-        console.log("noPower" + instance.noPower);
-        console.log("humanPower " + instance.humanPower);
+        // console.log("noPower" + instance.noPower);
+        // console.log("humanPower " + instance.humanPower);
 
-        console.log("tubeC" + instance.tubeC);
-        console.log("doubleRecht " + instance.doubleRecht);
-        console.log("lip" + instance.lip);
-        console.log("circle " + instance.circle);
-        console.log("square" + instance.square);
-        console.log("circle " + instance.recht);
-        console.log("square" + instance.cbeam);
+        // console.log("tubeC" + instance.tubeC);
+        // console.log("doubleRecht " + instance.doubleRecht);
+        // console.log("lip" + instance.lip);
+        // console.log("circle " + instance.circle);
+        // console.log("square" + instance.square);
+        // console.log("circle " + instance.recht);
+        // console.log("square" + instance.cbeam);
 
         //max
         console.log("Max ctype  " + Math.max(...instance.ctype));
