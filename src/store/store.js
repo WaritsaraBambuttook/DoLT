@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         CarStyle: '',
-        Bumpertype: 'กระบะบรรทุก',
+        Bumpertype: '',
         numberOfSubType: "",
         CheckWidth: '',
         RLtype: '',
@@ -22,6 +22,13 @@ export const store = new Vuex.Store({
         lffour: '',
         lffive: '',
         lfsix: '',
+        num_rf1: '',
+        num_rf2: '',
+        num_rf31: '',
+        num_rf32: '',
+        num_rf33: '',
+        num_rf4: '',
+
     },
     mutations: {
         setCarStyle(state, CarStyle) {
@@ -76,6 +83,24 @@ export const store = new Vuex.Store({
         setlfsix(state, lfsix) {
             state.lfsix = lfsix
         },
+        setnum_rf1(state, num_rf1) {
+            state.num_rf1 = num_rf1
+        },
+        setnum_rf2(state, num_rf2) {
+            state.num_rf2 = num_rf2
+        },
+        setnum_rf31(state, num_rf31) {
+            state.num_rf31 = num_rf31
+        },
+        setnum_rf32(state, num_rf32) {
+            state.num_rf32 = num_rf32
+        },
+        setnum_rf33(state, num_rf33) {
+            state.num_rf33 = num_rf33
+        },
+        setnum_rf4(state, num_rf4) {
+            state.num_rf4 = num_rf4
+        }
     },
     getters: {
         CarStyle: state => state.CarStyle,
@@ -95,6 +120,11 @@ export const store = new Vuex.Store({
         lffour: state => state.lffour,
         lffive: state => state.lffive,
         lfsix: state => state.lfsix,
-
+        num_rf1: state => state.num_rf1,
+        num_rf2: state => state.num_rf2,
+        num_rf31: state => state.num_rf31,
+        num_rf32: state => state.num_rf32,
+        num_rf33: state => state.num_rf33,
+        num_rf4: state => state.num_rf4,
     }
 })

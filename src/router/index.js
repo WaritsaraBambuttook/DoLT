@@ -6,7 +6,7 @@ import Address from '../pages/Address'
 import Stepper from '../pages/Stepper'
 import google from '../pages/googleSheet'
 import bumper from '../components/TypeofCar/TypeTwo.vue'
-import rupd from '../components/RUPD/Rupd.vue'
+import rupd from '../components/RUPD/Rsummary.vue'
 Vue.use(Router)
 
 export default new Router({

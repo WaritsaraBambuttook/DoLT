@@ -206,18 +206,51 @@ export default {
   methods: {
     one: function(type) {
       console.log("click 1. " + type);
+      if (type == this.f1[0]) {
+        this.$store.commit("setnum_rf1", 1);
+      }
+      if (type == this.f1[1]) {
+        this.$store.commit("setnum_rf1", 2);
+      }
       this.$store.commit("setrfone", type);
       console.log("getter 1 : " + this.$store.getters.rfone);
+      console.log("getter numf1 : " + this.$store.getters.num_rf1);
     },
     two: function(type) {
       console.log("click 2. " + type);
+      if (type == this.f2[0]) {
+        this.$store.commit("setnum_rf2", 1);
+      }
+      if (type == this.f2[1]) {
+        this.$store.commit("setnum_rf2", 2);
+      }
       this.$store.commit("setrftwo", type);
       console.log("getter 2: " + this.$store.getters.rftwo);
+      console.log("getter num f2 : " + this.$store.getters.num_rf2);
     },
     three: function(type) {
       console.log("click 3 : " + type);
+      if (type == this.f31[0]) {
+        this.$store.commit("setnum_rf31", 1);
+      }
+      if (type == this.f311[0]) {
+        this.$store.commit("setnum_rf31", 2);
+      }
+      if (type == this.f311[1]) {
+        this.$store.commit("setnum_rf31", 3);
+      }
+      if (type == this.f311[2]) {
+        this.$store.commit("setnum_rf31", 4);
+      }
+      if (type == this.f311[3]) {
+        this.$store.commit("setnum_rf31", 5);
+      }
+      if (type == this.f311[4]) {
+        this.$store.commit("setnum_rf31", 6);
+      }
       this.$store.commit("setrfthree", type);
       console.log("getter 3 : " + this.$store.getters.rfthree);
+      console.log("getter num f31 : " + this.$store.getters.num_rf31);
     },
     four: function(type) {
       //อนาคตอาจจะลบตรงนี้///////////////////////////////////////////////////////
@@ -253,20 +286,60 @@ export default {
         }
       }
       ///////////////////////////////////////////////////////////////////////
-
+      if (type == this.f32[0]) {
+        this.$store.commit("setnum_rf32", 1);
+      }
+      if (type == this.f32[1]) {
+        this.$store.commit("setnum_rf32", 2);
+      }
+      if (type == this.f32[2]) {
+        this.$store.commit("setnum_rf32", 3);
+      }
+      ///////////////////////////////////////////////////////////////////////
       console.log("click 4 : " + type);
       this.$store.commit("setrffour", type);
       console.log("getter 4 : " + this.$store.getters.rffour);
+      console.log("getter num f32 : " + this.$store.getters.num_rf32);
     },
+
     five: function(type) {
       console.log("click 5 : " + type);
+      if (type == this.f33[0]) {
+        this.$store.commit("setnum_rf33", 1);
+      }
+      if (type == this.f33[1]) {
+        this.$store.commit("setnum_rf33", 2);
+      }
       this.$store.commit("setrffive", type);
       console.log("getter 5 : " + this.$store.getters.rffive);
+      console.log("getter num f33 : " + this.$store.getters.num_rf33);
     },
     six: function(type) {
       console.log("click 6 : " + type);
+      if (type == this.f4[0]) {
+        this.$store.commit("setnum_rf4", 1);
+      }
+      if (type == this.f4[1]) {
+        this.$store.commit("setnum_rf4", 2);
+      }
+      if (type == this.f4[2]) {
+        this.$store.commit("setnum_rf4", 3);
+      }
+      if (type == this.f4[3]) {
+        this.$store.commit("setnum_rf4", 4);
+      }
+      if (type == this.f4[4]) {
+        this.$store.commit("setnum_rf4", 5);
+      }
+      if (type == this.f4[5]) {
+        this.$store.commit("setnum_rf4", 6);
+      }
+      if (type == this.f4[5]) {
+        this.$store.commit("setnum_rf4", 7);
+      }
       this.$store.commit("setrfsix", type);
       console.log("getter 6 : " + this.$store.getters.rfsix);
+      console.log("getter num f4 : " + this.$store.getters.num_rf4);
     },
     cal: function() {
       let less =
@@ -361,8 +434,8 @@ export default {
         // console.log("f2 >>" + instance.f2);
         // console.log("f31 >>" + instance.f31);
         // console.log("f311 >>" + instance.f311);
-        console.log("f32 >>" + instance.f32);
-        console.log("f33 >>" + instance.f33);
+        // console.log("f32 >>" + instance.f32);
+        // console.log("f33 >>" + instance.f33);
         // console.log("f4 >>" + instance.f4);
 
         //////////////////////////////////////////////////////////////////////////
@@ -370,7 +443,9 @@ export default {
         for (let i = 3; i < data.length; i++) {
           if (data[i][numberOfSubType] == 1) {
             instance.subType.push(data[i][numberOfSubType]);
+            //index
             instance.index.push(i);
+            //แบบที่
             instance.type.push(data[i][0]);
 
             instance.ctype.push(data[i][1]);
@@ -409,33 +484,33 @@ export default {
         console.log("index " + instance.index);
         console.log("type " + instance.type);
 
-        // console.log("ctype" + instance.ctype);
-        // console.log("itype" + instance.itype);
+        console.log("ctype" + instance.ctype);
+        console.log("itype" + instance.itype);
 
-        // console.log("BoltsNuts " + instance.BoltsNuts);
-        // console.log("Welding" + instance.Welding);
+        console.log("BoltsNuts " + instance.BoltsNuts);
+        console.log("Welding" + instance.Welding);
 
-        // console.log("stay1 " + instance.stay1);
-        // console.log("stay2" + instance.stay2);
-        // console.log("trailer31 " + instance.trailer31);
-        // console.log("trailer32" + instance.trailer32);
-        // console.log("tippingVehicle " + instance.tippingVehicle);
-        // console.log("trailerCoupling" + instance.trailerCoupling);
+        console.log("stay1 " + instance.stay1);
+        console.log("stay2" + instance.stay2);
+        console.log("trailer31 " + instance.trailer31);
+        console.log("trailer32" + instance.trailer32);
+        console.log("tippingVehicle " + instance.tippingVehicle);
+        console.log("trailerCoupling" + instance.trailerCoupling);
 
-        // console.log("fixed " + instance.fixed);
-        // console.log("slidable" + instance.slidable);
-        // console.log("foldable " + instance.foldable);
+        console.log("fixed " + instance.fixed);
+        console.log("slidable" + instance.slidable);
+        console.log("foldable " + instance.foldable);
 
-        // console.log("noPower" + instance.noPower);
-        // console.log("humanPower " + instance.humanPower);
+        console.log("noPower" + instance.noPower);
+        console.log("humanPower " + instance.humanPower);
 
-        // console.log("tubeC" + instance.tubeC);
-        // console.log("doubleRecht " + instance.doubleRecht);
-        // console.log("lip" + instance.lip);
-        // console.log("circle " + instance.circle);
-        // console.log("square" + instance.square);
-        // console.log("circle " + instance.recht);
-        // console.log("square" + instance.cbeam);
+        console.log("tubeC" + instance.tubeC);
+        console.log("doubleRecht " + instance.doubleRecht);
+        console.log("lip" + instance.lip);
+        console.log("circle " + instance.circle);
+        console.log("square" + instance.square);
+        console.log("circle " + instance.recht);
+        console.log("square" + instance.cbeam);
 
         //max
         console.log("Max ctype  " + Math.max(...instance.ctype));

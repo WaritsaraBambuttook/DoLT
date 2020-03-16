@@ -46,6 +46,8 @@
 </template>
 
 <script>
+var _ = require("lodash");
+import axios from "axios";
 export default {
   data() {
     return {
@@ -60,7 +62,43 @@ export default {
       type: "",
       locationFile: "",
       nameFile: "",
-      width: ""
+      width: "",
+      // subType: [],
+      // index: [],
+      // model: [],
+      // ctype: [],
+      // itype: [],
+      // BoltsNuts: [],
+      // Welding: [],
+      // stay1: [],
+      // stay2: [],
+      // trailer31: [],
+      // trailer32: [],
+      // tippingVehicle: [],
+      // trailerCoupling: [],
+      // fixed: [],
+      // slidable: [],
+      // foldable: [],
+      // noPower: [],
+      // humanPower: [],
+      // tubeC: [],
+      // doubleRecht: [],
+      // lip: [],
+      // circle: [],
+      // square: [],
+      // recht: [],
+      // cbeam: [],
+      // f1: [],
+      // f2: [],
+      // f31: [],
+      // f311: [],
+      // f32: [],
+      // f33: [],
+      // f4: []
+      allnum_rf: [],
+      pdf: [],
+      data: [],
+      index_rf: []
     };
   },
   created() {
@@ -75,773 +113,49 @@ export default {
     this.rf5 = this.$store.getters.rffive;
     this.rf6 = this.$store.getters.rfsix;
 
-    console.log(
-      this.car +
-        "  " +
-        this.bumper +
-        "  " +
-        this.type +
-        "  " +
-        this.width +
-        " " +
-        this.rf1 +
-        "  " +
-        this.rf2 +
-        "  " +
-        this.rf3 +
-        "  " +
-        this.rf4 +
-        "  " +
-        this.rf5 +
-        "  " +
-        this.rf6
-    );
+    ///////////////////
+    var f1 = this.$store.getters.num_rf1;
+    var f2 = this.$store.getters.num_rf2;
+    var f31 = this.$store.getters.num_rf31;
+    var f32 = this.$store.getters.num_rf32;
+    var f33 = this.$store.getters.num_rf33;
+    var f4 = this.$store.getters.num_rf4;
+    this.allnum_rf.push(f1, f2, f31, f32, f33, f4);
+
+    // console.log("all ", this.allnum_rf);
+    const typeName =
+      "RUPD-MTEC-" + this.allnum_rf.toString().replace(/,/g, "-");
+    console.log("typeName", typeName);
+
+    var instance = this;
+    var url =
+      "https://sheets.googleapis.com//v4/spreadsheets/1vfnoJq3AiL0GuHaGhI_q8W2zRUPBM9swH2V5_EW8MlU/values/A1:AQ76/?key=AIzaSyBdDxNQXwJyowwndJy54wQoynwFvQJiK_g";
+    axios
+      .get(url)
+      .then(function(response) {
+        // var data = response.data.values;
+        instance.data = response.data.values;
+        // console.log(instance.data);
+
+        //
+        for (let i = 3; i < instance.data.length; i++) {
+          // instance.allTpye.push(instance.data[i][0]);
+          if (typeName == instance.data[i][0]) {
+            instance.index_rf = i;
+            instance.pdf.push(instance.data[i][42]);
+          }
+        }
+
+        console.log("pdf ", instance.pdf);
+        console.log("instance.index_rf", instance.index_rf);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   },
   methods: {
     GeneratePDF: function() {
-      //RUPD1
-      if (
-        this.rf1 == "C-type" &&
-        this.rf2 == "ยึดด้วยโบลต์(Bolts-nuts)" &&
-        this.width ==
-          "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2น้อยกว่าหรือเท่ากับ775mm" &&
-        this.rf3 == "ขายึดแบบที่1(stay)" &&
-        this.rf4 == "แบบยึดตายตัว(Fixed)" &&
-        this.rf5 == "ไม่ใช้แรงคน(No-power)" &&
-        this.rf6 == "แบบผสมท่อและตัวซี(Tube+C-beam)"
-      ) {
-        this.locationFile =
-          "https://drive.google.com/u/0/uc?id=1qLXN4F8UQl9X8Bt8d84vmWfsWS321OEd&export=download";
-        console.log("RUPD 1");
-      }
-      //RUPD2
-      else if (
-        this.rf1 == "C-type" &&
-        this.rf2 == "ยึดด้วยโบลต์(Bolts-nuts)" &&
-        this.width ==
-          "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2น้อยกว่าหรือเท่ากับ775mm" &&
-        this.rf3 == "ขายึดแบบที่1(stay)" &&
-        this.rf4 == "แบบยึดตายตัว(Fixed)" &&
-        this.rf5 == "ไม่ใช้แรงคน(No-power)" &&
-        this.rf6 == "แบบผสมสี่เหลี่ยมประกบ(Double-recht)"
-      ) {
-        this.locationFile =
-          "https://drive.google.com/u/0/uc?id=1sVVrm8tA-c6w_zfc4szeB6i_zkoOTPIR&export=download";
-        console.log("RUPD 2");
-      }
-      //RUPD3
-      else if (
-        this.rf1 == "C-type" &&
-        this.rf2 == "ยึดด้วยโบลต์(Bolts-nuts)" &&
-        this.width ==
-          "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2น้อยกว่าหรือเท่ากับ775mm" &&
-        this.rf3 == "ขายึดแบบที่1(stay)" &&
-        this.rf4 == "แบบยึดตายตัว(Fixed)" &&
-        this.rf5 == "ไม่ใช้แรงคน(No-power)" &&
-        this.rf6 == "แบบผสมตัวซีประกบ(LIP-channel)"
-      ) {
-        console.log("RUPD 3");
-      }
-      //RUPD4
-      else if (
-        this.rf1 == "C-type" &&
-        this.rf2 == "ยึดด้วยโบลต์(Bolts-nuts)" &&
-        this.width ==
-          "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2น้อยกว่าหรือเท่ากับ775mm" &&
-        this.rf3 == "ขายึดแบบที่1(stay)" &&
-        this.rf4 == "แบบยึดตายตัว(Fixed)" &&
-        this.rf5 == "ไม่ใช้แรงคน(No-power)" &&
-        this.rf6 == "แบบท่อเดี่ยว(Circle)"
-      ) {
-        console.log("RUPD 4");
-      }
-      //RUPD5
-      else if (
-        this.rf1 == "C-type" &&
-        this.rf2 == "ยึดด้วยโบลต์(Bolts-nuts)" &&
-        this.width ==
-          "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2น้อยกว่าหรือเท่ากับ775mm" &&
-        this.rf3 == "ขายึดแบบที่1(stay)" &&
-        this.rf4 == "แบบยึดตายตัว(Fixed)" &&
-        this.rf5 == "ไม่ใช้แรงคน(No-power)" &&
-        this.rf6 == "แบบกล่องเดี่ยว(Square)"
-      ) {
-        console.log("RUPD 5");
-      }
-      //RUPD6
-      else if (
-        this.rf1 == "C-type" &&
-        this.rf2 == "ยึดด้วยโบลต์(Bolts-nuts)" &&
-        this.width ==
-          "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2น้อยกว่าหรือเท่ากับ775mm" &&
-        this.rf3 == "ขายึดแบบที่1(stay)" &&
-        this.rf4 == "แบบยึดตายตัว(Fixed)" &&
-        this.rf5 == "ไม่ใช้แรงคน(No-power)" &&
-        this.rf6 == "แบบกล่องผืนผ้าเดี่ยว(Recht)"
-      ) {
-        console.log("RUPD 6");
-      }
-      // //RUPD7
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "ยึดด้วยโบลต์(Bolts-nuts)" &&
-      //   this.width ==
-      //     "ส่วนต่างระหว่างความกว้างตัวรถและคัสซี W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "ขายึดแบบที่1(stay)" &&
-      //   this.rf4 == "แบบยึดตายตัว(Fixed)" &&
-      //   this.rf5 == "ไม่ใช้แรงคน(No-power)" &&
-      //   this.rf6 == "แบบกล่องผืนผ้าเดี่ยว(Recht)"
-      // ) {
-      //   console.log("RUPD 7");
-      // }
-      // //RUPD8
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "Double-recht"
-      // ) {
-      //   console.log("RUPD 8");
-      // }
-      // //RUPD9
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "LIP-channel"
-      // ) {
-      //   console.log("RUPD 9");
-      // }
-      // //RUPD10
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "Circle"
-      // ) {
-      //   console.log("RUPD 10");
-      // }
-      // //RUPD11
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "Square"
-      // ) {
-      //   console.log("RUPD 11");
-      // }
-      // //RUPD12
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "Recht"
-      // ) {
-      //   console.log("RUPD 12");
-      // }
-      // //RUPD13
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Tube+C-beam"
-      // ) {
-      //   console.log("RUPD 13");
-      // }
-      // //RUPD14
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Double-recht"
-      // ) {
-      //   console.log("RUPD 14");
-      // }
-      // //RUPD15
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "LIP-channel"
-      // ) {
-      //   console.log("RUPD 15");
-      // }
-      // //RUPD16
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Circle"
-      // ) {
-      //   console.log("RUPD 16");
-      // }
-      // //RUPD17
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Square"
-      // ) {
-      //   console.log("RUPD 17");
-      // }
-      // //RUPD18
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Recht"
-      // ) {
-      //   console.log("RUPD 18");
-      // }
-      // //RUPD19
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "Tube+C-beam"
-      // ) {
-      //   console.log("RUPD 19");
-      // }
-      // //RUPD20
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "Double-recht"
-      // ) {
-      //   console.log("RUPD 20");
-      // }
-      // //RUPD21
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "LIP-channel"
-      // ) {
-      //   console.log("RUPD 21");
-      // }
-      // //RUPD22
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "Circle"
-      // ) {
-      //   console.log("RUPD 22");
-      // }
-      // //RUPD23
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "Square"
-      // ) {
-      //   console.log("RUPD 23");
-      // }
-      // //RUPD24
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2มากกว่า775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "Recht"
-      // ) {
-      //   console.log("RUPD 24");
-      // }
-      // //RUPD25
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Tube+C-beam"
-      // ) {
-      //   console.log("RUPD 25");
-      // }
-      // //RUPD26
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Double-recht"
-      // ) {
-      //   console.log("RUPD 26");
-      // }
-      // //RUPD27
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "LIP-channel"
-      // ) {
-      //   console.log("RUPD 27");
-      // }
-      // //RUPD28
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Circle"
-      // ) {
-      //   console.log("RUPD 28");
-      // }
-      // //RUPD29
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Square"
-      // ) {
-      //   console.log("RUPD 29");
-      // }
-      // //RUPD30
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Recht"
-      // ) {
-      //   console.log("RUPD 30");
-      // }
-      // //RUPD31
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Tube+C-beam"
-      // ) {
-      //   console.log("RUPD 31");
-      // }
-      // //RUPD32
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Double-recht"
-      // ) {
-      //   console.log("RUPD 32");
-      // }
-      // //RUPD33
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "LIP-channel"
-      // ) {
-      //   console.log("RUPD 33");
-      // }
-      // //RUPD34
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Circle"
-      // ) {
-      //   console.log("RUPD 34");
-      // }
-      // //RUPD35
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Square"
-      // ) {
-      //   console.log("RUPD 35");
-      // }
-      // //RUPD36
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Slidable" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Recht"
-      // ) {
-      //   console.log("RUPD 36");
-      // }
-      // //RUPD37
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "2-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Tube+C-beam"
-      // ) {
-      //   console.log("RUPD 37");
-      // }
-      // //RUPD38
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "2-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Double-recht"
-      // ) {
-      //   console.log("RUPD 38");
-      // }
-      // //RUPD39
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "2-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "LIP-channel"
-      // ) {
-      //   console.log("RUPD 39");
-      // }
-      // //RUPD40
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "2-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Circle"
-      // ) {
-      //   console.log("RUPD 40");
-      // }
-      // //RUPD41
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "2-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Square"
-      // ) {
-      //   console.log("RUPD 41");
-      // }
-      // //RUPD42
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "2-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Recht"
-      // ) {
-      //   console.log("RUPD 42");
-      // }
-      // //RUPD43
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "3-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Tube+C-beam"
-      // ) {
-      //   console.log("RUPD 43");
-      // }
-      // //RUPD44
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "3-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Double-recht"
-      // ) {
-      //   console.log("RUPD 44");
-      // }
-      // //RUPD45
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "3-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "LIP-channel"
-      // ) {
-      //   console.log("RUPD 45");
-      // }
-      // //RUPD46
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "3-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Circle"
-      // ) {
-      //   console.log("RUPD 46");
-      // }
-      // //RUPD47
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "3-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Square"
-      // ) {
-      //   console.log("RUPD 47");
-      // }
-      // //RUPD48
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "3-axle-trailer" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Recht"
-      // ) {
-      //   console.log("RUPD 48");
-      // }
-      // //RUPD49
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Tipping-vechincle" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Tube+C-beam"
-      // ) {
-      //   console.log("RUPD 49");
-      // }
-      // //RUPD50
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Tipping-vechincle" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Double-recht"
-      // ) {
-      //   console.log("RUPD 50");
-      // }
-      // //RUPD51
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Tipping-vechincle" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "LIP-channel"
-      // ) {
-      //   console.log("RUPD 51");
-      // }
-      // //RUPD52
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Tipping-vechincle" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Circle"
-      // ) {
-      //   console.log("RUPD 52");
-      // }
-      // //RUPD53
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Tipping-vechincle" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Square"
-      // ) {
-      //   console.log("RUPD 53");
-      // }
-      // //RUPD54
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Tipping-vechincle" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Recht"
-      // ) {
-      //   console.log("RUPD 54");
-      // }
-      // //RUPD55
-      // else if (
-      //   this.rf1 == "I-type" &&
-      //   this.rf2 == "Welding" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trapezord-stay" &&
-      //   this.rf4 == "Foldable" &&
-      //   this.rf5 == "Human-power" &&
-      //   this.rf6 == "C-beam"
-      // ) {
-      //   console.log("RUPD 55");
-      // }
-      // //RUPD56
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trailer-coupling" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Tube+C-beam"
-      // ) {
-      //   console.log("RUPD 56");
-      // }
-      // //RUPD57
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trailer-coupling" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Double-recht"
-      // ) {
-      //   console.log("RUPD 57");
-      // }
-      // //RUPD58
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trailer-coupling" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "LIP-channel"
-      // ) {
-      //   console.log("RUPD 58");
-      // }
-      // //RUPD59
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trailer-coupling" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Circle"
-      // ) {
-      //   console.log("RUPD 59");
-      // }
-      // //RUPD60
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trailer-coupling" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Square"
-      // ) {
-      //   console.log("RUPD 60");
-      // }
-      // //RUPD61
-      // else if (
-      //   this.rf1 == "C-type" &&
-      //   this.rf2 == "Bolts-nuts" &&
-      //   this.width == "W/2น้อยกว่าหรือเท่ากับ775mm" &&
-      //   this.rf3 == "Trailer-coupling" &&
-      //   this.rf4 == "Fixed" &&
-      //   this.rf5 == "No-power" &&
-      //   this.rf6 == "Recht"
-      // ) {
-      //   console.log("RUPD 61");
-      // }
+      this.locationFile = this.pdf;
     }
   }
 };
