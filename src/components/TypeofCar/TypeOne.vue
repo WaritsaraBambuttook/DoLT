@@ -31,9 +31,9 @@ export default {
       type: [],
       index: [],
       CarImg: [
-        require("../../assets/ImgCarType/1.jpg"),
-        require("../../assets/ImgCarType/2.jpg"),
-        require("../../assets/ImgCarType/3.jpg")
+        require("../../assets/ImgCarType/icon_001_1.1.png"),
+        require("../../assets/ImgCarType/icon_001_1.2.png"),
+        require("../../assets/ImgCarType/icon_001_1.3.png")
       ],
       allData: []
     };
@@ -77,7 +77,6 @@ export default {
           for (let j = 23; j < 26; j++) {
             console.log(data[i][j]);
             instance.type.push(data[i][j]);
-
             instance.index.push(j);
           }
         }
@@ -98,9 +97,9 @@ export default {
 };
 </script>
 <style>
-.img-thumbnail {
+/* .img-thumbnail {
   width: 60%;
-}
+} */
 .carstyle {
   padding-left: unset;
   padding-right: unset;

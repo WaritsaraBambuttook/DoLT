@@ -13,6 +13,10 @@ Vue.use(ButtonPlugin)
 import { LayoutPlugin } from 'bootstrap-vue'
 Vue.use(LayoutPlugin)
 
+import VueFormWizard from 'vue-form-wizard'
+import 'vue-form-wizard/dist/vue-form-wizard.min.css'
+Vue.use(VueFormWizard)
+
 // Install BootstrapVue
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin

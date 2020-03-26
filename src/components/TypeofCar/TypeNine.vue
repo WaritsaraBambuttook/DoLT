@@ -10,7 +10,7 @@
               class="img"
               thumbnail
               fluid
-              :src="require('../../assets/logo.png')"
+              :src="require('../../assets/ImgCarType/icon_009.png')"
               alt="Image 1"
             ></b-img>
           </b-col>

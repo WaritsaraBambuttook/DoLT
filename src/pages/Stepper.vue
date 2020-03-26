@@ -177,6 +177,11 @@ export default {
         ? true
         : false;
     }
+    // slot1() {
+    //   return {
+    //     "background-color": "#4e1771"
+    //   };
+    // }
   },
   data() {
     return {
@@ -412,10 +417,10 @@ export default {
 };
 </script> 
 <style>
-.wizard__step.active .wizard__step__indicator[data-v-c21d83ca] {
+/* .wizard__step.active .wizard__step__indicator[data-v-c21d83ca] {
   background-color: #4e1771;
-}
-.wizard__step__indicator[data-v-c21d83ca] {
+} */
+/* .wizard__step__indicator[data-v-c21d83ca] {
   width: 20px;
   height: 20px;
   background-color: #d7b0f0;
@@ -437,7 +442,7 @@ export default {
 }
 .wizard__step.active:not(:first-child) .wizard__step__line[data-v-c21d83ca] {
   background-color: #000000;
-}
+} */
 .confirm {
   background-color: #4d2b68; /*Button Color*/
   color: #fff;

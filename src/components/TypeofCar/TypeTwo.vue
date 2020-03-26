@@ -11,7 +11,7 @@
               class="img"
               thumbnail
               fluid
-              :src="require('../../assets/logo.png')"
+              :src="require('../../assets/ImgCarType/icon_002.png')"
               alt="Image 1"
             ></b-img>
           </b-col>
@@ -30,7 +30,8 @@ export default {
     return {
       buttonColor: "outline-success",
       type: [],
-      index: []
+      index: [],
+      CarImg: []
     };
   },
   methods: {

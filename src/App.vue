@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-navbar toggleable="lg" type="dark" variant="info">
+    <b-navbar toggleable="lg" type="dark" variant="info" :style="navCss">
       <b-navbar-brand to="/">หน้าแรก</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
@@ -45,6 +45,17 @@ export default {
     return {
       // testCollection: []
     };
+  },
+  computed: {
+    navCss() {
+      return {
+        "background-color": "#563d7c !important",
+        position: "-webkit-sticky",
+        position: "sticky",
+        top: 0,
+        "z-index": 1071
+      };
+    }
   }
   // mounted() {
   //   const db = this.$firebase.firestore();
@@ -63,25 +74,25 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Kanit&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Kanit&display=swap");
 html,
 body {
   background-color: rgb(248, 239, 252);
   font-family: "Kanit";
-}
+} */
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #4d2b68;
 }
-.bg-info {
+/* .bg-info {
   background-color: #563d7c !important;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1071;
-}
+} */
 #sticky-footer {
   flex-shrink: 0;
 }

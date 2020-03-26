@@ -2,17 +2,16 @@
   <div>
     <br />
     <b-row>
-      <b-col v-for="type in type" :key="type" class="col-12 col-sm-4" style="margin-top: 10px;">
-        <b-button class="carstyle" :variant="buttonColor" @click="subType(type)">
+      <b-col
+        v-for="allData in allData"
+        :key="allData.name"
+        class="col-12 col-sm-4"
+        style="margin-top: 10px;"
+      >
+        <b-button class="carstyle" :variant="buttonColor" @click="subType(allData.name)">
           <b-col>
-            <h6>{{type}}</h6>
-            <b-img
-              class="img"
-              thumbnail
-              fluid
-              :src="require('../../assets/logo.png')"
-              alt="Image 1"
-            ></b-img>
+            <h6>{{allData.name}}</h6>
+            <b-img class="img" thumbnail fluid :src="allData.img" alt="Image 1"></b-img>
           </b-col>
         </b-button>
       </b-col>
@@ -29,7 +28,12 @@ export default {
       one: "",
       buttonColor: "outline-success",
       type: [],
-      index: []
+      index: [],
+      CarImg: [
+        require("../../assets/ImgCarType/icon_007_7.1.png"),
+        require("../../assets/ImgCarType/icon_007_7.2.png")
+      ],
+      allData: []
     };
   },
   methods: {
@@ -64,6 +68,13 @@ export default {
         }
         console.log(instance.type);
         console.log("index " + instance.index);
+        for (let i = 0; i < instance.type.length; i++) {
+          instance.allData.push({
+            name: instance.type[i],
+            img: instance.CarImg[i]
+          });
+        }
+        console.log("all data", instance.allData);
       })
       .catch(function(error) {
         console.log(error);

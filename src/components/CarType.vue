@@ -11,7 +11,7 @@
         <b-button class="carstyle" ref="myid" :variant="buttonColor" @click="carstyle(car.name)">
           <h6>{{car.name}}</h6>
           <b-col>
-            <b-img thumbnail fluid :src="car.img" :alt="car.name"></b-img>
+            <b-img class="img" thumbnail fluid :src="car.img" :alt="car.name"></b-img>
           </b-col>
         </b-button>
       </b-col>
@@ -27,15 +27,15 @@ export default {
     return {
       buttonColor: "outline-success",
       imgCar: [
-        require("../assets/ImgCarType/1.jpg"),
-        require("../assets/ImgCarType/2.jpg"),
-        require("../assets/ImgCarType/3.jpg"),
-        require("../assets/ImgCarType/4.jpg"),
-        require("../assets/ImgCarType/5.jpg"),
-        require("../assets/ImgCarType/6.jpg"),
-        require("../assets/ImgCarType/7.jpg"),
-        require("../assets/ImgCarType/8.jpg"),
-        require("../assets/ImgCarType/9.jpg")
+        require("../assets/ImgCarType/icon_001_1.1.png"),
+        require("../assets/ImgCarType/icon_002.png"),
+        require("../assets/ImgCarType/icon_003.png"),
+        require("../assets/ImgCarType/icon_004.png"),
+        require("../assets/ImgCarType/icon_005_5.1.png"),
+        require("../assets/ImgCarType/icon_007_6.1.png"),
+        require("../assets/ImgCarType/icon_007_7.1.png"),
+        require("../assets/ImgCarType/icon_008.png"),
+        require("../assets/ImgCarType/icon_009.png")
       ],
       head: [],
       carType: []

@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "npm run dev"
+    "build": "node build/build.js",
+    "deploy:firebase": "npm run build && firebase deploy --only hosting"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -17,6 +18,7 @@
     "google-spreadsheet": "^3.0.9",
     "nodegit": "^0.26.5",
     "vue": "^2.5.2",
+    "vue-form-wizard": "^0.8.4",
     "vue-good-wizard": "^1.4.1",
     "vue-google-charts": "^0.3.2",
     "vue-router": "^3.0.1",
