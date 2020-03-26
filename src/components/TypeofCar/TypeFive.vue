@@ -11,7 +11,7 @@
         <b-button class="carstyle" :variant="buttonColor" @click="subType(allData.name)">
           <b-col>
             <h6>{{allData.name}}</h6>
-            <b-img class="img" thumbnail fluid :src="allData.img" alt="Image 1"></b-img>
+            <b-img class="imgTypefive" thumbnail fluid :src="allData.img" alt="Image 1"></b-img>
           </b-col>
         </b-button>
       </b-col>
@@ -98,11 +98,10 @@ export default {
   height: 100%;
   width: 60%;
 }
-.img {
+.imgTypefive {
   padding-left: unset;
   padding-right: unset;
-  width: 100px;
-  height: 100px;
+  width: 150px;
 }
 .carstyle:focus {
   background-color: darkgreen;

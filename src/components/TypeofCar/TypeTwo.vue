@@ -8,7 +8,7 @@
           <b-col>
             <h6>{{type}}</h6>
             <b-img
-              class="img"
+              class="imgTypetwo"
               thumbnail
               fluid
               :src="require('../../assets/ImgCarType/icon_002.png')"
@@ -81,11 +81,10 @@ export default {
   height: 100%;
   width: 60%;
 }
-.img {
+.imgTypetwo {
   padding-left: unset;
   padding-right: unset;
-  width: 100px;
-  height: 100px;
+  width: 150px;
 }
 .carstyle:focus {
   background-color: darkgreen;

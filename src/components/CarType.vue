@@ -11,7 +11,7 @@
         <b-button class="carstyle" ref="myid" :variant="buttonColor" @click="carstyle(car.name)">
           <h6>{{car.name}}</h6>
           <b-col>
-            <b-img class="img" thumbnail fluid :src="car.img" :alt="car.name"></b-img>
+            <b-img class="imgCartype" thumbnail fluid :src="car.img" :alt="car.name"></b-img>
           </b-col>
         </b-button>
       </b-col>
@@ -89,11 +89,10 @@ export default {
   height: 100%;
   width: 60%;
 }
-.img {
+.imgCartype {
   padding-left: unset;
   padding-right: unset;
   width: 150px;
-  height: 150px;
 }
 .carstyle:focus {
   background-color: darkgreen;
