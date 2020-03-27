@@ -11,7 +11,7 @@
         <b-button class="carstyle" :variant="buttonColor" @click="subType(allData.name)">
           <b-col>
             <h6>{{allData.name}}</h6>
-            <b-img class="imgTypeone" thumbnail fluid :src="allData.img" alt="Image 1"></b-img>
+            <b-img :style="imgTypeone" thumbnail fluid :src="allData.img" alt="Image 1"></b-img>
           </b-col>
         </b-button>
       </b-col>
@@ -93,10 +93,19 @@ export default {
       .catch(function(error) {
         console.log(error);
       });
+  },
+  computed: {
+    imgTypeone() {
+      return {
+        "padding-left": "unset",
+        "padding-right": "unset",
+        width: "150px"
+      };
+    }
   }
 };
 </script>
-<style>
+<style lang="css" scoped>
 /* .img-thumbnail {
   width: 60%;
 } */
@@ -106,11 +115,11 @@ export default {
   height: 100%;
   width: 60%;
 }
-.imgTypeone {
+/* .imgTypeone {
   padding-left: unset;
   padding-right: unset;
   width: 150px;
-}
+} */
 .carstyle:focus {
   background-color: darkgreen;
 }

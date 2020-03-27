@@ -126,6 +126,7 @@
  
 <script>
 // import Stepper from "vuejs-stepper";
+import wizard from "./Wizard";
 import Order from "../components/CarType";
 import Bumper1 from "../components/TypeofCar/TypeOne";
 import Bumper2 from "../components/TypeofCar/TypeTwo";
@@ -158,7 +159,8 @@ export default {
     RUPD,
     LUPD,
     Rsummary,
-    Lsummary
+    Lsummary,
+    "vue-good-wizard": wizard
   },
   computed: {
     firstnameState() {
@@ -416,39 +418,10 @@ export default {
   }
 };
 </script> 
-<style>
-/* .wizard__step.active .wizard__step__indicator[data-v-c21d83ca] {
-  background-color: #4e1771;
-} */
-/* .wizard__step__indicator[data-v-c21d83ca] {
-  width: 20px;
-  height: 20px;
-  background-color: #d7b0f0;
-  border: 3px solid #4e1771;
-}
-.wizard__step__label[data-v-c21d83ca] {
-  color: black;
-  font-weight: bold;
-}
-.wizard__body__actions[data-v-c21d83ca] {
-  border-top: 1px solid #4e1771;
-  background-color: #d7b0f0;
-}
-.wizard__body__actions a[data-v-c21d83ca] {
-  background-color: #4e1771;
-}
-.wizard__body__actions a[data-v-c21d83ca]:hover {
-  background-color: #4e1771;
-}
-.wizard__step.active:not(:first-child) .wizard__step__line[data-v-c21d83ca] {
-  background-color: #000000;
-} */
+<style lang="css" scoped >
 .confirm {
   background-color: #4d2b68; /*Button Color*/
   color: #fff;
   width: 20%;
 }
-/* #jumbotron {
-  background-image: url("../assets/Car-icon.png");
-} */
 </style>

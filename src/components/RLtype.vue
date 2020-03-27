@@ -52,7 +52,7 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="css" scoped>
 .RLstyle {
   padding-left: unset;
   padding-right: unset;

@@ -8,7 +8,7 @@
           <b-col>
             <h6>{{type}}</h6>
             <b-img
-              class="imgTypetwo"
+              :style="imgTypetwo"
               thumbnail
               fluid
               :src="require('../../assets/ImgCarType/icon_002.png')"
@@ -68,10 +68,19 @@ export default {
       .catch(function(error) {
         console.log(error);
       });
+  },
+  computed: {
+    imgTypetwo() {
+      return {
+        "padding-left": "unset",
+        "padding-right": "unset",
+        width: "150px"
+      };
+    }
   }
 };
 </script>
-<style>
+<style lang="css" scoped>
 .img-thumbnail {
   width: 60%;
 }
@@ -81,11 +90,11 @@ export default {
   height: 100%;
   width: 60%;
 }
-.imgTypetwo {
+/* .imgTypetwo {
   padding-left: unset;
   padding-right: unset;
   width: 150px;
-}
+} */
 .carstyle:focus {
   background-color: darkgreen;
 }
