@@ -97,6 +97,7 @@ export default {
   padding-right: unset;
   height: 100%;
   width: 60%;
+  border: solid;
 }
 /* .imgCartype {
   padding-left: unset;

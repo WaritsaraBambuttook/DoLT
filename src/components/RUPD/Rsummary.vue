@@ -30,7 +30,7 @@
       <b-row class="col-12 col-sm-12">
         <b-col>
           <a :href="locationFile">
-            <b-button @click="GeneratePDF">download</b-button>
+            <b-button @click="GeneratePDF" variant="success">download</b-button>
           </a>
 
           <br />

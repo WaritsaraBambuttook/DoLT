@@ -89,6 +89,7 @@ export default {
   padding-right: unset;
   height: 100%;
   width: 60%;
+  border: solid;
 }
 /* .imgTypeeight {
   padding-left: unset;

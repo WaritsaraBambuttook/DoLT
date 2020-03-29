@@ -88,6 +88,7 @@ export default {
   padding-right: unset;
   height: 100%;
   width: 60%;
+  border: solid;
 }
 /* .imgTypethree {
   padding-left: unset;

@@ -58,6 +58,7 @@ export default {
   padding-right: unset;
   height: 100%;
   width: 70%;
+  border: solid;
 }
 .imgRL {
   padding-left: unset;

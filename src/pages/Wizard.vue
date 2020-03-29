@@ -216,9 +216,9 @@ export default {
   display: block;
   width: 20px;
   height: 20px;
-  background-color: #d7b0f0;
+  background-color: white;
   border-radius: 50%;
-  border: 3px solid #4e1771;
+  border: 3px solid #230444;
   position: absolute;
   left: 50%;
   margin-left: -10px;
@@ -226,7 +226,7 @@ export default {
   z-index: 1;
 }
 .wizard__step.active .wizard__step__indicator {
-  background-color: #4e1771;
+  background-color: #230444;
 }
 .wizard__step.active:not(:first-child) .wizard__step__line {
   background-color: #000000; /* green */
@@ -275,14 +275,14 @@ export default {
   bottom: 0px;
   height: 50px;
   width: 100%;
-  border-top: 1px solid #4e1771;
-  background-color: #d7b0f0;
+  border-top: 1px solid #230444;
+  background-color: #f3f3f3;
 }
 .wizard__body__actions a {
   width: 120px;
   height: 100%;
   display: block;
-  background-color: #4e1771;
+  background-color: #230444;
   color: white;
   font-weight: bold;
   text-align: center;
@@ -326,10 +326,10 @@ export default {
   left: -10px;
 }
 .wizard__body__actions a:hover {
-  background-color: #357fae;
+  background-color: #230444;
 }
 .wizard__body__actions a.final-step {
-  background-color: #6eb165;
+  background-color: #596157;
 }
 /* mobile */
 .wizard__body.vgw-mobile {
