@@ -25,7 +25,7 @@ export default {
   store,
   data() {
     return {
-      buttonColor: "outline-success",
+      buttonColor: "light",
       imgCar: [
         require("../assets/ImgCarType/icon_001_1.1.png"),
         require("../assets/ImgCarType/icon_002.png"),
@@ -105,6 +105,6 @@ export default {
   width: 150px;
 } */
 .carstyle:focus {
-  background-color: darkgreen;
+  background-color: #b8b2a6;
 }
 </style>

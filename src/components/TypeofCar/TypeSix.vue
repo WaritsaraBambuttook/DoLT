@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       one: "",
-      buttonColor: "outline-success",
+      buttonColor: "light",
       type: [],
       index: [],
       CarImg: [
@@ -82,7 +82,7 @@ export default {
       });
   },
   computed: {
-    imgCartype() {
+    imgTypesix() {
       return {
         "padding-left": "unset",
         "padding-right": "unset",
@@ -110,6 +110,6 @@ export default {
   height: 100px;
 } */
 .carstyle:focus {
-  background-color: darkgreen;
+  background-color: #b8b2a6;
 }
 </style>

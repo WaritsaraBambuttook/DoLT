@@ -232,7 +232,7 @@ export default {
   background-color: #000000; /* green */
 }
 .wizard__step__label {
-  color: #98a4af;
+  color: #230444;
   font-weight: bold;
 }
 /* Wizard body 
@@ -240,8 +240,8 @@ export default {
 .wizard__body {
   margin-top: 30px;
   min-height: 400px;
-  margin-left: 50px;
-  margin-right: 50px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
   border: 1px solid #aebac4;
   background-color: #fff;
   position: relative;

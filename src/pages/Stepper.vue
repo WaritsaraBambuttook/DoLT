@@ -89,8 +89,8 @@
     </b-row>
     <!-- slot -->
     <b-row v-if="check===false">
-      <b-col>
-        <h3>ระบบดาวน์โหลดอุปกรณ์ป้องกันด้านข้างและด้านท้ายรถบรรทุก</h3>
+      <b-col class="title">
+        <h3 style="margin:10px;">ระบบดาวน์โหลดอุปกรณ์ป้องกันด้านข้างและด้านท้ายรถบรรทุก</h3>
       </b-col>
     </b-row>
     <br />
@@ -421,6 +421,11 @@ export default {
 };
 </script> 
 <style lang="css" scoped >
+.title {
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 0;
+}
 .confirm {
   background-color: #4d2b68; /*Button Color*/
   color: #fff;

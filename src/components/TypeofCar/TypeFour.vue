@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       one: "",
-      buttonColor: "outline-success",
+      buttonColor: "light",
       type: [],
       index: []
     };
@@ -96,6 +96,6 @@ export default {
   width: 150px;
 } */
 .carstyle:focus {
-  background-color: darkgreen;
+  background-color: #b8b2a6;
 }
 </style>

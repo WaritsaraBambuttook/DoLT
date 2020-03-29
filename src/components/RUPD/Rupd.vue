@@ -478,72 +478,6 @@ export default {
             instance.cbeam.push(data[i][22]);
           }
         }
-        // console.log("f1 " + instance.f1[1]);
-
-        // console.log("subtype " + instance.subType);
-        // console.log("index " + instance.index);
-        // console.log("type " + instance.type);
-
-        // console.log("ctype" + instance.ctype);
-        // console.log("itype" + instance.itype);
-
-        // console.log("BoltsNuts " + instance.BoltsNuts);
-        // console.log("Welding" + instance.Welding);
-
-        // console.log("stay1 " + instance.stay1);
-        // console.log("stay2" + instance.stay2);
-        // console.log("trailer31 " + instance.trailer31);
-        // console.log("trailer32" + instance.trailer32);
-        // console.log("tippingVehicle " + instance.tippingVehicle);
-        // console.log("trailerCoupling" + instance.trailerCoupling);
-
-        // console.log("fixed " + instance.fixed);
-        // console.log("slidable" + instance.slidable);
-        // console.log("foldable " + instance.foldable);
-
-        // console.log("noPower" + instance.noPower);
-        // console.log("humanPower " + instance.humanPower);
-
-        // console.log("tubeC" + instance.tubeC);
-        // console.log("doubleRecht " + instance.doubleRecht);
-        // console.log("lip" + instance.lip);
-        // console.log("circle " + instance.circle);
-        // console.log("square" + instance.square);
-        // console.log("circle " + instance.recht);
-        // console.log("square" + instance.cbeam);
-
-        // //max
-        // console.log("Max ctype  " + Math.max(...instance.ctype));
-        // console.log("Max itype  " + Math.max(...instance.itype));
-
-        // console.log("Max BoltsNuts  " + Math.max(...instance.BoltsNuts));
-        // console.log("Max Welding  " + Math.max(...instance.Welding));
-
-        // console.log("Max stay1  " + Math.max(...instance.stay1));
-        // console.log("Max stay2  " + Math.max(...instance.stay2));
-        // console.log("Max trailer31  " + Math.max(...instance.trailer31));
-        // console.log("Max trailer32  " + Math.max(...instance.trailer32));
-        // console.log(
-        //   "Max tippingVehicle  " + Math.max(...instance.tippingVehicle)
-        // );
-        // console.log(
-        //   "Max trailerCoupling  " + Math.max(...instance.trailerCoupling)
-        // );
-
-        // console.log("Max fixed  " + Math.max(...instance.fixed));
-        // console.log("Max slidable  " + Math.max(...instance.slidable));
-        // console.log("Max foldable  " + Math.max(...instance.foldable));
-
-        // console.log("Max noPower  " + Math.max(...instance.noPower));
-        // console.log("Max humanPower  " + Math.max(...instance.humanPower));
-
-        // console.log("Max tubeC  " + Math.max(...instance.tubeC));
-        // console.log("Max doubleRecht  " + Math.max(...instance.doubleRecht));
-        // console.log("Max lip  " + Math.max(...instance.lip));
-        // console.log("Max circle  " + Math.max(...instance.circle));
-        // console.log("Max square  " + Math.max(...instance.square));
-        // console.log("Max recht  " + Math.max(...instance.recht));
-        // console.log("Max cbeam  " + Math.max(...instance.cbeam));
 
         const arrFindCtype = instance.ctype.find(el => el > 0);
         const arrFinditype = instance.itype.find(el => el > 0);
@@ -578,28 +512,28 @@ export default {
         const arrFindrecht = instance.recht.find(el => el > 0);
         const arrFindcbeam = instance.cbeam.find(el => el > 0);
 
-        console.log("arrFindCtype ", arrFindCtype);
-        console.log("arrFinditype ", arrFinditype);
-        console.log("arrFindBoltsNuts ", arrFindBoltsNuts);
-        console.log("arrFindWelding ", arrFindWelding);
-        console.log("arrFindstay1 ", arrFindstay1);
-        console.log("arrFindstay2 ", arrFindstay2);
-        console.log("arrFindtrailer31 ", arrFindtrailer31);
-        console.log("arrFindtrailer32 ", arrFindtrailer32);
-        console.log("arrFindtippingVehicle ", arrFindtippingVehicle);
-        console.log("arrFindtrailerCoupling ", arrFindtrailerCoupling);
-        console.log("arrFindfixed ", arrFindfixed);
-        console.log("arrFindslidable ", arrFindslidable);
-        console.log("arrFindfoldable ", arrFindfoldable);
-        console.log("arrFindnoPower ", arrFindnoPower);
-        console.log("arrFindhumanPower ", arrFindhumanPower);
-        console.log("arrFindtubeC ", arrFindtubeC);
-        console.log("arrFinddoubleRecht ", arrFinddoubleRecht);
-        console.log("arrFindlip ", arrFindlip);
-        console.log("arrFindcircle ", arrFindcircle);
-        console.log("arrFindsquare ", arrFindsquare);
-        console.log("arrFindrecht ", arrFindrecht);
-        console.log("arrFindcbeam ", arrFindcbeam);
+        // console.log("arrFindCtype ", arrFindCtype);
+        // console.log("arrFinditype ", arrFinditype);
+        // console.log("arrFindBoltsNuts ", arrFindBoltsNuts);
+        // console.log("arrFindWelding ", arrFindWelding);
+        // console.log("arrFindstay1 ", arrFindstay1);
+        // console.log("arrFindstay2 ", arrFindstay2);
+        // console.log("arrFindtrailer31 ", arrFindtrailer31);
+        // console.log("arrFindtrailer32 ", arrFindtrailer32);
+        // console.log("arrFindtippingVehicle ", arrFindtippingVehicle);
+        // console.log("arrFindtrailerCoupling ", arrFindtrailerCoupling);
+        // console.log("arrFindfixed ", arrFindfixed);
+        // console.log("arrFindslidable ", arrFindslidable);
+        // console.log("arrFindfoldable ", arrFindfoldable);
+        // console.log("arrFindnoPower ", arrFindnoPower);
+        // console.log("arrFindhumanPower ", arrFindhumanPower);
+        // console.log("arrFindtubeC ", arrFindtubeC);
+        // console.log("arrFinddoubleRecht ", arrFinddoubleRecht);
+        // console.log("arrFindlip ", arrFindlip);
+        // console.log("arrFindcircle ", arrFindcircle);
+        // console.log("arrFindsquare ", arrFindsquare);
+        // console.log("arrFindrecht ", arrFindrecht);
+        // console.log("arrFindcbeam ", arrFindcbeam);
 
         //f1
         if (arrFindCtype != 1) {

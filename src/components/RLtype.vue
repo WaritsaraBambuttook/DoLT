@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       data: "",
-      buttonColor: "outline-success"
+      buttonColor: "light"
     };
   },
   methods: {
@@ -67,6 +67,6 @@ export default {
   height: 150px;
 }
 .RLstyle:focus {
-  background-color: darkgreen;
+  background-color: #b8b2a6;
 }
 </style>
