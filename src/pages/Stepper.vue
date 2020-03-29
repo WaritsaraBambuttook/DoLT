@@ -121,6 +121,8 @@
         </vue-good-wizard>
       </b-col>
     </b-row>
+    <br />
+    <br />
   </div>
 </template>
  

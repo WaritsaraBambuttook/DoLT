@@ -480,142 +480,198 @@ export default {
         }
         // console.log("f1 " + instance.f1[1]);
 
-        console.log("subtype " + instance.subType);
-        console.log("index " + instance.index);
-        console.log("type " + instance.type);
+        // console.log("subtype " + instance.subType);
+        // console.log("index " + instance.index);
+        // console.log("type " + instance.type);
 
-        console.log("ctype" + instance.ctype);
-        console.log("itype" + instance.itype);
+        // console.log("ctype" + instance.ctype);
+        // console.log("itype" + instance.itype);
 
-        console.log("BoltsNuts " + instance.BoltsNuts);
-        console.log("Welding" + instance.Welding);
+        // console.log("BoltsNuts " + instance.BoltsNuts);
+        // console.log("Welding" + instance.Welding);
 
-        console.log("stay1 " + instance.stay1);
-        console.log("stay2" + instance.stay2);
-        console.log("trailer31 " + instance.trailer31);
-        console.log("trailer32" + instance.trailer32);
-        console.log("tippingVehicle " + instance.tippingVehicle);
-        console.log("trailerCoupling" + instance.trailerCoupling);
+        // console.log("stay1 " + instance.stay1);
+        // console.log("stay2" + instance.stay2);
+        // console.log("trailer31 " + instance.trailer31);
+        // console.log("trailer32" + instance.trailer32);
+        // console.log("tippingVehicle " + instance.tippingVehicle);
+        // console.log("trailerCoupling" + instance.trailerCoupling);
 
-        console.log("fixed " + instance.fixed);
-        console.log("slidable" + instance.slidable);
-        console.log("foldable " + instance.foldable);
+        // console.log("fixed " + instance.fixed);
+        // console.log("slidable" + instance.slidable);
+        // console.log("foldable " + instance.foldable);
 
-        console.log("noPower" + instance.noPower);
-        console.log("humanPower " + instance.humanPower);
+        // console.log("noPower" + instance.noPower);
+        // console.log("humanPower " + instance.humanPower);
 
-        console.log("tubeC" + instance.tubeC);
-        console.log("doubleRecht " + instance.doubleRecht);
-        console.log("lip" + instance.lip);
-        console.log("circle " + instance.circle);
-        console.log("square" + instance.square);
-        console.log("circle " + instance.recht);
-        console.log("square" + instance.cbeam);
+        // console.log("tubeC" + instance.tubeC);
+        // console.log("doubleRecht " + instance.doubleRecht);
+        // console.log("lip" + instance.lip);
+        // console.log("circle " + instance.circle);
+        // console.log("square" + instance.square);
+        // console.log("circle " + instance.recht);
+        // console.log("square" + instance.cbeam);
 
-        //max
-        console.log("Max ctype  " + Math.max(...instance.ctype));
-        console.log("Max itype  " + Math.max(...instance.itype));
+        // //max
+        // console.log("Max ctype  " + Math.max(...instance.ctype));
+        // console.log("Max itype  " + Math.max(...instance.itype));
 
-        console.log("Max BoltsNuts  " + Math.max(...instance.BoltsNuts));
-        console.log("Max Welding  " + Math.max(...instance.Welding));
+        // console.log("Max BoltsNuts  " + Math.max(...instance.BoltsNuts));
+        // console.log("Max Welding  " + Math.max(...instance.Welding));
 
-        console.log("Max stay1  " + Math.max(...instance.stay1));
-        console.log("Max stay2  " + Math.max(...instance.stay2));
-        console.log("Max trailer31  " + Math.max(...instance.trailer31));
-        console.log("Max trailer32  " + Math.max(...instance.trailer32));
-        console.log(
-          "Max tippingVehicle  " + Math.max(...instance.tippingVehicle)
+        // console.log("Max stay1  " + Math.max(...instance.stay1));
+        // console.log("Max stay2  " + Math.max(...instance.stay2));
+        // console.log("Max trailer31  " + Math.max(...instance.trailer31));
+        // console.log("Max trailer32  " + Math.max(...instance.trailer32));
+        // console.log(
+        //   "Max tippingVehicle  " + Math.max(...instance.tippingVehicle)
+        // );
+        // console.log(
+        //   "Max trailerCoupling  " + Math.max(...instance.trailerCoupling)
+        // );
+
+        // console.log("Max fixed  " + Math.max(...instance.fixed));
+        // console.log("Max slidable  " + Math.max(...instance.slidable));
+        // console.log("Max foldable  " + Math.max(...instance.foldable));
+
+        // console.log("Max noPower  " + Math.max(...instance.noPower));
+        // console.log("Max humanPower  " + Math.max(...instance.humanPower));
+
+        // console.log("Max tubeC  " + Math.max(...instance.tubeC));
+        // console.log("Max doubleRecht  " + Math.max(...instance.doubleRecht));
+        // console.log("Max lip  " + Math.max(...instance.lip));
+        // console.log("Max circle  " + Math.max(...instance.circle));
+        // console.log("Max square  " + Math.max(...instance.square));
+        // console.log("Max recht  " + Math.max(...instance.recht));
+        // console.log("Max cbeam  " + Math.max(...instance.cbeam));
+
+        const arrFindCtype = instance.ctype.find(el => el > 0);
+        const arrFinditype = instance.itype.find(el => el > 0);
+
+        const arrFindBoltsNuts = instance.BoltsNuts.find(el => el > 0);
+        const arrFindWelding = instance.Welding.find(el => el > 0);
+
+        const arrFindstay1 = instance.stay1.find(el => el > 0);
+
+        const arrFindstay2 = instance.stay2.find(el => el > 0);
+        const arrFindtrailer31 = instance.trailer31.find(el => el > 0);
+        const arrFindtrailer32 = instance.trailer32.find(el => el > 0);
+        const arrFindtippingVehicle = instance.tippingVehicle.find(
+          el => el > 0
         );
-        console.log(
-          "Max trailerCoupling  " + Math.max(...instance.trailerCoupling)
+        const arrFindtrailerCoupling = instance.trailerCoupling.find(
+          el => el > 0
         );
 
-        console.log("Max fixed  " + Math.max(...instance.fixed));
-        console.log("Max slidable  " + Math.max(...instance.slidable));
-        console.log("Max foldable  " + Math.max(...instance.foldable));
+        const arrFindfixed = instance.fixed.find(el => el > 0);
+        const arrFindslidable = instance.slidable.find(el => el > 0);
+        const arrFindfoldable = instance.foldable.find(el => el > 0);
 
-        console.log("Max noPower  " + Math.max(...instance.noPower));
-        console.log("Max humanPower  " + Math.max(...instance.humanPower));
+        const arrFindnoPower = instance.noPower.find(el => el > 0);
+        const arrFindhumanPower = instance.humanPower.find(el => el > 0);
 
-        console.log("Max tubeC  " + Math.max(...instance.tubeC));
-        console.log("Max doubleRecht  " + Math.max(...instance.doubleRecht));
-        console.log("Max lip  " + Math.max(...instance.lip));
-        console.log("Max circle  " + Math.max(...instance.circle));
-        console.log("Max square  " + Math.max(...instance.square));
-        console.log("Max recht  " + Math.max(...instance.recht));
-        console.log("Max cbeam  " + Math.max(...instance.cbeam));
+        const arrFindtubeC = instance.tubeC.find(el => el > 0);
+        const arrFinddoubleRecht = instance.doubleRecht.find(el => el > 0);
+        const arrFindlip = instance.lip.find(el => el > 0);
+        const arrFindcircle = instance.circle.find(el => el > 0);
+        const arrFindsquare = instance.square.find(el => el > 0);
+        const arrFindrecht = instance.recht.find(el => el > 0);
+        const arrFindcbeam = instance.cbeam.find(el => el > 0);
+
+        console.log("arrFindCtype ", arrFindCtype);
+        console.log("arrFinditype ", arrFinditype);
+        console.log("arrFindBoltsNuts ", arrFindBoltsNuts);
+        console.log("arrFindWelding ", arrFindWelding);
+        console.log("arrFindstay1 ", arrFindstay1);
+        console.log("arrFindstay2 ", arrFindstay2);
+        console.log("arrFindtrailer31 ", arrFindtrailer31);
+        console.log("arrFindtrailer32 ", arrFindtrailer32);
+        console.log("arrFindtippingVehicle ", arrFindtippingVehicle);
+        console.log("arrFindtrailerCoupling ", arrFindtrailerCoupling);
+        console.log("arrFindfixed ", arrFindfixed);
+        console.log("arrFindslidable ", arrFindslidable);
+        console.log("arrFindfoldable ", arrFindfoldable);
+        console.log("arrFindnoPower ", arrFindnoPower);
+        console.log("arrFindhumanPower ", arrFindhumanPower);
+        console.log("arrFindtubeC ", arrFindtubeC);
+        console.log("arrFinddoubleRecht ", arrFinddoubleRecht);
+        console.log("arrFindlip ", arrFindlip);
+        console.log("arrFindcircle ", arrFindcircle);
+        console.log("arrFindsquare ", arrFindsquare);
+        console.log("arrFindrecht ", arrFindrecht);
+        console.log("arrFindcbeam ", arrFindcbeam);
 
         //f1
-        if (Math.max(...instance.ctype) == 0) {
+        if (arrFindCtype != 1) {
           instance.maxF1_ctype = instance.f1[0];
         }
-        if (Math.max(...instance.itype) == 0) {
+        if (arrFinditype != 1) {
           instance.maxF1_itype = instance.f1[1];
         }
         //f2
-        if (Math.max(...instance.BoltsNuts) == 0) {
+        if (arrFindBoltsNuts != 1) {
           instance.maxF2_boltsnuts = instance.f2[0];
         }
-        if (Math.max(...instance.Welding) == 0) {
+        if (arrFindWelding != 1) {
           instance.maxF2_welding = instance.f2[1];
         }
         //f31
-        if (Math.max(...instance.stay1) == 0) {
+        if (arrFindstay1 != 1) {
           instance.maxF31 = instance.f31;
         }
         //f311
-        if (Math.max(...instance.stay2) == 0) {
+        if (arrFindstay2 != 1) {
           instance.maxF311_stay2 = instance.f311[0];
         }
-        if (Math.max(...instance.trailer31) == 0) {
+        if (arrFindtrailer31 != 1) {
           instance.maxF311_trailer31 = instance.f311[1];
         }
-        if (Math.max(...instance.trailer32) == 0) {
+        if (arrFindtrailer32 != 1) {
           instance.maxF311_trailer32 = instance.f311[2];
         }
-        if (Math.max(...instance.tippingVehicle) == 0) {
+        if (arrFindtippingVehicle != 1) {
           instance.maxF311_tipping = instance.f311[3];
         }
-        if (Math.max(...instance.trailerCoupling) == 0) {
+        if (arrFindtrailerCoupling != 1) {
           instance.maxF311_trailer = instance.f311[4];
         }
         //f32
-        if (Math.max(...instance.fixed) == 0) {
+        if (arrFindfixed != 1) {
           instance.maxF32_fixed = instance.f32[0];
         }
-        if (Math.max(...instance.slidable) == 0) {
+        if (arrFindslidable != 1) {
           instance.maxF32_slidable = instance.f32[1];
         }
-        if (Math.max(...instance.foldable) == 0) {
+        if (arrFindfoldable != 1) {
           instance.maxF32_foldable = instance.f32[2];
         }
         //f33
-        if (Math.max(...instance.noPower) == 0) {
+        if (arrFindnoPower != 1) {
           instance.maxF33_nopower = instance.f33[0];
         }
-        if (Math.max(...instance.humanPower) == 0) {
+        if (arrFindhumanPower != 1) {
           instance.maxF33_humanpower = instance.f33[1];
         }
         //f4
-        if (Math.max(...instance.tubeC) == 0) {
+        if (arrFindtubeC != 1) {
           instance.maxF4_tube_cbeam = instance.f4[0];
         }
-        if (Math.max(...instance.doubleRecht) == 0) {
+        if (arrFinddoubleRecht != 1) {
           instance.maxF4_double_recht = instance.f4[1];
         }
-        if (Math.max(...instance.lip) == 0) {
+        if (arrFindlip != 1) {
           instance.maxF4_lip = instance.f4[2];
         }
-        if (Math.max(...instance.circle) == 0) {
+        if (arrFindcircle != 1) {
           instance.maxF4_circle = instance.f4[3];
         }
-        if (Math.max(...instance.square) == 0) {
+        if (arrFindsquare != 1) {
           instance.maxF4_square = instance.f4[4];
         }
-        if (Math.max(...instance.recht) == 0) {
+        if (arrFindrecht != 1) {
           instance.maxF4_recht = instance.f4[5];
         }
-        if (Math.max(...instance.cbeam) == 0) {
+        if (arrFindcbeam != 1) {
           instance.maxF4_cbeam = instance.f4[6];
         }
       })
