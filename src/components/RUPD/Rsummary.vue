@@ -10,13 +10,7 @@
       <br />
       <b-row class="col-12 col-sm-12">
         <b-col class="col-12 col-sm-4">
-          <b-img
-            class="imgRsummary"
-            thumbnail
-            fluid
-            :src="require('../../assets/logo.png')"
-            alt="Image 1"
-          ></b-img>
+          <b-img class="imgRsummary" thumbnail fluid :src="pathImg" :alt="pathImg"></b-img>
         </b-col>
         <b-col class="col-12 col-sm-8 text-left">
           <p>1. วิธีการติดต้ังเข้ากับคัสซี : {{rf1}}</p>
@@ -66,7 +60,12 @@ export default {
       allnum_rf: [],
       pdf: [],
       data: [],
-      index_rf: []
+      index_rf: [],
+      imgType: {
+        "RUPD-MTEC-1-1-2-1-1-1": require("../../assets/imgRUPD/RUPD-MTEC-1-1-2-1-1-1.jpg"),
+        "RUPD-MTEC-1-1-2-1-1-2": require("../../assets/imgRUPD/RUPD-MTEC-1-1-2-1-2.jpg")
+      },
+      pathImg: ""
     };
   },
   created() {
@@ -94,6 +93,12 @@ export default {
     const typeName =
       "RUPD-MTEC-" + this.allnum_rf.toString().replace(/,/g, "-");
     console.log("typeName", typeName);
+
+    const img = "../../assets/imgRUPD/" + typeName + ".jpg";
+    console.log(" this.imgType", "../../assets/imgRUPD/" + typeName + ".jpg");
+    this.pathImg = this.imgType[typeName];
+    // this.pathImg = require("../../assets/imgRUPD/" + this.imgType + ".jpg");
+    // console.log(typeof this.imgType);
 
     var instance = this;
     var url =
@@ -126,13 +131,21 @@ export default {
       this.locationFile = this.pdf;
     }
   }
+  // mounted() {
+  //   this.pathImg = require("../../assets/imgRUPD/" + this.imgType + ".jpg");
+  // }
+  // computed: {
+  //   imgRUPD() {
+  //     return require(`../../assets/imgRUPD/${this.imgType}.jpg`);
+  //   }
+  // }
 };
 </script>
 <style>
-.imgRsummary {
+/* .imgRsummary {
   width: 200px;
-  height: 200px;
-}
+  height: aut;
+} */
 .line {
   border-style: ridge;
 }
