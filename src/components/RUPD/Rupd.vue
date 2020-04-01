@@ -2,7 +2,7 @@
   <div class="f1">
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="1. วิธีการติดต้ังเข้ากับคัสซี">
+        <b-form-group label="วิธีการติดต้ังเข้ากับคัสซี">
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="f1 in f1"
@@ -17,7 +17,7 @@
       </b-col>
 
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="2. วิธีการจับยึดเข้ากับคัสซี ">
+        <b-form-group label="วิธีการจับยึดเข้ากับคัสซี ">
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="f2 in f2"
@@ -34,7 +34,7 @@
 
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="3. รูปแบบของขายึด (Stay)  ">
+        <b-form-group label="รูปแบบของขายึด (Stay)  ">
           <b-form-radio-group stacked>
             <b-col>
               <b-form-input
@@ -86,7 +86,7 @@
       </b-col>
 
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="4.  รูปแบบชิ้นส่วนสำหรับป้องกันการมุด">
+        <b-form-group label="รูปแบบชิ้นส่วนสำหรับป้องกันการมุด">
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="f4 in f4"
@@ -103,7 +103,7 @@
 
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="5. การปรับได้ของขายึด (Stay)">
+        <b-form-group label="การปรับได้ของขายึด (Stay)">
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="f32 in f32"
@@ -117,7 +117,7 @@
         </b-form-group>
       </b-col>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="6. การใช้แรงคนในการปรับตำแหน่ง">
+        <b-form-group label="การใช้แรงคนในการปรับตำแหน่ง">
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="f33 in f33"
@@ -618,6 +618,7 @@ export default {
 <style>
 .f1 {
   text-align: start;
+  font-size: 18px;
 }
 .outline {
   border-style: groove;
