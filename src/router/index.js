@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../pages/Home'
+import detailProject from '../pages/detailProject'
 import Contact from '../pages/Contact'
 import Address from '../pages/Address'
 import Stepper from '../pages/Stepper'
@@ -11,13 +11,13 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'rupd',
-    //   component: rupd
-    // },
     {
       path: '/',
+      name: 'detailProject',
+      component: detailProject
+    },
+    {
+      path: '/download',
       name: 'Stepper',
       component: Stepper
     },
@@ -27,9 +27,9 @@ export default new Router({
       component: Address
     },
     {
-      path: '/Home',
-      name: 'Home',
-      component: Home
+      path: '/detailProject',
+      name: 'detailProject',
+      component: detailProject
     },
     {
       path: '/Contact',

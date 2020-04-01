@@ -6,11 +6,11 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item to="/Home">
+          <b-nav-item to="/detailProject">
             <b-icon icon="tv"></b-icon>รายละเอียดโครงการ
           </b-nav-item>
           <b-nav-item to="/download">
-            <b-icon icon="download"></b-icon>ดาวน์โหลดอุปกรณ์ป้องกัน
+            <b-icon icon="download"></b-icon>ดาวน์โหลดแบบเชิงวิศวกรรม
           </b-nav-item>
           <b-nav-item to="/Contact">
             <b-icon icon="people"></b-icon>ติดต่อสอบถาม
@@ -19,9 +19,9 @@
       </b-collapse>
     </b-navbar>
     <br />
-    <b-container class="wrapper">
-      <router-view to="/" />
-    </b-container>
+    <!-- <b-container fluid > -->
+    <router-view to="/" />
+    <!-- </b-container> -->
   </div>
 </template>
 

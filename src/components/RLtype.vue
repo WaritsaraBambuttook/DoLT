@@ -11,16 +11,28 @@
         <b-button class="RLstyle" :variant="buttonColor" @click="RLtype('LUPD')">
           <b-col>
             <h5>ด้านข้างรถ</h5>
-            <b-img class="imgRL" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+            <b-img
+              class="imgRL"
+              thumbnail
+              fluid
+              :src="require('../assets/imgLUPD/beside.png')"
+              alt="Image 1"
+            ></b-img>
           </b-col>
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-6" style="margin-top: 10px;">
+      <b-col class="col-12 col-sm-6">
         <b-button class="RLstyle" :variant="buttonColor" @click="RLtype('RUPD')">
           <b-col>
-            <h5>ท้ายรถ</h5>
-            <b-img class="imgRL" thumbnail fluid :src="require('../assets/logo.png')" alt="Image 1"></b-img>
+            <h5>ด้านท้ายรถ</h5>
+            <b-img
+              class="imgRL"
+              thumbnail
+              fluid
+              :src="require('../assets/imgRUPD/behind.png')"
+              alt="Image 1"
+            ></b-img>
           </b-col>
         </b-button>
       </b-col>
@@ -54,17 +66,13 @@ export default {
 </script>
 <style lang="css" scoped>
 .RLstyle {
-  padding-left: unset;
-  padding-right: unset;
   height: 100%;
-  width: 70%;
+  width: 60%;
   border: solid;
 }
 .imgRL {
-  padding-left: unset;
-  padding-right: unset;
-  width: 150px;
-  height: 150px;
+  width: auto;
+  height: auto;
 }
 .RLstyle:focus {
   background-color: #b8b2a6;

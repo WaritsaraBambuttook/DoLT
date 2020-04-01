@@ -1,128 +1,130 @@
 <template>
   <div>
-    <b-row v-if="check === true">
-      <b-col>
-        <b-jumbotron id="jumbotron" lead="กรุณากรอกข้อมูล">
-          <b-row>
-            <b-col class="col-4 col-sm-4">
-              <label id="name" for="input-live">ชื่อ :</label>
-            </b-col>
-            <b-col class="col-8 col-sm-8">
-              <b-form-input
-                type="text"
-                v-model="firstname"
-                :state="firstnameState"
-                aria-describedby="input-live-help input-live-feedback"
-                trim
-              ></b-form-input>
-              <!-- This will only be shown if the preceding input has an invalid state -->
-              <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกชื่อ</b-form-invalid-feedback>
-            </b-col>
-          </b-row>
-          <br />
+    <b-container>
+      <b-row v-if="check === true">
+        <b-col>
+          <b-jumbotron id="jumbotron" lead="กรุณากรอกข้อมูล">
+            <b-row>
+              <b-col class="col-4 col-sm-4">
+                <label id="name" for="input-live">ชื่อ :</label>
+              </b-col>
+              <b-col class="col-8 col-sm-8">
+                <b-form-input
+                  type="text"
+                  v-model="firstname"
+                  :state="firstnameState"
+                  aria-describedby="input-live-help input-live-feedback"
+                  trim
+                ></b-form-input>
+                <!-- This will only be shown if the preceding input has an invalid state -->
+                <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกชื่อ</b-form-invalid-feedback>
+              </b-col>
+            </b-row>
+            <br />
 
-          <b-row>
-            <b-col class="col-4 col-sm-4">
-              <label for="input-live">นามสกุล :</label>
-            </b-col>
-            <b-col class="col-8 col-sm-8">
-              <b-form-input
-                type="text"
-                v-model="lastname"
-                :state="lastnameState"
-                aria-describedby="input-live-help input-live-feedback"
-                trim
-              ></b-form-input>
-              <!-- This will only be shown if the preceding input has an invalid state -->
-              <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกนามสกุล</b-form-invalid-feedback>
-            </b-col>
-          </b-row>
-          <br />
+            <b-row>
+              <b-col class="col-4 col-sm-4">
+                <label for="input-live">นามสกุล :</label>
+              </b-col>
+              <b-col class="col-8 col-sm-8">
+                <b-form-input
+                  type="text"
+                  v-model="lastname"
+                  :state="lastnameState"
+                  aria-describedby="input-live-help input-live-feedback"
+                  trim
+                ></b-form-input>
+                <!-- This will only be shown if the preceding input has an invalid state -->
+                <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกนามสกุล</b-form-invalid-feedback>
+              </b-col>
+            </b-row>
+            <br />
 
-          <b-row>
-            <b-col class="col-4 col-sm-4">
-              <label for="input-live">บริษัท/หน่วยงาน :</label>
-            </b-col>
-            <b-col class="col-8 col-sm-8">
-              <b-form-input
-                type="text"
-                v-model="company"
-                :state="companyState"
-                aria-describedby="input-live-help input-live-feedback"
-                trim
-              ></b-form-input>
-              <!-- This will only be shown if the preceding input has an invalid state -->
-              <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกบริษัท/หน่วยงาน</b-form-invalid-feedback>
-            </b-col>
-          </b-row>
-          <br />
+            <b-row>
+              <b-col class="col-4 col-sm-4">
+                <label for="input-live">บริษัท/หน่วยงาน :</label>
+              </b-col>
+              <b-col class="col-8 col-sm-8">
+                <b-form-input
+                  type="text"
+                  v-model="company"
+                  :state="companyState"
+                  aria-describedby="input-live-help input-live-feedback"
+                  trim
+                ></b-form-input>
+                <!-- This will only be shown if the preceding input has an invalid state -->
+                <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกบริษัท/หน่วยงาน</b-form-invalid-feedback>
+              </b-col>
+            </b-row>
+            <br />
 
-          <b-row>
-            <b-col class="col-4 col-sm-4">
-              <label for="input-live">อีเมล :</label>
-            </b-col>
-            <b-col class="col-8 col-sm-8">
-              <b-form-input
-                type="email"
-                required
-                v-model="email"
-                :state="emailState"
-                aria-describedby="input-live-help input-live-feedback"
-                trim
-                class="form-control validate"
-              ></b-form-input>
-              <!-- This will only be shown if the preceding input has an invalid state -->
-              <b-form-invalid-feedback
-                id="input-live-feedback "
-              >กรุณากรอกอีเมล เช่น name@example.com</b-form-invalid-feedback>
-            </b-col>
-          </b-row>
-          <br />
+            <b-row>
+              <b-col class="col-4 col-sm-4">
+                <label for="input-live">อีเมล :</label>
+              </b-col>
+              <b-col class="col-8 col-sm-8">
+                <b-form-input
+                  type="email"
+                  required
+                  v-model="email"
+                  :state="emailState"
+                  aria-describedby="input-live-help input-live-feedback"
+                  trim
+                  class="form-control validate"
+                ></b-form-input>
+                <!-- This will only be shown if the preceding input has an invalid state -->
+                <b-form-invalid-feedback
+                  id="input-live-feedback "
+                >กรุณากรอกอีเมล เช่น name@example.com</b-form-invalid-feedback>
+              </b-col>
+            </b-row>
+            <br />
 
-          <b-row>
-            <b-col>
-              <b-button type="submit" id="confirm" class="confirm" @click="confirm">ตกลง</b-button>
-            </b-col>
-          </b-row>
-        </b-jumbotron>
-      </b-col>
-    </b-row>
-    <!-- slot -->
-    <b-row v-if="check===false">
-      <b-col class="title">
-        <h3 style="margin:10px;">ระบบดาวน์โหลดอุปกรณ์ป้องกันด้านข้างและด้านท้ายรถบรรทุก</h3>
-      </b-col>
-    </b-row>
-    <br />
-    <br />
-    <b-row v-if="check===false">
-      <b-col>
-        <vue-good-wizard
-          :steps="steps"
-          :onNext="nextClicked"
-          :onBack="backClicked"
-          finalStepLabel="final"
-        >
-          <div slot="page1">
-            <Order />
-          </div>
-          <div slot="page2">
-            <component v-bind:is="checkBumpertype" />
-          </div>
-          <div slot="page3">
-            <RLtype />
-          </div>
-          <div slot="page4">
-            <component v-bind:is="checkRLtype" />
-          </div>
-          <div slot="page5">
-            <component v-bind:is="summary" />
-          </div>
-        </vue-good-wizard>
-      </b-col>
-    </b-row>
-    <br />
-    <br />
+            <b-row>
+              <b-col>
+                <b-button type="submit" id="confirm" class="confirm" @click="confirm">ตกลง</b-button>
+              </b-col>
+            </b-row>
+          </b-jumbotron>
+        </b-col>
+      </b-row>
+      <!-- slot -->
+      <b-row v-if="check===false">
+        <b-col class="title">
+          <h3 style="margin:10px;">ระบบดาวน์โหลดอุปกรณ์ป้องกันด้านข้างและด้านท้ายรถบรรทุก</h3>
+        </b-col>
+      </b-row>
+      <br />
+      <br />
+      <b-row v-if="check===false">
+        <b-col>
+          <vue-good-wizard
+            :steps="steps"
+            :onNext="nextClicked"
+            :onBack="backClicked"
+            finalStepLabel="final"
+          >
+            <div slot="page1">
+              <Order />
+            </div>
+            <div slot="page2">
+              <component v-bind:is="checkBumpertype" />
+            </div>
+            <div slot="page3">
+              <RLtype />
+            </div>
+            <div slot="page4">
+              <component v-bind:is="checkRLtype" />
+            </div>
+            <div slot="page5">
+              <component v-bind:is="summary" />
+            </div>
+          </vue-good-wizard>
+        </b-col>
+      </b-row>
+      <br />
+      <br />
+    </b-container>
   </div>
 </template>
  
