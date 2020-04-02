@@ -1,66 +1,26 @@
 <template>
   <div>
-    <b-row class="text-center">
-      <b-col>
-        <b-card
-          overlay
-          img-src="https://picsum.photos/900/250/?image=3"
-          img-alt="Card Image"
-          text-variant="white"
-          title="Image Overlay"
-          sub-title="Subtitle"
-        >
-          <b-card-text>Some quick example text to build on the card and make up the bulk of the card's content.</b-card-text>
-        </b-card>
-      </b-col>
-    </b-row>
     <br />
     <br />
-    <b-row class="text-center">
-      <b-col cols="*" sm="*" class="bc">
-        <b-card
-          title="Card Title"
-          img-src="https://picsum.photos/600/300/?image=25"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2"
-        >
-          <b-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</b-card-text>
+    <b-container>
+      <b-jumbotron class="jum">
+        <b-row>
+          <b-col class="ol-12 col-sm-3">
+            <b-icon icon="people" style="width: 200px; height: 200px;"></b-icon>
+          </b-col>
+          <b-col class="ol-12 col-sm-9">
+            <br />
+            <h3 style="text-align: left;">
+              ศูนย์เทคโนโลยีโลหะและวัสดุแห่งชาติ 114 อุทยานวิทยาศาสตร์ประเทศไทย ถ.พหลโยธิน ต.คลองหนึ่ง อ.คลองหลวง จ.ปทุมธานี 12120
+              โทรศัพท์ 0-2564-6500 โทรสาร 0-2564-6501- 5
+            </h3>
+          </b-col>
+        </b-row>
+      </b-jumbotron>
+    </b-container>
 
-          <b-button href="#" variant="primary">{{name}}</b-button>
-        </b-card>
-      </b-col>
-      <b-col cols="*" sm="*" class="bc">
-        <b-card
-          title="Card Title"
-          img-src="https://picsum.photos/600/300/?image=25"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2"
-        >
-          <b-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</b-card-text>
-          <b-button href="#" variant="primary">{{mes}}</b-button>
-        </b-card>
-      </b-col>
-      <b-col cols="*" sm="*" class="bc">
-        <b-card
-          title="Card Title"
-          img-src="https://picsum.photos/600/300/?image=25"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2"
-        >
-          <b-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</b-card-text>
-          <b-button href="#" variant="primary">{{mes}}</b-button>
-        </b-card>
-      </b-col>
-    </b-row>
+    <br />
+    <br />
   </div>
 </template>
 <script>
@@ -76,5 +36,9 @@ export default {
 <style>
 .bc {
   margin: auto;
+}
+.jum {
+  background: linear-gradient(to top left, #ff9966 0%, #000066 100%);
+  color: white;
 }
 </style>

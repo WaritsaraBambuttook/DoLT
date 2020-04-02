@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import detailProject from '../pages/detailProject'
 import Contact from '../pages/Contact'
-import Address from '../pages/Address'
 import Stepper from '../pages/Stepper'
 import google from '../pages/googleSheet'
 import bumper from '../components/TypeofCar/TypeTwo.vue'
@@ -20,11 +19,6 @@ export default new Router({
       path: '/download',
       name: 'Stepper',
       component: Stepper
-    },
-    {
-      path: '/Address',
-      name: 'Address',
-      component: Address
     },
     {
       path: '/detailProject',
