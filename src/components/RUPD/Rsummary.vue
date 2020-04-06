@@ -94,11 +94,7 @@ export default {
       "RUPD-MTEC-" + this.allnum_rf.toString().replace(/,/g, "-");
     console.log("typeName", typeName);
 
-    const img = "../../assets/imgRUPD/" + typeName + ".jpg";
-    console.log(" this.imgType", "../../assets/imgRUPD/" + typeName + ".jpg");
     this.pathImg = this.imgType[typeName];
-    // this.pathImg = require("../../assets/imgRUPD/" + this.imgType + ".jpg");
-    // console.log(typeof this.imgType);
 
     var instance = this;
     var url =
@@ -117,6 +113,11 @@ export default {
             instance.index_rf = i;
             instance.pdf.push(instance.data[i][42]);
           }
+          //  else {
+          //   alert(
+          //     "ยังไม่มีแบบเชิงวิศวกรรมนี้ กรุณาเลือกฟังก์ชั่นกันในขั้นตอนที่ 4 ใหม่อีกครั้ง "
+          //   );
+          // }
         }
 
         console.log("pdf ", instance.pdf);
@@ -128,7 +129,11 @@ export default {
   },
   methods: {
     GeneratePDF: function() {
-      this.locationFile = this.pdf;
+      if (this.pdf == "") {
+        alert("ยังไม่มีแบบเชิงวิศวกรรมนี้ กรุณาเลือกใหม่อีกครั้ง");
+      } else {
+        this.locationFile = this.pdf;
+      }
     }
   }
   // mounted() {

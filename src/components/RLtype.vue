@@ -7,7 +7,7 @@
     </b-row>-->
     <br />
     <b-row>
-      <b-col class="col-12 col-sm-6">
+      <b-col class="col-12 col-sm-6" style="margin-top:10px;">
         <b-button class="RLstyle" :variant="buttonColor" @click="RLtype('LUPD')">
           <b-col>
             <h5>ด้านข้างรถ</h5>
@@ -22,7 +22,7 @@
         </b-button>
       </b-col>
 
-      <b-col class="col-12 col-sm-6">
+      <b-col class="col-12 col-sm-6" style="margin-top:10px;">
         <b-button class="RLstyle" :variant="buttonColor" @click="RLtype('RUPD')">
           <b-col>
             <h5>ด้านท้ายรถ</h5>
