@@ -11,16 +11,16 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'detailProject',
-    //   component: detailProject
-    // },
     {
       path: '/',
-      name: 'Stepper',
-      component: Stepper
+      name: 'detailProject',
+      component: detailProject
     },
+    // {
+    //   path: '/',
+    //   name: 'Stepper',
+    //   component: Stepper
+    // },
     {
       path: '/download',
       name: 'Stepper',
