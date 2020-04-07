@@ -79,7 +79,19 @@
               </b-col>
             </b-row>
             <br />
-
+            <br />
+            <b-row>
+              <b-col>
+                <b-form-checkbox
+                  id="checkbox-1"
+                  v-model="status"
+                  name="checkbox-1"
+                  value="accepted"
+                  unchecked-value="not_accepted"
+                >ยินยอมการเก็บข้อมูล</b-form-checkbox>
+              </b-col>
+            </b-row>
+            <br />
             <b-row>
               <b-col>
                 <b-button type="submit" id="confirm" class="confirm" @click="confirm">ตกลง</b-button>
@@ -216,6 +228,7 @@ export default {
           }
         }
       ],
+      status: "not_accepted",
       checkRLtype: "",
       summary: "",
       checkBumpertype: "",
@@ -223,7 +236,7 @@ export default {
       lastname: "",
       company: "",
       email: "",
-      check: false,
+      check: true,
       head: [],
       carType: []
     };
@@ -403,20 +416,25 @@ export default {
       } else {
         var instance = this;
         instance.check = true;
-        db.collection("register")
-          .add({
-            firstname: this.firstname,
-            lastname: this.lastname,
-            company: this.company,
-            email: this.email
-          })
-          .then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id);
-            instance.check = false;
-          })
-          .catch(function(error) {
-            console.error("Error adding document: ", error);
-          });
+        if (this.status == "not_accepted") {
+          alert("กรุณายินยอมการเก็บข้อมูล");
+        } else {
+          db.collection("register")
+            .add({
+              firstname: this.firstname,
+              lastname: this.lastname,
+              company: this.company,
+              email: this.email
+            })
+            .then(function(docRef) {
+              console.log("Document written with ID: ", docRef.id);
+              instance.check = false;
+            })
+            .catch(function(error) {
+              console.error("Error adding document: ", error);
+            });
+        }
+        this.status = "false";
       }
     }
   }

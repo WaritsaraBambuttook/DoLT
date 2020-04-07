@@ -23,9 +23,9 @@
       </b-row>
       <b-row class="col-12 col-sm-12">
         <b-col>
-          <a :href="locationFile">
-            <b-button @click="GeneratePDF" variant="success">download</b-button>
-          </a>
+          <!-- <a :href="locationFile" onclick="return false;"> -->
+          <b-button @click="GeneratePDF" variant="success">download</b-button>
+          <!-- </a> -->
 
           <br />
         </b-col>
@@ -133,6 +133,7 @@ export default {
         alert("ยังไม่มีแบบเชิงวิศวกรรมนี้ กรุณาเลือกใหม่อีกครั้ง");
       } else {
         this.locationFile = this.pdf;
+        location.href = this.locationFile;
       }
     }
   }

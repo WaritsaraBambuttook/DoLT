@@ -203,7 +203,7 @@ export default {
   mounted() {
     let instance = this;
     const url =
-      "https://sheets.googleapis.com//v4/spreadsheets/19DJnQk5pirckQRHjaswBlVJxpY0AUzzkKvTAIZvV2iA/values/A1:O28/?key=AIzaSyBdDxNQXwJyowwndJy54wQoynwFvQJiK_g";
+      "https://sheets.googleapis.com//v4/spreadsheets/19DJnQk5pirckQRHjaswBlVJxpY0AUzzkKvTAIZvV2iA/values/A1:P28/?key=AIzaSyBdDxNQXwJyowwndJy54wQoynwFvQJiK_g";
     axios.get(url).then(function(res) {
       let data = res.data.values;
       //f1
