@@ -51,16 +51,12 @@ export default {
   },
   methods: {
     RLtype: function(type) {
-      console.log(type);
-      console.log("commit RUPD or LUPD :  " + type);
       this.$store.commit("setRLtype", type);
     }
   },
   created() {
     this.data = this.$store.getters.Bumpertype;
     var test = this.$store.getters.CarStyle;
-    console.log("getters car style = " + test);
-    console.log("getters bumper type " + this.data);
   }
 };
 </script>

@@ -18,8 +18,8 @@ export default new Router({
     },
     // {
     //   path: '/',
-    //   name: 'Stepper',
-    //   component: Stepper
+    //   name: 'Lupd',
+    //   component: Lupd
     // },
     {
       path: '/download',

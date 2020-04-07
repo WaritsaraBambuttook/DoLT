@@ -10,7 +10,7 @@
               name="some-radios"
               :value="f1"
               @change="one(f1)"
-              :disabled="f1 == maxF1_ctype || f1 == maxF1_itype"
+              :disabled="f1 == Vctype || f1 == Vitype"
             >แบบ {{f1}}</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -25,7 +25,7 @@
               name="some-radios"
               :value="f2"
               @change="two(f2)"
-              :disabled="f2 == maxF2_boltsnuts || f2 == maxF2_welding"
+              :disabled="f2 == Vboltsnuts || f2 == Vwelding"
             >{{f2}}</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -65,7 +65,7 @@
                 name="some-radios"
                 :value="f31"
                 @change="three(f31)"
-                :disabled="MoreThan || f31 == maxF31"
+                :disabled="MoreThan || f31 == VF31"
               >{{f31}}</b-form-radio>
             </b-col>
             <br />
@@ -78,7 +78,7 @@
                 name="some-radios"
                 :value="f311"
                 @change="three(f311)"
-                :disabled="LessEqual || f311 ==  maxF311_stay2 ||  f311 ==  maxF311_trailer31 ||  f311 ==  maxF311_trailer32 ||  f311 ==  maxF311_tipping ||  f311 ==  maxF311_trailer"
+                :disabled="LessEqual || f311 ==  Vstay2 ||  f311 ==  Vtrailer31 ||  f311 ==  Vtrailer32 ||  f311 ==  Vtipping ||  f311 ==  Vtrailer"
               >{{f311}}</b-form-radio>
             </b-col>
           </b-form-radio-group>
@@ -94,7 +94,7 @@
               name="some-radios"
               :value="f4"
               @change="six(f4)"
-              :disabled=" f4 ==   maxF4_tube_cbeam || f4 ==   maxF4_double_recht || f4 ==   maxF4_lip || f4 ==   maxF4_circle || f4 ==   maxF4_square || f4 ==   maxF4_recht || f4 ==   maxF4_cbeam "
+              :disabled=" f4 ==  Vtube_cbeam || f4 ==   Vdouble_recht || f4 ==   Vlip || f4 ==   Vcircle || f4 ==   Vsquare || f4 ==   Vrecht || f4 ==   Vcbeam "
             >{{f4}}</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -111,7 +111,7 @@
               name="some-radios"
               :value="f32"
               @change="four(f32)"
-              :disabled="f32 ==   maxF32_fixed ||f32 ==   maxF32_slidable || f32 ==   maxF32_foldable"
+              :disabled="f32 ==   Vfixed ||f32 ==   Vslidable || f32 ==  Vfoldable"
             >{{f32}}</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -125,7 +125,7 @@
               name="some-radios"
               :value="f33"
               @change="five(f33)"
-              :disabled="f33 ==   maxF33_nopower || f33 ==   maxF33_humanpower   "
+              :disabled="f33 ==   Vnopower || f33 ==  Vhumanpower   "
             >{{f33}}</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -140,28 +140,27 @@ export default {
   data() {
     return {
       selected: "",
-      maxF1_ctype: "",
-      maxF1_itype: "",
-      maxF2_boltsnuts: "",
-      maxF2_welding: "",
-      maxF31: "",
-      maxF311_stay2: "",
-      maxF311_trailer31: "",
-      maxF311_trailer32: "",
-      maxF311_tipping: "",
-      maxF311_trailer: "",
-      maxF32_fixed: "",
-      maxF32_slidable: "",
-      maxF32_foldable: "",
-      maxF33_nopower: "",
-      maxF33_humanpower: "",
-      maxF4_tube_cbeam: "",
-      maxF4_double_recht: "",
-      maxF4_lip: "",
-      maxF4_circle: "",
-      maxF4_square: "",
-      maxF4_recht: "",
-      maxF4_cbeam: "",
+      Vctype: "",
+      Vitype: "",
+      Vboltsnuts: "",
+      Vwelding: "",
+      VF31: "",
+      Vstay2: "",
+      Vtrailer31: "",
+      Vtipping: "",
+      Vtrailer: "",
+      Vfixed: "",
+      Vslidable: "",
+      Vfoldable: "",
+      Vnopower: "",
+      Vhumanpower: "",
+      Vtube_cbeam: "",
+      Vdouble_recht: "",
+      Vlip: "",
+      Vcircle: "",
+      Vsquare: "",
+      Vrecht: "",
+      Vcbeam: "",
       Wveh: "",
       Wch: "",
       num: "",
@@ -205,7 +204,6 @@ export default {
   },
   methods: {
     one: function(type) {
-      console.log("click 1. " + type);
       if (type == this.f1[0]) {
         this.$store.commit("setnum_rf1", 1);
       }
@@ -213,11 +211,8 @@ export default {
         this.$store.commit("setnum_rf1", 2);
       }
       this.$store.commit("setrfone", type);
-      console.log("getter 1 : " + this.$store.getters.rfone);
-      console.log("getter numf1 : " + this.$store.getters.num_rf1);
     },
     two: function(type) {
-      console.log("click 2. " + type);
       if (type == this.f2[0]) {
         this.$store.commit("setnum_rf2", 1);
       }
@@ -225,11 +220,8 @@ export default {
         this.$store.commit("setnum_rf2", 2);
       }
       this.$store.commit("setrftwo", type);
-      console.log("getter 2: " + this.$store.getters.rftwo);
-      console.log("getter num f2 : " + this.$store.getters.num_rf2);
     },
     three: function(type) {
-      console.log("click 3 : " + type);
       if (type == this.f31[0]) {
         this.$store.commit("setnum_rf31", 1);
       }
@@ -249,8 +241,6 @@ export default {
         this.$store.commit("setnum_rf31", 6);
       }
       this.$store.commit("setrfthree", type);
-      console.log("getter 3 : " + this.$store.getters.rfthree);
-      console.log("getter num f31 : " + this.$store.getters.num_rf31);
     },
     four: function(type) {
       //อนาคตอาจจะลบตรงนี้///////////////////////////////////////////////////////
@@ -258,12 +248,10 @@ export default {
       if (this.f32[0] == this.validateFixed) {
         this.humanPower = 0;
         if (this.humanPower == 0) {
-          this.maxF33_humanpower = this.f33[1];
-          console.log("validate if1.1........", this.maxF33_humanpower);
+          this.Vhumanpower = this.f33[1];
         }
       } else {
         this.humanPower = [];
-        console.log("else");
         var numberOfSubType = this.$store.getters.numberOfSubType;
         var data = this.data;
         for (let i = 3; i < data.length; i++) {
@@ -276,13 +264,10 @@ export default {
           }
         }
         if (Math.max(...this.humanPower) == 0) {
-          console.log("max......");
-          this.maxF33_humanpower = this.f33[1];
-          console.log("validate if2........", this.maxF33_humanpower);
+          this.Vhumanpower = this.f33[1];
         } else {
-          this.maxF33_humanpower = this.f33;
+          this.Vhumanpower = this.f33;
           // this.humanPower = Math.max(...this.humanPower);
-          console.log("validate else........", this.maxF33_humanpower);
         }
       }
       ///////////////////////////////////////////////////////////////////////
@@ -296,14 +281,10 @@ export default {
         this.$store.commit("setnum_rf32", 3);
       }
       ///////////////////////////////////////////////////////////////////////
-      console.log("click 4 : " + type);
       this.$store.commit("setrffour", type);
-      console.log("getter 4 : " + this.$store.getters.rffour);
-      console.log("getter num f32 : " + this.$store.getters.num_rf32);
     },
 
     five: function(type) {
-      console.log("click 5 : " + type);
       if (type == this.f33[0]) {
         this.$store.commit("setnum_rf33", 1);
       }
@@ -311,11 +292,8 @@ export default {
         this.$store.commit("setnum_rf33", 2);
       }
       this.$store.commit("setrffive", type);
-      console.log("getter 5 : " + this.$store.getters.rffive);
-      console.log("getter num f33 : " + this.$store.getters.num_rf33);
     },
     six: function(type) {
-      console.log("click 6 : " + type);
       if (type == this.f4[0]) {
         this.$store.commit("setnum_rf4", 1);
       }
@@ -338,8 +316,6 @@ export default {
         this.$store.commit("setnum_rf4", 7);
       }
       this.$store.commit("setrfsix", type);
-      console.log("getter 6 : " + this.$store.getters.rfsix);
-      console.log("getter num f4 : " + this.$store.getters.num_rf4);
     },
     cal: function() {
       let less =
@@ -348,21 +324,14 @@ export default {
       if (this.Wch != "" && this.Wveh != "") {
         let calculate = (this.Wveh - this.Wch) / 2;
         this.num = calculate;
-        console.log("cal :" + this.num);
         if (this.num > 890) {
           this.MoreThan = false;
           this.LessEqual = true;
           this.$store.commit("setCheckWidth", more);
-          console.log(
-            "getter >> more than : " + this.$store.getters.CheckWidth
-          );
         } else {
           this.MoreThan = true;
           this.LessEqual = false;
           this.$store.commit("setCheckWidth", less);
-          console.log(
-            "getter >> less than and equal : " + this.$store.getters.CheckWidth
-          );
         }
       } else {
         if (this.Wveh == "") {
@@ -378,7 +347,6 @@ export default {
   mounted() {
     var Bumpertype = this.$store.getters.Bumpertype;
     var numberOfSubType = this.$store.getters.numberOfSubType;
-    console.log("getters sub tpye  " + Bumpertype);
     var instance = this;
     var url =
       "https://sheets.googleapis.com//v4/spreadsheets/1AYlNYc_so8jGRhNoNK_PGJ1XSHwOrhvOoW76UVpCoek/values/A1:AQ76/?key=AIzaSyBdDxNQXwJyowwndJy54wQoynwFvQJiK_g";
@@ -430,13 +398,6 @@ export default {
             instance.f4.push(data[i][j]);
           }
         }
-        // console.log("f1 >>" + instance.f1);
-        // console.log("f2 >>" + instance.f2);
-        // console.log("f31 >>" + instance.f31);
-        // console.log("f311 >>" + instance.f311);
-        // console.log("f32 >>" + instance.f32);
-        // console.log("f33 >>" + instance.f33);
-        // console.log("f4 >>" + instance.f4);
 
         //////////////////////////////////////////////////////////////////////////
 
@@ -512,101 +473,78 @@ export default {
         const arrFindrecht = instance.recht.find(el => el > 0);
         const arrFindcbeam = instance.cbeam.find(el => el > 0);
 
-        // console.log("arrFindCtype ", arrFindCtype);
-        // console.log("arrFinditype ", arrFinditype);
-        // console.log("arrFindBoltsNuts ", arrFindBoltsNuts);
-        // console.log("arrFindWelding ", arrFindWelding);
-        // console.log("arrFindstay1 ", arrFindstay1);
-        // console.log("arrFindstay2 ", arrFindstay2);
-        // console.log("arrFindtrailer31 ", arrFindtrailer31);
-        // console.log("arrFindtrailer32 ", arrFindtrailer32);
-        // console.log("arrFindtippingVehicle ", arrFindtippingVehicle);
-        // console.log("arrFindtrailerCoupling ", arrFindtrailerCoupling);
-        // console.log("arrFindfixed ", arrFindfixed);
-        // console.log("arrFindslidable ", arrFindslidable);
-        // console.log("arrFindfoldable ", arrFindfoldable);
-        // console.log("arrFindnoPower ", arrFindnoPower);
-        // console.log("arrFindhumanPower ", arrFindhumanPower);
-        // console.log("arrFindtubeC ", arrFindtubeC);
-        // console.log("arrFinddoubleRecht ", arrFinddoubleRecht);
-        // console.log("arrFindlip ", arrFindlip);
-        // console.log("arrFindcircle ", arrFindcircle);
-        // console.log("arrFindsquare ", arrFindsquare);
-        // console.log("arrFindrecht ", arrFindrecht);
-        // console.log("arrFindcbeam ", arrFindcbeam);
-
         //f1
         if (arrFindCtype != 1) {
-          instance.maxF1_ctype = instance.f1[0];
+          instance.Vctype = instance.f1[0];
         }
         if (arrFinditype != 1) {
-          instance.maxF1_itype = instance.f1[1];
+          instance.Vitype = instance.f1[1];
         }
         //f2
         if (arrFindBoltsNuts != 1) {
-          instance.maxF2_boltsnuts = instance.f2[0];
+          instance.Vboltsnuts = instance.f2[0];
         }
         if (arrFindWelding != 1) {
-          instance.maxF2_welding = instance.f2[1];
+          instance.Vwelding = instance.f2[1];
         }
         //f31
         if (arrFindstay1 != 1) {
-          instance.maxF31 = instance.f31;
+          instance.VF31 = instance.f31;
         }
         //f311
         if (arrFindstay2 != 1) {
-          instance.maxF311_stay2 = instance.f311[0];
+          instance.Vstay2 = instance.f311[0];
         }
         if (arrFindtrailer31 != 1) {
-          instance.maxF311_trailer31 = instance.f311[1];
+          instance.Vtrailer31 = instance.f311[1];
         }
         if (arrFindtrailer32 != 1) {
-          instance.maxF311_trailer32 = instance.f311[2];
+          instance.Vtrailer32 = instance.f311[2];
         }
         if (arrFindtippingVehicle != 1) {
-          instance.maxF311_tipping = instance.f311[3];
+          instance.Vtipping = instance.f311[3];
         }
         if (arrFindtrailerCoupling != 1) {
-          instance.maxF311_trailer = instance.f311[4];
+          instance.Vtrailer = instance.f311[4];
         }
         //f32
         if (arrFindfixed != 1) {
-          instance.maxF32_fixed = instance.f32[0];
+          instance.Vfixed = instance.f32[0];
         }
         if (arrFindslidable != 1) {
-          instance.maxF32_slidable = instance.f32[1];
+          instance.Vslidable = instance.f32[1];
         }
         if (arrFindfoldable != 1) {
-          instance.maxF32_foldable = instance.f32[2];
+          instance.Vfoldable = instance.f32[2];
         }
         //f33
         if (arrFindnoPower != 1) {
-          instance.maxF33_nopower = instance.f33[0];
+          instance.Vnopower = instance.f33[0];
         }
         if (arrFindhumanPower != 1) {
-          instance.maxF33_humanpower = instance.f33[1];
+          instance.Vhumanpower = instance.f33[1];
         }
         //f4
         if (arrFindtubeC != 1) {
-          instance.maxF4_tube_cbeam = instance.f4[0];
+          instance.Vtube_cbeam = instance.f4[0];
         }
         if (arrFinddoubleRecht != 1) {
-          instance.maxF4_double_recht = instance.f4[1];
+          instance.Vdouble_recht = instance.f4[1];
         }
         if (arrFindlip != 1) {
-          instance.maxF4_lip = instance.f4[2];
+          instance.Vlip = instance.f4[2];
         }
         if (arrFindcircle != 1) {
-          instance.maxF4_circle = instance.f4[3];
+          instance.Vcircle = instance.f4[3];
         }
         if (arrFindsquare != 1) {
-          instance.maxF4_square = instance.f4[4];
+          instance.Vsquare = instance.f4[4];
         }
         if (arrFindrecht != 1) {
-          instance.maxF4_recht = instance.f4[5];
+          instance.Vrecht = instance.f4[5];
         }
         if (arrFindcbeam != 1) {
-          instance.maxF4_cbeam = instance.f4[6];
+          instance.Vcbeam = instance.f4[6];
         }
       })
       .catch(function(error) {

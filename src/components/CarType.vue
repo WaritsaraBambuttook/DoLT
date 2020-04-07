@@ -44,7 +44,6 @@ export default {
   },
   methods: {
     carstyle: function(data) {
-      console.log("commit car style  " + data);
       this.$store.commit("setCarStyle", data);
     }
   },

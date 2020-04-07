@@ -28,6 +28,12 @@ export const store = new Vuex.Store({
         num_rf32: '',
         num_rf33: '',
         num_rf4: '',
+        num_lf1: '',
+        num_lf2: '',
+        num_lf31: '',
+        num_lf32: '',
+        num_lf33: '',
+        num_lf4: '',
 
     },
     mutations: {
@@ -83,6 +89,7 @@ export const store = new Vuex.Store({
         setlfsix(state, lfsix) {
             state.lfsix = lfsix
         },
+        //RUPD
         setnum_rf1(state, num_rf1) {
             state.num_rf1 = num_rf1
         },
@@ -100,6 +107,25 @@ export const store = new Vuex.Store({
         },
         setnum_rf4(state, num_rf4) {
             state.num_rf4 = num_rf4
+        },
+        //LUPD
+        setnum_lf1(state, num_lf1) {
+            state.num_lf1 = num_lf1
+        },
+        setnum_lf2(state, num_lf2) {
+            state.num_lf2 = num_lf2
+        },
+        setnum_lf31(state, num_lf31) {
+            state.num_lf31 = num_lf31
+        },
+        setnum_lf32(state, num_lf32) {
+            state.num_lf32 = num_lf32
+        },
+        setnum_lf33(state, num_lf33) {
+            state.num_lf33 = num_lf33
+        },
+        setnum_lf4(state, num_lf4) {
+            state.num_lf4 = num_lf4
         }
     },
     getters: {
@@ -120,11 +146,19 @@ export const store = new Vuex.Store({
         lffour: state => state.lffour,
         lffive: state => state.lffive,
         lfsix: state => state.lfsix,
+        //Num RUPD
         num_rf1: state => state.num_rf1,
         num_rf2: state => state.num_rf2,
         num_rf31: state => state.num_rf31,
         num_rf32: state => state.num_rf32,
         num_rf33: state => state.num_rf33,
         num_rf4: state => state.num_rf4,
+        //Num LUPD
+        num_lf1: state => state.num_lf1,
+        num_lf2: state => state.num_lf2,
+        num_lf31: state => state.num_lf31,
+        num_lf32: state => state.num_lf32,
+        num_lf33: state => state.num_lf33,
+        num_lf4: state => state.num_lf4,
     }
 })

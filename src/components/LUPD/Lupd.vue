@@ -140,34 +140,64 @@ export default {
   },
   methods: {
     one: function(type) {
-      console.log("click 1. " + type);
       this.$store.commit("setlfone", type);
-      console.log("getter 1 : " + this.$store.getters.lfone);
+      if (type == this.Textf1[0]) {
+        this.$store.commit("setnum_lf1", 1);
+      }
+      if (type == this.Textf1[1]) {
+        this.$store.commit("setnum_lf1", 2);
+      }
     },
     two: function(type) {
-      console.log("click 2. " + type);
       this.$store.commit("setlftwo", type);
-      console.log("getter 2: " + this.$store.getters.lftwo);
+      if (type == this.Textf2[0]) {
+        this.$store.commit("setnum_lf2", 1);
+      }
+      if (type == this.Textf2[1]) {
+        this.$store.commit("setnum_lf2", 2);
+      }
     },
     three: function(type) {
-      console.log("click 3 : " + type);
       this.$store.commit("setlfthree", type);
-      console.log("getter 3 : " + this.$store.getters.lfthree);
+      if (type == this.Textf31[0]) {
+        this.$store.commit("setnum_lf31", 1);
+      }
+      if (type == this.Textf31[1]) {
+        this.$store.commit("setnum_lf31", 2);
+      }
     },
     four: function(type) {
-      console.log("click 4 : " + type);
       this.$store.commit("setlffour", type);
-      console.log("getter 4 : " + this.$store.getters.lffour);
+      if (type == this.Textf32[0]) {
+        this.$store.commit("setnum_lf32", 1);
+      }
+      if (type == this.Textf32[1]) {
+        this.$store.commit("setnum_lf32", 2);
+      }
     },
     five: function(type) {
-      console.log("click 5 : " + type);
       this.$store.commit("setlffive", type);
-      console.log("getter 5 : " + this.$store.getters.lffive);
+      if (type == this.Textf33[0]) {
+        this.$store.commit("setnum_lf33", 1);
+      }
+      if (type == this.Textf33[1]) {
+        this.$store.commit("setnum_lf33", 2);
+      }
     },
     six: function(type) {
-      console.log("click 6 : " + type);
       this.$store.commit("setlfsix", type);
-      console.log("getter 6 : " + this.$store.getters.lfsix);
+      if (type == this.Textf4[0]) {
+        this.$store.commit("setnum_lf4", 1);
+      }
+      if (type == this.Textf4[1]) {
+        this.$store.commit("setnum_lf4", 2);
+      }
+      if (type == this.Textf4[2]) {
+        this.$store.commit("setnum_lf4", 3);
+      }
+      if (type == this.Textf4[3]) {
+        this.$store.commit("setnum_lf4", 4);
+      }
     }
   },
   mounted() {

@@ -40,18 +40,15 @@ export default {
     subType: function(data) {
       for (let index = 0; index <= 1; index++) {
         if (data == this.type[index]) {
-          console.log("index " + this.index[index]);
           this.$store.commit("setnumberOfSubType", this.index[index]);
         }
       }
-      console.log("commit to store " + data);
       this.$store.commit("setBumpertype", data);
     }
   },
 
   mounted() {
     this.one = this.$store.getters.CarStyle;
-    console.log("getters car style  " + this.one);
     var instance = this;
     var url =
       "https://sheets.googleapis.com//v4/spreadsheets/1AYlNYc_so8jGRhNoNK_PGJ1XSHwOrhvOoW76UVpCoek/values/A1:AQ76/?key=AIzaSyBdDxNQXwJyowwndJy54wQoynwFvQJiK_g";
@@ -61,20 +58,16 @@ export default {
         var data = response.data.values;
         for (let i = 1; i < 2; i++) {
           for (let j = 38; j < 40; j++) {
-            console.log(data[i][j]);
             instance.type.push(data[i][j]);
             instance.index.push(j);
           }
         }
-        console.log(instance.type);
-        console.log("index " + instance.index);
         for (let i = 0; i < instance.type.length; i++) {
           instance.allData.push({
             name: instance.type[i],
             img: instance.CarImg[i]
           });
         }
-        console.log("all data", instance.allData);
       })
       .catch(function(error) {
         console.log(error);
