@@ -2,7 +2,7 @@
   <div class="f1">
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="วิธีการติดต้ังเข้ากับคัสซี">
+        <b-form-group label="รูปแบบของคัสซี">
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="f1 in f1"

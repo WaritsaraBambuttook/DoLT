@@ -3,7 +3,13 @@
     <b-container>
       <b-row v-if="check === true">
         <b-col>
-          <b-jumbotron id="jumbotron" lead="กรุณากรอกข้อมูล">
+          <b-jumbotron id="jumbotron" class="information">
+            <b-row>
+              <b-col>
+                <h3>กรุณากรอกข้อมูล</h3>
+              </b-col>
+            </b-row>
+            <br />
             <b-row>
               <b-col class="col-4 col-sm-4">
                 <label id="name" for="input-live">ชื่อ :</label>
@@ -17,11 +23,12 @@
                   trim
                 ></b-form-input>
                 <!-- This will only be shown if the preceding input has an invalid state -->
-                <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกชื่อ</b-form-invalid-feedback>
+                <b-form-invalid-feedback id="input-live-feedback">
+                  <h6>กรุณากรอกชื่อ</h6>
+                </b-form-invalid-feedback>
               </b-col>
             </b-row>
             <br />
-
             <b-row>
               <b-col class="col-4 col-sm-4">
                 <label for="input-live">นามสกุล :</label>
@@ -35,11 +42,12 @@
                   trim
                 ></b-form-input>
                 <!-- This will only be shown if the preceding input has an invalid state -->
-                <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกนามสกุล</b-form-invalid-feedback>
+                <b-form-invalid-feedback id="input-live-feedback">
+                  <h6>กรุณากรอกนามสกุล</h6>
+                </b-form-invalid-feedback>
               </b-col>
             </b-row>
             <br />
-
             <b-row>
               <b-col class="col-4 col-sm-4">
                 <label for="input-live">บริษัท/หน่วยงาน :</label>
@@ -53,11 +61,12 @@
                   trim
                 ></b-form-input>
                 <!-- This will only be shown if the preceding input has an invalid state -->
-                <b-form-invalid-feedback id="input-live-feedback">กรุณากรอกบริษัท/หน่วยงาน</b-form-invalid-feedback>
+                <b-form-invalid-feedback id="input-live-feedback">
+                  <h6>กรุณากรอกบริษัท/หน่วยงาน</h6>
+                </b-form-invalid-feedback>
               </b-col>
             </b-row>
             <br />
-
             <b-row>
               <b-col class="col-4 col-sm-4">
                 <label for="input-live">อีเมล :</label>
@@ -73,9 +82,9 @@
                   class="form-control validate"
                 ></b-form-input>
                 <!-- This will only be shown if the preceding input has an invalid state -->
-                <b-form-invalid-feedback
-                  id="input-live-feedback "
-                >กรุณากรอกอีเมล เช่น name@example.com</b-form-invalid-feedback>
+                <b-form-invalid-feedback id="input-live-feedback ">
+                  <h6>กรุณากรอกอีเมล เช่น name@example.com</h6>
+                </b-form-invalid-feedback>
               </b-col>
             </b-row>
             <br />
@@ -268,12 +277,10 @@ export default {
   },
   methods: {
     nextClicked(currentPage) {
-      console.log("next clicked", currentPage);
       let carStyle = this.$store.getters.CarStyle;
       let Bumpertype = this.$store.getters.Bumpertype;
       let RLtype = this.$store.getters.RLtype;
       this.checkRLtype = RLtype;
-      console.log("checkRLtype :" + this.checkRLtype);
 
       let rf1 = this.$store.getters.rfone;
       let rf2 = this.$store.getters.rftwo;
@@ -290,8 +297,6 @@ export default {
       let lf6 = this.$store.getters.lfsix;
       //check car style
       if (currentPage == 0) {
-        console.log(this.carType[0]);
-
         if (carStyle == "") {
           alert("เลือก 'ลักษณะรถยนต์' ใหม่อีกครั้ง");
           return false;
@@ -340,8 +345,6 @@ export default {
       //check rf
       else if (currentPage == 3) {
         if (RLtype == "RUPD") {
-          console.log("9999999");
-
           if (
             rf1 != "" &&
             rf2 != "" &&
@@ -357,7 +360,6 @@ export default {
             return false;
           }
         } else if (RLtype == "LUPD") {
-          console.log("lllllllllllllll");
           if (
             lf1 != "" &&
             lf2 != "" &&
@@ -408,8 +410,7 @@ export default {
     },
     confirm: function() {
       const db = this.$firebase.firestore();
-      console.log(this.firstname);
-      console.log(this.lastname);
+
       if (this.firstname == "" && this.lastname == "") {
         alert("กรุณากรอกข้อมูล");
         this.page = true;
@@ -447,8 +448,16 @@ export default {
   padding: 0;
 }
 .confirm {
-  background-color: #4d2b68; /*Button Color*/
+  background-color: #302b63; /*Button Color*/
   color: #fff;
   width: 20%;
+}
+.information {
+  background: linear-gradient(to bottom right, #302b63 20%, #ffcc66 100%);
+  color: black;
+  font-size: 18px;
+}
+h6 {
+  color: black;
 }
 </style>

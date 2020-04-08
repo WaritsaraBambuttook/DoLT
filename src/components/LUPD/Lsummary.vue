@@ -5,7 +5,7 @@
       <b-row class="col-12 col-sm-12">
         <b-col class="col-12 col-sm-12">
           <h4>ลักษณะรถยนต์ : {{car}} ({{bumper}})</h4>
-          <h5>ประเภทกันชน : {{type}}</h5>
+          <h5>ประเภทกันชน : {{type}} (ด้านข้างรถ)</h5>
         </b-col>
       </b-row>
       <br />
@@ -20,18 +20,18 @@
           ></b-img>
         </b-col>
         <b-col class="col-12 col-sm-7 text-left">
-          <p>F1: Attach to chassis STAY design : {{lf1}}</p>
-          <p>F2: Mount to chassis Fixing method : {{lf2}}</p>
-          <p>F3.1: Avoid interference STAY attachment : {{lf3}}</p>
-          <p>F3.2: Avoid interference SUPPORT BEAM profile : {{lf4}}</p>
-          <p>F3.3: Avoid interference SPACER design / Power source : {{lf5}}</p>
-          <p>F4: Absorb impact energy Protective beam : {{lf6}}</p>
+          <p>1. รูปแบบของคัสซี : {{lf1}}</p>
+          <p>2. วิธีการจับยึดเข้ากับคัสซี : {{lf2}}</p>
+          <p>3. รูปแบบของขายึด (Stay) : {{lf3}}</p>
+          <p>4. การใช้แรงคนในการปรับตำแหน่ง : {{lf4}}</p>
+          <p>5. การปรับได้ของขายึด (Stay) : {{lf5}}</p>
+          <p>6. รูปแบบชิ้นส่วนสำหรับป้องกันการมุด : {{lf6}}</p>
         </b-col>
       </b-row>
       <br />
       <b-row class="col-12 col-sm-12">
         <b-col>
-          <b-button @click="GeneratePDF">dowload</b-button>
+          <b-button @click="GeneratePDF" variant="success">Download</b-button>
         </b-col>
       </b-row>
       <b-row class="col-12 col-sm-12">
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -55,21 +56,18 @@ export default {
       lf6: "",
       car: "",
       bumper: "",
-      type: ""
+      type: "",
+      allNumber: [],
+      index_lf: "",
+      pdf: []
     };
   },
   methods: {
     GeneratePDF: function() {
-      //LUPD 1
-      if (
-        this.lf1 == "C-type" &&
-        this.lf2 == "Bolts-nuts" &&
-        this.lf3 == "Vertical" &&
-        this.lf4 == "C-section" &&
-        this.lf5 == "Fixed" &&
-        this.lf6 == "C-section"
-      ) {
-        console.log("LUPD 1");
+      if (this.pdf == "") {
+        alert("ยังไม่มีแบบเชิงวิศวกรรมนี้ กรุณาเลือกใหม่อีกครั้ง");
+      } else {
+        location.href = this.pdf;
       }
     }
   },
@@ -83,26 +81,36 @@ export default {
     this.lf4 = this.$store.getters.lffour;
     this.lf5 = this.$store.getters.lffive;
     this.lf6 = this.$store.getters.lfsix;
+    //number of LUPD
+    var numLf1 = this.$store.getters.num_lf1;
+    var numLf2 = this.$store.getters.num_lf2;
+    var numLf31 = this.$store.getters.num_lf31;
+    var numLf32 = this.$store.getters.num_lf32;
+    var numLf33 = this.$store.getters.num_lf33;
+    var numLf4 = this.$store.getters.num_lf4;
+    //to string
+    this.allNumber.push(numLf1, numLf2, numLf31, numLf32, numLf33, numLf4);
+    const toString =
+      "LUPD-MTEC-" + this.allNumber.toString().replace(/,/g, "-");
+    console.log(toString);
 
-    console.log(
-      this.car +
-        "  " +
-        this.bumper +
-        "  " +
-        this.type +
-        "  " +
-        this.lf1 +
-        "  " +
-        this.lf2 +
-        "  " +
-        this.lf3 +
-        "  " +
-        this.lf4 +
-        "  " +
-        this.lf5 +
-        "  " +
-        this.lf6
-    );
+    var instance = this;
+    var url =
+      "https://sheets.googleapis.com//v4/spreadsheets/19DJnQk5pirckQRHjaswBlVJxpY0AUzzkKvTAIZvV2iA/values/A1:P28/?key=AIzaSyBdDxNQXwJyowwndJy54wQoynwFvQJiK_g";
+    axios
+      .get(url)
+      .then(function(response) {
+        instance.data = response.data.values;
+        for (let i = 2; i < instance.data.length; i++) {
+          if (toString == instance.data[i][0]) {
+            instance.index_lf = i;
+            instance.pdf.push(instance.data[i][15]);
+          }
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 };
 </script>

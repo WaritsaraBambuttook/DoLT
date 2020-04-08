@@ -4,7 +4,7 @@
       <b-row class="col-12 col-sm-12">
         <b-col class="col-12 col-sm-12">
           <h4>ลักษณะรถยนต์ : {{car}} ({{bumper}})</h4>
-          <h5>ประเภทกันชน : {{type}}</h5>
+          <h5>ประเภทกันชน : {{type}} (ด้านท้ายรถ)</h5>
         </b-col>
       </b-row>
       <br />
@@ -13,7 +13,7 @@
           <b-img class="imgRsummary" thumbnail fluid :src="pathImg" :alt="pathImg"></b-img>
         </b-col>
         <b-col class="col-12 col-sm-8 text-left">
-          <p>1. วิธีการติดต้ังเข้ากับคัสซี : {{rf1}}</p>
+          <p>1. รูปแบบของคัสซี : {{rf1}}</p>
           <p>2. วิธีการจับยึดเข้ากับคัสซี : {{rf2}}</p>
           <p>3. รูปแบบของขายึด (Stay) : {{width}} = {{rf3}}</p>
           <p>4. การใช้แรงคนในการปรับตำแหน่ง : {{rf4}}</p>
@@ -24,7 +24,7 @@
       <b-row class="col-12 col-sm-12">
         <b-col>
           <!-- <a :href="locationFile" onclick="return false;"> -->
-          <b-button @click="GeneratePDF" variant="success">download</b-button>
+          <b-button @click="GeneratePDF" variant="success">Download</b-button>
           <!-- </a> -->
 
           <br />
@@ -54,8 +54,6 @@ export default {
       car: "",
       bumper: "",
       type: "",
-      locationFile: "",
-      nameFile: "",
       width: "",
       allnum_rf: [],
       pdf: [],
@@ -132,8 +130,7 @@ export default {
       if (this.pdf == "") {
         alert("ยังไม่มีแบบเชิงวิศวกรรมนี้ กรุณาเลือกใหม่อีกครั้ง");
       } else {
-        this.locationFile = this.pdf;
-        location.href = this.locationFile;
+        location.href = this.pdf;
       }
     }
   }

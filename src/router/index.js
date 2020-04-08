@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import detailProject from '../pages/detailProject'
 import Contact from '../pages/Contact'
-import Stepper from '../pages/Stepper'
+import Download from '../pages/Download'
 import google from '../pages/googleSheet'
 import bumper from '../components/TypeofCar/TypeTwo.vue'
 import rupd from '../components/RUPD/Rsummary.vue'
@@ -23,8 +23,8 @@ export default new Router({
     // },
     {
       path: '/download',
-      name: 'Stepper',
-      component: Stepper
+      name: 'Download',
+      component: Download
     },
     {
       path: '/detailProject',

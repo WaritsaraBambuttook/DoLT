@@ -2,7 +2,7 @@
   <div class="lf">
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="วิธีการติดตั้งเข้ากับคัตซี">
+        <b-form-group label="รูปแบบของคัสซี">
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="Textf1 in Textf1"
@@ -140,13 +140,15 @@ export default {
   },
   methods: {
     one: function(type) {
+      //เก็บเลขเดียว
       this.$store.commit("setlfone", type);
-      if (type == this.Textf1[0]) {
-        this.$store.commit("setnum_lf1", 1);
-      }
-      if (type == this.Textf1[1]) {
-        this.$store.commit("setnum_lf1", 2);
-      }
+      this.$store.commit("setnum_lf1", 1);
+      // if (type == this.Textf1[0]) {
+      //   this.$store.commit("setnum_lf1", 1);
+      // }
+      // if (type == this.Textf1[1]) {
+      //   this.$store.commit("setnum_lf1", 2);
+      // }
     },
     two: function(type) {
       this.$store.commit("setlftwo", type);
