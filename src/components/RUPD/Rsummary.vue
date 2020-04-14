@@ -10,21 +10,27 @@
       <br />
       <b-row class="col-12 col-sm-12">
         <b-col class="col-12 col-sm-4">
-          <b-img class="imgRsummary" thumbnail fluid :src="pathImg" :alt="pathImg"></b-img>
+          <b-col>
+            <b-img class="imgRsummary" thumbnail fluid :src="pathImg" :alt="pathImg"></b-img>
+          </b-col>
+          <br />
+          <b-col>{{code}}</b-col>
         </b-col>
         <b-col class="col-12 col-sm-8 text-left">
           <p>1. รูปแบบของคัสซี : {{rf1}}</p>
           <p>2. วิธีการจับยึดเข้ากับคัสซี : {{rf2}}</p>
           <p>3. รูปแบบของขายึด (Stay) : {{width}} = {{rf3}}</p>
-          <p>4. การใช้แรงคนในการปรับตำแหน่ง : {{rf4}}</p>
-          <p>5. การปรับได้ของขายึด (Stay) : {{rf5}}</p>
+          <p>4. การปรับได้ของขายึด (Stay) : {{rf5}}</p>
+          <p>5. การใช้แรงคนในการปรับตำแหน่ง : {{rf4}}</p>
           <p>6. รูปแบบชิ้นส่วนสำหรับป้องกันการมุด : {{rf6}}</p>
         </b-col>
       </b-row>
       <b-row class="col-12 col-sm-12">
         <b-col>
           <!-- <a :href="locationFile" onclick="return false;"> -->
-          <b-button @click="GeneratePDF" variant="success">Download</b-button>
+          <b-button @click="GeneratePDF" variant="success">
+            <b-icon icon="download" font-scale="2"></b-icon>Download
+          </b-button>
           <!-- </a> -->
 
           <br />
@@ -63,7 +69,8 @@ export default {
         "RUPD-MTEC-1-1-2-1-1-1": require("../../assets/imgRUPD/RUPD-MTEC-1-1-2-1-1-1.jpg"),
         "RUPD-MTEC-1-1-2-1-1-2": require("../../assets/imgRUPD/RUPD-MTEC-1-1-2-1-2.jpg")
       },
-      pathImg: ""
+      pathImg: "",
+      code: ""
     };
   },
   created() {
@@ -93,6 +100,7 @@ export default {
     console.log("typeName", typeName);
 
     this.pathImg = this.imgType[typeName];
+    this.code = typeName;
 
     var instance = this;
     var url =

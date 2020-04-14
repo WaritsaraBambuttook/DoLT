@@ -4,7 +4,7 @@
       <b-navbar-brand to="/" id="home">หน้าแรก</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-      <b-collapse id="nav-collapse" is-nav>
+      <b-collapse id="nav-collapse" class="all" is-nav>
         <b-navbar-nav>
           <b-nav-item to="/detailProject">
             <b-icon icon="tv"></b-icon>รายละเอียดโครงการ
@@ -15,6 +15,15 @@
           <b-nav-item to="/Contact">
             <b-icon icon="people"></b-icon>ติดต่อสอบถาม
           </b-nav-item>
+        </b-navbar-nav>
+
+        <b-navbar-nav class="ml-auto imgNav">
+          <b-navbar-brand href="#">
+            <img class="dolt" :src="require('./assets/dolt.png')" />
+          </b-navbar-brand>
+          <b-navbar-brand href="#">
+            <img class="mtec" :src="require('./assets/mtec.png')" />
+          </b-navbar-brand>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -72,5 +81,20 @@ export default {
 
 #sticky-footer {
   flex-shrink: 0;
+}
+.dolt {
+  height: 55px;
+  /* background-color: white; */
+}
+.mtec {
+  height: 55px;
+  /* background-color: white; */
+}
+.imgNav {
+  background-color: white;
+  border-radius: 5px;
+}
+.all {
+  font-size: 16px;
 }
 </style>

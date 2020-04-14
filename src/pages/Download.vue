@@ -251,6 +251,9 @@ export default {
     };
   },
   mounted() {
+    if (sessionStorage.getItem("setData")) {
+      this.check = false;
+    }
     var instance = this;
     var url =
       "https://sheets.googleapis.com//v4/spreadsheets/1AYlNYc_so8jGRhNoNK_PGJ1XSHwOrhvOoW76UVpCoek/values/A1:AQ76/?key=AIzaSyBdDxNQXwJyowwndJy54wQoynwFvQJiK_g";
@@ -410,32 +413,41 @@ export default {
     },
     confirm: function() {
       const db = this.$firebase.firestore();
-
-      if (this.firstname == "" && this.lastname == "") {
-        alert("กรุณากรอกข้อมูล");
-        this.page = true;
+      if (
+        this.firstname == "" ||
+        this.lastname == "" ||
+        this.company == "" ||
+        this.emailState === false ||
+        this.status == "not_accepted"
+      ) {
+        alert("กรุณากรอกข้อมูลให้ถูกต้อง ครบถ้วน และกรุณายินยอมการเก็บข้อมูล");
+        console.log("if");
       } else {
+        console.log("else");
+        let setData = {
+          firstname: this.firstname,
+          lastname: this.lastname,
+          company: this.company,
+          email: this.email
+        };
+        sessionStorage.setItem("setData", JSON.stringify(setData));
+
         var instance = this;
         instance.check = true;
-        if (this.status == "not_accepted") {
-          alert("กรุณายินยอมการเก็บข้อมูล");
-        } else {
-          db.collection("register")
-            .add({
-              firstname: this.firstname,
-              lastname: this.lastname,
-              company: this.company,
-              email: this.email
-            })
-            .then(function(docRef) {
-              console.log("Document written with ID: ", docRef.id);
-              instance.check = false;
-            })
-            .catch(function(error) {
-              console.error("Error adding document: ", error);
-            });
-        }
-        this.status = "false";
+        db.collection("register")
+          .add({
+            firstname: this.firstname,
+            lastname: this.lastname,
+            company: this.company,
+            email: this.email
+          })
+          .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+            instance.check = false;
+          })
+          .catch(function(error) {
+            console.error("Error adding document: ", error);
+          });
       }
     }
   }

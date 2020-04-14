@@ -11,27 +11,33 @@
       <br />
       <b-row class="col-12 col-sm-12">
         <b-col class="col-12 col-sm-5">
-          <b-img
-            class="imgLsummary"
-            thumbnail
-            fluid
-            :src="require('../../assets/logo.png')"
-            alt="Image 1"
-          ></b-img>
+          <b-col>
+            <b-img
+              class="imgLsummary"
+              thumbnail
+              fluid
+              :src="require('../../assets/logo.png')"
+              alt="Image 1"
+            ></b-img>
+          </b-col>
+          <br />
+          <b-col>{{code}}</b-col>
         </b-col>
         <b-col class="col-12 col-sm-7 text-left">
           <p>1. รูปแบบของคัสซี : {{lf1}}</p>
           <p>2. วิธีการจับยึดเข้ากับคัสซี : {{lf2}}</p>
           <p>3. รูปแบบของขายึด (Stay) : {{lf3}}</p>
-          <p>4. การใช้แรงคนในการปรับตำแหน่ง : {{lf4}}</p>
-          <p>5. การปรับได้ของขายึด (Stay) : {{lf5}}</p>
+          <p>4. การปรับได้ของขายึด (Stay) : {{lf5}}</p>
+          <p>5. การใช้แรงคนในการปรับตำแหน่ง : {{lf4}}</p>
           <p>6. รูปแบบชิ้นส่วนสำหรับป้องกันการมุด : {{lf6}}</p>
         </b-col>
       </b-row>
       <br />
       <b-row class="col-12 col-sm-12">
         <b-col>
-          <b-button @click="GeneratePDF" variant="success">Download</b-button>
+          <b-button @click="GeneratePDF" variant="success">
+            <b-icon icon="download" font-scale="2"></b-icon>Download
+          </b-button>
         </b-col>
       </b-row>
       <b-row class="col-12 col-sm-12">
@@ -59,7 +65,8 @@ export default {
       type: "",
       allNumber: [],
       index_lf: "",
-      pdf: []
+      pdf: [],
+      code: ""
     };
   },
   methods: {
@@ -93,7 +100,7 @@ export default {
     const toString =
       "LUPD-MTEC-" + this.allNumber.toString().replace(/,/g, "-");
     console.log(toString);
-
+    this.code = toString;
     var instance = this;
     var url =
       "https://sheets.googleapis.com//v4/spreadsheets/19DJnQk5pirckQRHjaswBlVJxpY0AUzzkKvTAIZvV2iA/values/A1:P28/?key=AIzaSyBdDxNQXwJyowwndJy54wQoynwFvQJiK_g";
