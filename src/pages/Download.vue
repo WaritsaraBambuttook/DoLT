@@ -97,7 +97,7 @@
                   name="checkbox-1"
                   value="accepted"
                   unchecked-value="not_accepted"
-                >ยินยอมการเก็บข้อมูล</b-form-checkbox>
+                >ยอมรับเงื่อนไขและข้อตกลง</b-form-checkbox>
               </b-col>
             </b-row>
             <br />

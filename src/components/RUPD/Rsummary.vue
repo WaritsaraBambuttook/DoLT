@@ -11,10 +11,17 @@
       <b-row class="col-12 col-sm-12">
         <b-col class="col-12 col-sm-4">
           <b-col>
-            <b-img class="imgRsummary" thumbnail fluid :src="pathImg" :alt="pathImg"></b-img>
+            <!-- <b-img class="imgRsummary" thumbnail fluid :src="pathImg" :alt="pathImg"></b-img> -->
+            <b-img
+              class="imgRsummary"
+              thumbnail
+              fluid
+              :src="require('../../assets/imgRUPD/behind.png')"
+              alt="behind"
+            ></b-img>
           </b-col>
           <br />
-          <b-col>{{code}}</b-col>
+          <b-col>{{codeID}}</b-col>
         </b-col>
         <b-col class="col-12 col-sm-8 text-left">
           <p>1. รูปแบบของคัสซี : {{rf1}}</p>
@@ -65,12 +72,12 @@ export default {
       pdf: [],
       data: [],
       index_rf: [],
-      imgType: {
-        "RUPD-MTEC-1-1-2-1-1-1": require("../../assets/imgRUPD/RUPD-MTEC-1-1-2-1-1-1.jpg"),
-        "RUPD-MTEC-1-1-2-1-1-2": require("../../assets/imgRUPD/RUPD-MTEC-1-1-2-1-2.jpg")
-      },
-      pathImg: "",
-      code: ""
+      // imgType: {
+      //   "RUPD-MTEC-1-1-2-1-1-1": require("../../assets/imgRUPD/RUPD-MTEC-1-1-2-1-1-1.jpg"),
+      //   "RUPD-MTEC-1-1-2-1-1-2": require("../../assets/imgRUPD/RUPD-MTEC-1-1-2-1-2.jpg")
+      // },
+      // pathImg: "",
+      codeID: ""
     };
   },
   created() {
@@ -99,8 +106,10 @@ export default {
       "RUPD-MTEC-" + this.allnum_rf.toString().replace(/,/g, "-");
     console.log("typeName", typeName);
 
-    this.pathImg = this.imgType[typeName];
-    this.code = typeName;
+    // this.pathImg = this.imgType[typeName];
+    this.codeID = typeName;
+
+    console.log("code", this.codeID);
 
     var instance = this;
     var url =

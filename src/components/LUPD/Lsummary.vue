@@ -16,7 +16,7 @@
               class="imgLsummary"
               thumbnail
               fluid
-              :src="require('../../assets/logo.png')"
+              :src="require('../../assets/imgLUPD/beside.png')"
               alt="Image 1"
             ></b-img>
           </b-col>
@@ -123,8 +123,8 @@ export default {
 </script>
 <style>
 .imgLsummary {
-  width: 200px;
-  height: 200px;
+  width: auto;
+  height: 250px;
 }
 .line {
   border-style: ridge;

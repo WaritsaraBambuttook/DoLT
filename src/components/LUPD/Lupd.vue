@@ -6,12 +6,15 @@
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="Textf1 in Textf1"
-              :key="Textf1"
-              name="some-radios"
-              :value="Textf1"
-              @change="one(Textf1)"
-              :disabled=" Textf1 == VCtype || Textf1 == VItype"
-            >แบบ {{Textf1}}</b-form-radio>
+              :key="Textf1.name"
+              name="radio-size"
+              :value="Textf1.name"
+              @change="one(Textf1.name)"
+              :disabled=" Textf1.name == VCtype || Textf1.name == VItype"
+            >
+              แบบ {{Textf1.name}}
+              <b-img class="imgf1" :src="Textf1.imgf1" thumbnail fluid :alt="Textf1.name"></b-img>
+            </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -38,27 +41,33 @@
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="Textf31 in Textf31"
-              :key="Textf31"
+              :key="Textf31.name"
               name="some-radios"
-              :value="Textf31"
-              @change="three(Textf31)"
-              :disabled=" Textf31 == VVertical || Textf31 == VHorizontal"
-            >{{Textf31}}</b-form-radio>
+              :value="Textf31.name"
+              @change="three(Textf31.name)"
+              :disabled=" Textf31.name == VVertical || Textf31.name == VHorizontal"
+            >
+              {{Textf31.name}}
+              <b-img class="imgf1" :src="Textf31.imgf31" thumbnail fluid :alt="Textf31.name"></b-img>
+            </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
 
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="การปรับได้ของขายึด">
+        <b-form-group label="หน้าตัดของขายึด (Stay)">
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="Textf32 in Textf32"
-              :key="Textf32"
+              :key="Textf32.name"
               name="some-radios"
-              :value="Textf32"
-              @change="four(Textf32)"
-              :disabled="Textf32 == VCsection1 || Textf32 == VCircle1"
-            >{{Textf32}}</b-form-radio>
+              :value="Textf32.name"
+              @change="four(Textf32.name)"
+              :disabled="Textf32.name == VCsection1 || Textf32.name == VCircle1"
+            >
+              {{Textf32.name}}
+              <b-img class="imgf1" :src="Textf32.imgf32" thumbnail fluid :alt="Textf32.name"></b-img>
+            </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -66,31 +75,37 @@
 
     <b-row>
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="การใช้แรงงานคนในการปรับตำปหน่ง">
+        <b-form-group label="การปรับได้ของขายึด (Stay)">
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="Textf33 in Textf33"
-              :key="Textf33"
+              :key="Textf33.name"
               name="some-radios"
-              :value="Textf33"
-              :disabled="Textf33 == VFixed || Textf33 == VFoldable"
-              @change="five(Textf33)"
-            >{{Textf33}}</b-form-radio>
+              :value="Textf33.name"
+              :disabled="Textf33.name == VFixed || Textf33.name == VFoldable"
+              @change="five(Textf33.name)"
+            >
+              {{Textf33.name}}
+              <b-img class="imgf1" :src="Textf33.imgf33" thumbnail fluid :alt="Textf33.name"></b-img>
+            </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
 
       <b-col class="col-12 col-sm-6 outline">
-        <b-form-group label="รูปแบบชิ้นส่วนสำหรับป้องกันการมุด">
+        <b-form-group label="หน้าตัดของด้านป้องกันการมุด (Protective beam cross section)">
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="Textf4 in Textf4"
-              :key="Textf4"
+              :key="Textf4.name"
               name="some-radios"
-              :value="Textf4"
-              @change="six(Textf4)"
-              :disabled="Textf4 == VCsection2 || Textf4 == VRectangular || Textf4 == VWsection || Textf4 == VCircle2"
-            >{{Textf4}}</b-form-radio>
+              :value="Textf4.name"
+              @change="six(Textf4.name)"
+              :disabled="Textf4.name == VCsection2 || Textf4.name == VRectangular || Textf4.name == VWsection || Textf4.name == VCircle2"
+            >
+              {{Textf4.name}}
+              <b-img class="imgf1" :src="Textf4.imgf4" thumbnail fluid :alt="Textf4.name"></b-img>
+            </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -135,11 +150,35 @@ export default {
       VCsection2: "",
       VRectangular: "",
       VWsection: "",
-      VCircle2: ""
+      VCircle2: "",
+      imgf1: [
+        require("../../assets/imgLUPD/ctype.png"),
+        require("../../assets/imgLUPD/I-type.png")
+      ],
+      imgf31: [
+        require("../../assets/imgLUPD/vertical.png"),
+        require("../../assets/imgLUPD/horizontal.png")
+      ],
+      imgf32: [
+        require("../../assets/imgLUPD/C.png"),
+        require("../../assets/imgLUPD/Circle.png")
+      ],
+      imgf33: [
+        require("../../assets/imgLUPD/fixed-LUPD.png"),
+        require("../../assets/imgLUPD/foldable.png")
+      ],
+      imgf4: [
+        require("../../assets/imgLUPD/C.png"),
+        require("../../assets/imgLUPD/rectangular.png"),
+        require("../../assets/imgLUPD/W-section.png"),
+        require("../../assets/imgLUPD/Circle.png")
+      ]
     };
   },
   methods: {
     one: function(type) {
+      console.log(type);
+
       //เก็บเลขเดียว
       this.$store.commit("setlfone", type);
       this.$store.commit("setnum_lf1", 1);
@@ -151,6 +190,7 @@ export default {
       // }
     },
     two: function(type) {
+      console.log(type);
       this.$store.commit("setlftwo", type);
       if (type == this.Textf2[0]) {
         this.$store.commit("setnum_lf2", 1);
@@ -160,44 +200,48 @@ export default {
       }
     },
     three: function(type) {
+      console.log(type);
       this.$store.commit("setlfthree", type);
-      if (type == this.Textf31[0]) {
+      if (type == this.Textf31[0].name) {
         this.$store.commit("setnum_lf31", 1);
       }
-      if (type == this.Textf31[1]) {
+      if (type == this.Textf31[1].name) {
         this.$store.commit("setnum_lf31", 2);
       }
     },
     four: function(type) {
+      console.log(type);
       this.$store.commit("setlffour", type);
-      if (type == this.Textf32[0]) {
+      if (type == this.Textf32[0].name) {
         this.$store.commit("setnum_lf32", 1);
       }
-      if (type == this.Textf32[1]) {
+      if (type == this.Textf32[1].name) {
         this.$store.commit("setnum_lf32", 2);
       }
     },
     five: function(type) {
+      console.log(type);
       this.$store.commit("setlffive", type);
-      if (type == this.Textf33[0]) {
+      if (type == this.Textf33[0].name) {
         this.$store.commit("setnum_lf33", 1);
       }
-      if (type == this.Textf33[1]) {
+      if (type == this.Textf33[1].name) {
         this.$store.commit("setnum_lf33", 2);
       }
     },
     six: function(type) {
+      console.log(type);
       this.$store.commit("setlfsix", type);
-      if (type == this.Textf4[0]) {
+      if (type == this.Textf4[0].name) {
         this.$store.commit("setnum_lf4", 1);
       }
-      if (type == this.Textf4[1]) {
+      if (type == this.Textf4[1].name) {
         this.$store.commit("setnum_lf4", 2);
       }
-      if (type == this.Textf4[2]) {
+      if (type == this.Textf4[2].name) {
         this.$store.commit("setnum_lf4", 3);
       }
-      if (type == this.Textf4[3]) {
+      if (type == this.Textf4[3].name) {
         this.$store.commit("setnum_lf4", 4);
       }
     }
@@ -210,27 +254,43 @@ export default {
       let data = res.data.values;
       //f1
       for (let i = 1; i < 3; i++) {
-        instance.Textf1.push(data[1][i]);
+        instance.Textf1.push({
+          name: data[1][i],
+          imgf1: instance.imgf1[i - 1]
+        });
       }
+
       //f2
       for (let i = 3; i <= 4; i++) {
         instance.Textf2.push(data[1][i]);
       }
       //f31
       for (let i = 5; i <= 6; i++) {
-        instance.Textf31.push(data[1][i]);
+        instance.Textf31.push({
+          name: data[1][i],
+          imgf31: instance.imgf31[i - 5]
+        });
       }
       //f32
       for (let i = 7; i <= 8; i++) {
-        instance.Textf32.push(data[1][i]);
+        instance.Textf32.push({
+          name: data[1][i],
+          imgf32: instance.imgf32[i - 7]
+        });
       }
       //f33
       for (let i = 9; i <= 10; i++) {
-        instance.Textf33.push(data[1][i]);
+        instance.Textf33.push({
+          name: data[1][i],
+          imgf33: instance.imgf33[i - 9]
+        });
       }
       //f4
       for (let i = 11; i <= 14; i++) {
-        instance.Textf4.push(data[1][i]);
+        instance.Textf4.push({
+          name: data[1][i],
+          imgf4: instance.imgf4[i - 11]
+        });
       }
 
       for (let i = 2; i < data.length; i++) {
@@ -272,10 +332,10 @@ export default {
       const arrCircle2 = instance.Circle2.find(el => el > 0);
 
       if (arrCtype != 1) {
-        instance.VCtype = instance.Textf1[0];
+        instance.VCtype = instance.Textf1[0].name;
       }
       if (arrItype != 1) {
-        instance.VItype = instance.Textf1[1];
+        instance.VItype = instance.Textf1[1].name;
       }
       if (arrBoltsNuts != 1) {
         instance.VBoltsNuts = instance.Textf2[0];
@@ -284,34 +344,34 @@ export default {
         instance.VWelding = instance.Textf2[1];
       }
       if (arrVertical != 1) {
-        instance.VVertical = instance.Textf31[0];
+        instance.VVertical = instance.Textf31[0].name;
       }
       if (arrHorizontal != 1) {
-        instance.Horizontal = instance.Textf31[1];
+        instance.Horizontal = instance.Textf31[1].name;
       }
       if (arrCsection1 != 1) {
-        instance.VCsection1 = instance.Textf32[0];
+        instance.VCsection1 = instance.Textf32[0].name;
       }
       if (arrCircle1 != 1) {
-        instance.VCircle1 = instance.Textf32[1];
+        instance.VCircle1 = instance.Textf32[1].name;
       }
       if (arrFixed != 1) {
-        instance.VFixed = instance.Textf33[0];
+        instance.VFixed = instance.Textf33[0].name;
       }
       if (arrFoldable != 1) {
-        instance.VFoldable = instance.Textf33[1];
+        instance.VFoldable = instance.Textf33[1].name;
       }
       if (arrCsection2 != 1) {
-        instance.VCsection2 = instance.Textf4[0];
+        instance.VCsection2 = instance.Textf4[0].name;
       }
       if (arrRectangular != 1) {
-        instance.VRectangular = instance.Textf4[1];
+        instance.VRectangular = instance.Textf4[1].name;
       }
       if (arrWsection != 1) {
-        instance.VWsection = instance.Textf4[2];
+        instance.VWsection = instance.Textf4[2].name;
       }
       if (arrCircle2 != 1) {
-        instance.VCircle2 = instance.Textf4[3];
+        instance.VCircle2 = instance.Textf4[3].name;
       }
     });
   }
@@ -320,8 +380,13 @@ export default {
 <style>
 .lf {
   text-align: start;
+  font-size: 18px;
 }
 .outline {
   border-style: groove;
+}
+.imgf1 {
+  width: auto;
+  height: 35px;
 }
 </style>

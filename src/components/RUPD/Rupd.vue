@@ -6,12 +6,15 @@
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="f1 in f1"
-              :key="f1"
+              :key="f1.name"
               name="some-radios"
-              :value="f1"
-              @change="one(f1)"
-              :disabled="f1 == Vctype || f1 == Vitype"
-            >แบบ {{f1}}</b-form-radio>
+              :value="f1.name"
+              @change="one(f1.name)"
+              :disabled="f1.name == Vctype || f1.name == Vitype"
+            >
+              แบบ {{f1.name}}
+              <b-img class="imgf1" :src="f1.imgf1" thumbnail fluid :alt="f1.name"></b-img>
+            </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -40,21 +43,33 @@
               <b-form-input
                 v-model="Wveh"
                 type="number"
-                placeholder="ความกว้างตัวรถ เช่น 2200 mm"
+                placeholder="ความกว้างตัวรถ Wveh เช่น 2550 มม."
                 min="0"
               ></b-form-input>
               <b-form-input
                 v-model="Wch"
                 type="number"
-                placeholder="ความกว้างคัตซี เช่น 800 mm"
+                placeholder="ความกว้างคัตซี Wch เช่น 800 มม."
                 min="0"
               ></b-form-input>
             </b-col>
             <br />
-            <b-col>
-              <b-button @click="cal">คำนวณ</b-button>
-              <div class="mt-2">Value: {{ num }}</div>
-            </b-col>
+            <b-row>
+              <b-col class="col-12 col-sm-4">
+                <b-button @click="cal">คำนวณ</b-button>
+                <div class="mt-2">Value: {{ num }}</div>
+              </b-col>
+              <b-col class="col-12 col-sm-8">
+                <b-img
+                  class="imgWidth"
+                  :src="require('../../assets/imgRUPD/Width.png')"
+                  thumbnail
+                  fluid
+                  alt="Width"
+                ></b-img>
+              </b-col>
+            </b-row>
+
             <br />
 
             <b-col>
@@ -90,12 +105,15 @@
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="f4 in f4"
-              :key="f4"
+              :key="f4.name"
               name="some-radios"
-              :value="f4"
-              @change="six(f4)"
-              :disabled=" f4 ==  Vtube_cbeam || f4 ==   Vdouble_recht || f4 ==   Vlip || f4 ==   Vcircle || f4 ==   Vsquare || f4 ==   Vrecht || f4 ==   Vcbeam "
-            >{{f4}}</b-form-radio>
+              :value="f4.name"
+              @change="six(f4.name)"
+              :disabled=" f4.name ==  Vtube_cbeam || f4.name ==   Vdouble_recht || f4.name ==   Vlip || f4.name ==   Vcircle || f4.name ==   Vsquare || f4.name ==   Vrecht || f4.name ==   Vcbeam "
+            >
+              {{f4.name}}
+              <b-img class="imgf1" :src="f4.imgf4" thumbnail fluid :alt="f4.name"></b-img>
+            </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -107,12 +125,15 @@
           <b-form-radio-group stacked>
             <b-form-radio
               v-for="f32 in f32"
-              :key="f32"
+              :key="f32.name"
               name="some-radios"
-              :value="f32"
-              @change="four(f32)"
-              :disabled="f32 ==   Vfixed ||f32 ==   Vslidable || f32 ==  Vfoldable"
-            >{{f32}}</b-form-radio>
+              :value="f32.name"
+              @change="four(f32.name)"
+              :disabled="f32.name ==  Vfixed ||f32.name ==  Vslidable || f32.name ==  Vfoldable"
+            >
+              {{f32.name}}
+              <b-img class="imgf1" :src="f32.imgf32" thumbnail fluid :alt="f32.name"></b-img>
+            </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
       </b-col>
@@ -199,15 +220,33 @@ export default {
       recht: [],
       cbeam: [],
       validateFixed: [],
-      data: []
+      data: [],
+      imgf1: [
+        require("../../assets/imgRUPD/C-type.png"),
+        require("../../assets/imgRUPD/I-type.png")
+      ],
+      imgf32: [
+        require("../../assets/imgRUPD/fixed.png"),
+        require("../../assets/imgRUPD/foldable.png"),
+        require("../../assets/imgRUPD/slidable.png")
+      ],
+      imgf4: [
+        require("../../assets/imgRUPD/Tube-C-beam.png"),
+        require("../../assets/imgRUPD/Double-Rectangular.png"),
+        require("../../assets/imgRUPD/Lip.png"),
+        require("../../assets/imgRUPD/Circle.png"),
+        require("../../assets/imgRUPD/Square.png"),
+        require("../../assets/imgRUPD/Rectangular.png"),
+        require("../../assets/imgRUPD/C-beam.png")
+      ]
     };
   },
   methods: {
     one: function(type) {
-      if (type == this.f1[0]) {
+      if (type == this.f1[0].name) {
         this.$store.commit("setnum_rf1", 1);
       }
-      if (type == this.f1[1]) {
+      if (type == this.f1[1].name) {
         this.$store.commit("setnum_rf1", 2);
       }
       this.$store.commit("setrfone", type);
@@ -245,7 +284,7 @@ export default {
     four: function(type) {
       //อนาคตอาจจะลบตรงนี้///////////////////////////////////////////////////////
       this.validateFixed = type;
-      if (this.f32[0] == this.validateFixed) {
+      if (this.f32[0].name == this.validateFixed) {
         this.humanPower = 0;
         if (this.humanPower == 0) {
           this.Vhumanpower = this.f33[1];
@@ -271,13 +310,13 @@ export default {
         }
       }
       ///////////////////////////////////////////////////////////////////////
-      if (type == this.f32[0]) {
+      if (type == this.f32[0].name) {
         this.$store.commit("setnum_rf32", 1);
       }
-      if (type == this.f32[1]) {
+      if (type == this.f32[1].name) {
         this.$store.commit("setnum_rf32", 2);
       }
-      if (type == this.f32[2]) {
+      if (type == this.f32[2].name) {
         this.$store.commit("setnum_rf32", 3);
       }
       ///////////////////////////////////////////////////////////////////////
@@ -294,25 +333,25 @@ export default {
       this.$store.commit("setrffive", type);
     },
     six: function(type) {
-      if (type == this.f4[0]) {
+      if (type == this.f4[0].name) {
         this.$store.commit("setnum_rf4", 1);
       }
-      if (type == this.f4[1]) {
+      if (type == this.f4[1].name) {
         this.$store.commit("setnum_rf4", 2);
       }
-      if (type == this.f4[2]) {
+      if (type == this.f4[2].name) {
         this.$store.commit("setnum_rf4", 3);
       }
-      if (type == this.f4[3]) {
+      if (type == this.f4[3].name) {
         this.$store.commit("setnum_rf4", 4);
       }
-      if (type == this.f4[4]) {
+      if (type == this.f4[4].name) {
         this.$store.commit("setnum_rf4", 5);
       }
-      if (type == this.f4[5]) {
+      if (type == this.f4[5].name) {
         this.$store.commit("setnum_rf4", 6);
       }
-      if (type == this.f4[5]) {
+      if (type == this.f4[6].name) {
         this.$store.commit("setnum_rf4", 7);
       }
       this.$store.commit("setrfsix", type);
@@ -358,9 +397,14 @@ export default {
         //f1
         for (let i = 1; i < 2; i++) {
           for (let j = 1; j < 3; j++) {
-            instance.f1.push(data[i][j]);
+            instance.f1.push({
+              name: data[i][j],
+              imgf1: instance.imgf1[j - 1]
+            });
           }
         }
+        console.log(instance.f1);
+
         //f2
         for (let i = 1; i < 2; i++) {
           for (let j = 3; j <= 4; j++) {
@@ -382,7 +426,10 @@ export default {
         //f32
         for (let i = 1; i < 2; i++) {
           for (let j = 11; j <= 13; j++) {
-            instance.f32.push(data[i][j]);
+            instance.f32.push({
+              name: data[i][j],
+              imgf32: instance.imgf32[j - 11]
+            });
           }
         }
         //f33
@@ -395,7 +442,10 @@ export default {
         //f4
         for (let i = 1; i < 2; i++) {
           for (let j = 16; j <= 22; j++) {
-            instance.f4.push(data[i][j]);
+            instance.f4.push({
+              name: data[i][j],
+              imgf4: instance.imgf4[j - 16]
+            });
           }
         }
 
@@ -473,12 +523,14 @@ export default {
         const arrFindrecht = instance.recht.find(el => el > 0);
         const arrFindcbeam = instance.cbeam.find(el => el > 0);
 
+        // console.log("f1", instance.f1[0]);
+
         //f1
         if (arrFindCtype != 1) {
-          instance.Vctype = instance.f1[0];
+          instance.Vctype = instance.f1[0].name;
         }
         if (arrFinditype != 1) {
-          instance.Vitype = instance.f1[1];
+          instance.Vitype = instance.f1[1].name;
         }
         //f2
         if (arrFindBoltsNuts != 1) {
@@ -509,13 +561,13 @@ export default {
         }
         //f32
         if (arrFindfixed != 1) {
-          instance.Vfixed = instance.f32[0];
+          instance.Vfixed = instance.f32[0].name;
         }
         if (arrFindslidable != 1) {
-          instance.Vslidable = instance.f32[1];
+          instance.Vslidable = instance.f32[1].name;
         }
         if (arrFindfoldable != 1) {
-          instance.Vfoldable = instance.f32[2];
+          instance.Vfoldable = instance.f32[2].name;
         }
         //f33
         if (arrFindnoPower != 1) {
@@ -526,25 +578,25 @@ export default {
         }
         //f4
         if (arrFindtubeC != 1) {
-          instance.Vtube_cbeam = instance.f4[0];
+          instance.Vtube_cbeam = instance.f4[0].name;
         }
         if (arrFinddoubleRecht != 1) {
-          instance.Vdouble_recht = instance.f4[1];
+          instance.Vdouble_recht = instance.f4[1].name;
         }
         if (arrFindlip != 1) {
-          instance.Vlip = instance.f4[2];
+          instance.Vlip = instance.f4[2].name;
         }
         if (arrFindcircle != 1) {
-          instance.Vcircle = instance.f4[3];
+          instance.Vcircle = instance.f4[3].name;
         }
         if (arrFindsquare != 1) {
-          instance.Vsquare = instance.f4[4];
+          instance.Vsquare = instance.f4[4].name;
         }
         if (arrFindrecht != 1) {
-          instance.Vrecht = instance.f4[5];
+          instance.Vrecht = instance.f4[5].name;
         }
         if (arrFindcbeam != 1) {
-          instance.Vcbeam = instance.f4[6];
+          instance.Vcbeam = instance.f4[6].name;
         }
       })
       .catch(function(error) {
@@ -560,5 +612,13 @@ export default {
 }
 .outline {
   border-style: groove;
+}
+.imgWidth {
+  width: auto;
+  height: 100px;
+}
+.imgf1 {
+  width: auto;
+  height: 35px;
 }
 </style>

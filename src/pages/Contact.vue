@@ -5,15 +5,34 @@
     <b-container>
       <b-jumbotron class="jum">
         <b-row>
-          <b-col class="ol-12 col-sm-3">
-            <b-icon icon="people" style="width: 200px; height: 200px;"></b-icon>
+          <b-col class="col-12 col-sm-5">
+            <!-- <b-icon icon="people" style="width: 200px; height: 200px;"></b-icon> -->
+            <b-img
+              :src="require('../assets/imgDetailProject/contact.jpg')"
+              fluid
+              rounded
+              alt="Rounded image"
+              class="imgContact"
+            ></b-img>
           </b-col>
-          <b-col class="ol-12 col-sm-9">
+          <b-col class="col-12 col-sm-7">
             <br />
-            <h3 style="text-align: left;">
-              ศูนย์เทคโนโลยีโลหะและวัสดุแห่งชาติ 114 อุทยานวิทยาศาสตร์ประเทศไทย ถ.พหลโยธิน ต.คลองหนึ่ง อ.คลองหลวง จ.ปทุมธานี 12120
-              โทรศัพท์ 0-2564-6500 โทรสาร 0-2564-6501- 5
-            </h3>
+            <p
+              style="text-align: left; font-size: 18px;"
+            >ดร.ศราวุธ เลิศพลังสันติ นักวิจัย(หัวหน้าโครงการ) sarawutl@mtec.or.th</p>
+            <p
+              style="text-align: left; font-size: 18px;"
+            >นางสาวรัตนสุดา แนวเงินดี วิศวกรอาวุโส rattanan@mtec.or.th</p>
+            <p
+              style="text-align: left; font-size: 18px;"
+            >เสาวลักษณ์ ตั้งวานิชกพงษ์ นักวิเคราะห์อาวุโส saowalut@mtec.or.th</p>
+            <br />
+            <p style="text-align: left; font-size: 18px;">
+              ศูนย์เทคโนโลยีโลหะและวัสดุแห่งชาติ
+              สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ
+              114 อุทยานวิทยาศาสตร์ประเทศไทย ถ.พหลโยธิน ต.คลองหนึ่ง อ.คลองหลวง จ.ปทุมธานี 12120
+              โทร 025646500
+            </p>
           </b-col>
         </b-row>
       </b-jumbotron>
@@ -40,5 +59,9 @@ export default {
 .jum {
   background: linear-gradient(to top left, #ff9966 0%, #000066 100%);
   color: white;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0rem;
 }
 </style>
