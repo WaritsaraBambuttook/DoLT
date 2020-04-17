@@ -33,14 +33,16 @@
         </b-col>
       </b-row>
       <b-row class="col-12 col-sm-12">
-        <b-col>
+        <b-col class="col-12 col-sm-7 text-right">
           <!-- <a :href="locationFile" onclick="return false;"> -->
-          <b-button @click="GeneratePDF" variant="success">
+          <b-button @click="GeneratePDF" :variant="variant" :disabled="disabled == true">
             <b-icon icon="download" font-scale="2"></b-icon>Download
           </b-button>
           <!-- </a> -->
-
-          <br />
+        </b-col>
+        <b-col class="col-12 col-sm-5 text-right" v-if="loading == true">
+          <strong>Loading...</strong>
+          <b-spinner class="ml-auto"></b-spinner>
         </b-col>
       </b-row>
       <b-row class="col-12 col-sm-12">
@@ -77,7 +79,10 @@ export default {
       //   "RUPD-MTEC-1-1-2-1-1-2": require("../../assets/imgRUPD/RUPD-MTEC-1-1-2-1-2.jpg")
       // },
       // pathImg: "",
-      codeID: ""
+      codeID: "",
+      loading: false,
+      disabled: false,
+      variant: "success"
     };
   },
   created() {
@@ -144,9 +149,18 @@ export default {
   },
   methods: {
     GeneratePDF: function() {
+      this.loading = true;
+      this.disabled = true;
+      this.variant = "dark";
       if (this.pdf == "") {
         alert("ยังไม่มีแบบเชิงวิศวกรรมนี้ กรุณาเลือกใหม่อีกครั้ง");
       } else {
+        const instance = this;
+        setTimeout(function() {
+          instance.loading = false;
+          instance.disabled = false;
+          instance.variant = "success";
+        }, 6000);
         location.href = this.pdf;
       }
     }

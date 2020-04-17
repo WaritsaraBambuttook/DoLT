@@ -102,8 +102,18 @@
             </b-row>
             <br />
             <b-row>
-              <b-col>
-                <b-button type="submit" id="confirm" class="confirm" @click="confirm">ตกลง</b-button>
+              <b-col class="col-12 col-sm-8 text-right">
+                <b-button
+                  style="width: 250px;"
+                  type="submit"
+                  id="confirm"
+                  class="confirm"
+                  @click="confirm"
+                >ตกลง</b-button>
+              </b-col>
+              <b-col class="col-12 col-sm-4 text-right" v-if="loading == true">
+                <strong>Loading...</strong>
+                <b-spinner class="ml-auto"></b-spinner>
               </b-col>
             </b-row>
           </b-jumbotron>
@@ -247,7 +257,8 @@ export default {
       email: "",
       check: true,
       head: [],
-      carType: []
+      carType: [],
+      loading: false
     };
   },
   mounted() {
@@ -424,6 +435,7 @@ export default {
         console.log("if");
       } else {
         console.log("else");
+        this.loading = true;
         let setData = {
           firstname: this.firstname,
           lastname: this.lastname,
@@ -444,6 +456,7 @@ export default {
           .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
             instance.check = false;
+            instance.loading = false;
           })
           .catch(function(error) {
             console.error("Error adding document: ", error);
