@@ -13,7 +13,7 @@
               :disabled="f1.name == Vctype || f1.name == Vitype"
             >
               แบบ {{f1.name}}
-              <b-img class="imgf1" :src="f1.imgf1" thumbnail fluid :alt="f1.name"></b-img>
+              <b-img class="imgf1" :src="f1.imgf1" :alt="f1.name"></b-img>
             </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -112,7 +112,7 @@
               :disabled=" f4.name ==  Vtube_cbeam || f4.name ==   Vdouble_recht || f4.name ==   Vlip || f4.name ==   Vcircle || f4.name ==   Vsquare || f4.name ==   Vrecht || f4.name ==   Vcbeam "
             >
               {{f4.name}}
-              <b-img class="imgf1" :src="f4.imgf4" thumbnail fluid :alt="f4.name"></b-img>
+              <b-img class="imgf1" :src="f4.imgf4" :alt="f4.name"></b-img>
             </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -132,7 +132,7 @@
               :disabled="f32.name ==  Vfixed ||f32.name ==  Vslidable || f32.name ==  Vfoldable"
             >
               {{f32.name}}
-              <b-img class="imgf1" :src="f32.imgf32" thumbnail fluid :alt="f32.name"></b-img>
+              <b-img class="imgf1" :src="f32.imgf32" :alt="f32.name"></b-img>
             </b-form-radio>
           </b-form-radio-group>
         </b-form-group>

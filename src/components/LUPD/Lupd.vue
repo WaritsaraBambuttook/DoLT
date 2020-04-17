@@ -13,7 +13,7 @@
               :disabled=" Textf1.name == VCtype || Textf1.name == VItype"
             >
               แบบ {{Textf1.name}}
-              <b-img class="imgf1" :src="Textf1.imgf1" thumbnail fluid :alt="Textf1.name"></b-img>
+              <b-img class="imgf1" :src="Textf1.imgf1" :alt="Textf1.name"></b-img>
             </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -48,7 +48,7 @@
               :disabled=" Textf31.name == VVertical || Textf31.name == VHorizontal"
             >
               {{Textf31.name}}
-              <b-img class="imgf1" :src="Textf31.imgf31" thumbnail fluid :alt="Textf31.name"></b-img>
+              <b-img class="imgf1" :src="Textf31.imgf31" :alt="Textf31.name"></b-img>
             </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -66,7 +66,7 @@
               :disabled="Textf32.name == VCsection1 || Textf32.name == VCircle1"
             >
               {{Textf32.name}}
-              <b-img class="imgf1" :src="Textf32.imgf32" thumbnail fluid :alt="Textf32.name"></b-img>
+              <b-img class="imgf1" :src="Textf32.imgf32" :alt="Textf32.name"></b-img>
             </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -86,7 +86,7 @@
               @change="five(Textf33.name)"
             >
               {{Textf33.name}}
-              <b-img class="imgf1" :src="Textf33.imgf33" thumbnail fluid :alt="Textf33.name"></b-img>
+              <b-img class="imgf1" :src="Textf33.imgf33" :alt="Textf33.name"></b-img>
             </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -104,7 +104,7 @@
               :disabled="Textf4.name == VCsection2 || Textf4.name == VRectangular || Textf4.name == VWsection || Textf4.name == VCircle2"
             >
               {{Textf4.name}}
-              <b-img class="imgf1" :src="Textf4.imgf4" thumbnail fluid :alt="Textf4.name"></b-img>
+              <b-img class="imgf1" :src="Textf4.imgf4" :alt="Textf4.name"></b-img>
             </b-form-radio>
           </b-form-radio-group>
         </b-form-group>
